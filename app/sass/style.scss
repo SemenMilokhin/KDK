@@ -1,0 +1,175 @@
+//_____________________________
+//
+//             Переменные
+//_____________________________
+$primary-text-color: #fff;
+$secondary-text-color: #a1b0c1;
+$header-color: #272f40;
+$contrast-color-1: #f98a37;
+$contrast-color-2: #f34308;
+$main-gradient: linear-gradient(135deg, $contrast-color-1,$contrast-color-2);
+$glow: 0 0 12.48px 0.52px $contrast-color-1;
+//_____________________________
+//
+//            Шрифты
+//_____________________________
+@import 'fonts';
+//_____________________________
+//
+//            Спецификация
+//_____________________________
+body {
+	margin: 0;
+	font-family: 'GothamPro', sans-serif;
+	min-height: 100vh;
+}
+.container {
+	box-sizing: border-box;
+	width: 1170px;
+	padding: 0 15px;
+	margin: 0 auto;
+}
+//_____________________________
+//
+//            Sidebar
+//_____________________________
+.sidebar {
+	position: fixed;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-end;
+	width: 70px;
+	top: 0;
+	left: 0;
+	border-right: 1px solid #595d69;
+	background-color: $header-color;
+	min-height: 100vh;
+}
+.sidebar-navigation {
+
+}
+.sidebar-btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 70px;
+	height: 70px;
+	box-sizing: border-box;
+	margin-bottom: 18px;
+	&:first-of-type {
+		
+	}
+	&:last-of-type {
+		margin-bottom: 40px;
+	}
+}
+.sidebar-btn-img {
+
+}
+//_____________________________
+//
+//            Header
+//_____________________________
+.section-header {
+	background: $header-color url('../img/bg_main.jpg') no-repeat center center/cover;
+	.container {
+		min-height: 630px;
+		padding-top: 23px;
+	}
+}
+.header-row {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.logo-text-part {
+	position: relative;
+	color: $primary-text-color;
+	margin-left: 60px;
+	font-size: 13px;
+	line-height: 15px;
+	font-weight: 400;
+	width: 115px;
+	display: inline-block;
+	&::before {
+		content: '';
+		display: block;
+		position: absolute;
+		width: 1px;
+		height: 50px;
+		background-color: #fff;
+		opacity: 0.2;
+		left: -31px;
+		top: -12px;
+	}
+}
+.search-form {
+	position: relative;
+	box-sizing: border-box;
+	width: 280px;
+	height: 40px;
+	padding: 6px 8px;
+	border: 1px solid rgba(255,255,255,0.2);
+	border-radius: 20px;
+	display: flex;
+	justify-content: space-between;
+}
+.search-btn, .clear-btn {
+	width: 26px;
+	height: 26px;
+	padding: 0;
+	border: none;
+	background: none;
+	text-align: center;
+	vertical-align: middle;
+	outline: none;
+	cursor: pointer;
+	display: block;
+}
+.search-input {
+	background: none;
+	border: none;
+	display: block;
+	height: 26px;
+	font: 700 13px/26px 'GothamPro', sans-serif;
+	color: $primary-text-color;
+	padding: 0 9px;
+	box-sizing: border-box;
+	flex-grow:1;
+	outline: none;
+}
+.phone-wrapper {
+	width: 180px;
+	text-align: right;
+}
+.phone-number {
+	display: block;
+	font: 700 18px/18px 'GothamPro',sans-serif;
+	color: $primary-text-color;
+	text-decoration: none;
+}
+.different-color {
+	color: $secondary-text-color;
+}
+.call-order-button {
+	display: inline-block;
+	position: relative;
+	font: 400 13px/13px 'GothamPro',sans-serif;
+	text-decoration: none;
+	text-transform: uppercase;
+	margin-top: 10px;
+	color: $secondary-text-color;
+	&::before {
+		content: '';
+		display: block;
+		width: 9px;
+		height: 9px;
+		border-radius: 50%;
+		position: absolute;
+		left: -18px;
+		top: 1px;
+		background: $contrast-color-2 $main-gradient;
+		box-shadow: $glow;
+	}
+}
