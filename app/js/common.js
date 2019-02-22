@@ -12,25 +12,26 @@ $(document).ready(function(){
 	});
 
 
-	var hold = $('.site-sections'),
-		btn = hold.find('#services-btn'),
-		list = hold.find('#services-list-item'),
-		closeBtn = list.find('#services-close-btn');
+	var hold = $('.site-sections-wrapper'),
+		siteSections = hold.find('.site-sections'),
+		btn = siteSections.find('#services-btn'),
+		services = hold.find('#services-list'),
+		closeBtn = services.find('#services-close-btn');
 	btn.on('click', function(evt) {
 		evt.preventDefault();
-		list.animate({
+		// setTimeout(function () {
+			siteSections.addClass('clipped');
+		// }, 10);
+		services.animate({
 			left: "0%"			
 		},1000);
-		// hold.hide("slide", { direction: "left" }, 1000);
 	});
 	closeBtn.on('click', function(evt) {
 		evt.preventDefault();
-		list.animate({
+		siteSections.removeClass('clipped');
+		services.animate({
 			left: "100%"			
 		},1000);
-		// hold.animate({
-		// 	width: "100%"
-		// },1000);
 	});
 
 	var controls = $('#section-about-slider-controls'),
