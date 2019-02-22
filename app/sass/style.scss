@@ -16,11 +16,21 @@ $ternary-bg-color: #e3e8ee;
 $main-gradient: linear-gradient(135deg, $contrast-color-1,$contrast-color-2);
 $glow: 0 0 12.48px 0.52px $contrast-color-1;
 $active-glow: 0 0 13px 1.5px $contrast-color-1;
-$card-shadow: 0 10px 50px transparentize($ternary-text-color, 0.95);
-$section-btn-shadow: 0 10px 50px transparentize($ternary-text-color, 0.65);
+$card-shadow: 0 10px 50px transparentize($ternary-text-color, 0.9);
+$section-btn-shadow: 0 10px 30px transparentize($ternary-text-color, 0.65);
 $btn-glow: 0 10px 40px 0 transparentize($btn-glow-color,0.5);
 $btn-active-glow: 0 13px 45px 0 transparentize($btn-glow-color,0.5);
 $btn-border-color: #d7e0e6;
+//_____________________________
+//
+//             Миксины
+//_____________________________
+@mixin placeholder {
+	&::-webkit-input-placeholder { @content; }
+	&:-moz-placeholder           { @content; }
+	&::-moz-placeholder          { @content; }
+	&:-ms-input-placeholder      { @content; }  
+}
 //_____________________________
 //
 //            Шрифты
@@ -35,12 +45,42 @@ body {
 	font-family: 'GothamPro', sans-serif;
 	font-weight: 400;
 	min-height: 100vh;
+	width: 100vw;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	overflow-x: hidden;
+	&.without-scroll {
+		overflow: hidden;
+	}
+	&.fixed-header {
+		padding-top: 90px;
+		header {
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			margin: auto;
+		}
+	}
 }
 .container {
 	box-sizing: border-box;
 	width: 1170px;
 	padding: 0 15px;
 	margin: 0 auto;
+}
+.svg-gradient-wrapper {
+	position: absolute;
+	width: 0;
+	height: 0;
+}
+.page-title {
+	font-size: 24px;
+	line-height: 24px;
+	font-weight: 700;
+	color: $ternary-text-color;
+	margin: 0 0 30px;
 }
 .section-title {
 	font-weight: 700;
@@ -133,23 +173,33 @@ section .container {
 .sidebar-navigation {
 	padding-bottom: 70px;
 }
-.menu {
-	position: fixed;
+.menu-container {
 	display: none;
-	box-sizing: border-box;
+	position: fixed;
+	top: 0;
+	left: 0;
 	width: 100vw;
+	height: 100vh;
+	box-sizing: border-box;
+	background-color: transparentize($ternary-text-color,0.05);
+	&.opened {
+		display: block;
+		z-index: 9999;
+	}
+}
+.menu {
+	display: flex;
+	justify-content: space-between;
+	list-style: none;
+	box-sizing: border-box;
+	width: 1170px;
 	height: 100vh;
 	top: 0;
 	left: 0;
-	margin: 0;
-	padding: 100px 0 0;
-	background-color: transparentize($ternary-text-color,0.05);
+	margin: 0 auto;
+	padding: 100px 15px 0;
+	background: none;
 	color: $primary-text-color;
-	.container {
-		display: flex;
-		justify-content: space-between;
-		list-style: none;
-	}
 	&__item {
 		&_agency {
 			width: 30%;
@@ -163,6 +213,7 @@ section .container {
 		line-height: 40px;
 		position: relative;
 		margin: 0;
+		padding: 0 0 10px;
 		&::after {
 			position: absolute;
 			left: 0;
@@ -199,10 +250,10 @@ section .container {
 		color: $primary-text-color;
 		text-decoration: none;
 		&::after {
+			content: '';
 			bottom: -2px;
 			left: 0;
 			position: absolute;
-			content: '';
 			height: 1px;
 			width: 0%;
 			background-color: $primary-text-color;
@@ -234,7 +285,7 @@ section .container {
 	&__sections {
 	}
 	&__drop-down-title {
-		font-size: 16px;
+		font-size: 18px;
 		font-weight: 400;
 		margin: 0;
 		padding: 12px 0 0;
@@ -242,15 +293,7 @@ section .container {
 	&__drop-down {
 		list-style: none;
 		margin: 0;
-		padding: 14px 0 0 14px;
-		.menu__drop-down-item:nth-of-type(even) {
-			.menu__link {
-				color: $contrast-color-1;
-				&::after {
-					background-color: $contrast-color-1;
-				}
-			}
-		}
+		padding: 10px 0 0 28px;
 	}
 	&__drop-down-btn {
 		padding-right: 15px;
@@ -269,13 +312,29 @@ section .container {
 			border-bottom: none;
 			top: 7px;
 			right: 0;
+			transition: 0.2s;
+		}
+		&.opened {
+			&::after {
+				transform: rotateX(180deg);
+			}
 		}
 	}
 	&__drop-down-item {
+		margin: 10px 0;
 		.menu__link {
-		    font-size: 14px;
+		    font-size: 16px;
 		    line-height: 18px;
-		    text-transform: uppercase;
+		    &::before {
+				content: '';
+				width: 6px;
+				height: 6px;
+				border-radius: 50%;
+				background-color: $primary-text-color;
+				position: absolute;
+				top: 5px;
+				left: -14px;
+			}
 		}
 		&:hover {
 			.menu__link{
@@ -284,10 +343,6 @@ section .container {
 				}
 			}
 		}
-	}
-	&.opened {
-		display: block;
-		z-index: 9999;
 	}
 }
 .sidebar-menu-btn {
@@ -423,7 +478,7 @@ section .container {
 .section-header {
 	position: relative;
 	z-index: 10;
-	background: $header-color url('../img/bg_main.jpg') no-repeat center center/cover;
+	background-color: transparentize($header-color,0.15);
 	.container {
 		min-height: 630px;
 		display: flex;
@@ -438,6 +493,15 @@ section .container {
 		width: 1px;
 		height: 100%;
 		background-color: #595d69;
+	}
+	&.secondary-page {
+		background-color: $header-color;
+		.container {
+			min-height: 90px;
+		}
+		&::before {
+			content: none;
+		}
 	}
 }
 .header-row {
@@ -1009,7 +1073,6 @@ section .container {
 	}
 	&__svg {
 		fill: $ternary-text-color;
-		transition: 0.2s;
 	}
 	&__favorites-btn-text {
 		display: block;
@@ -1314,4 +1377,281 @@ section .container {
 }
 .footer-copyright {
 	text-align: right;
+}
+//_____________________________
+//
+//          contacts.html
+//_____________________________
+.drop-down {
+	width: 290px;
+	display: flex;
+	justify-content: space-between;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	&__item {
+		position: relative;
+		&:hover {
+			.drop-down__btn {
+				color: $contrast-color-2;
+				&::after {
+					transform: rotateX(180deg);
+				}
+			}
+		}
+	}
+	&__title {
+		margin: 0;
+		padding: 0;
+	}
+	&__btn {
+		font-size: 13px;
+		line-height: 15px;
+		font-weight: 500;
+		color: $primary-text-color;
+		text-decoration: none;
+		position: relative;
+		display: inline-block;
+		padding: 15px 10px 15px 0;
+		&::after {
+			position: absolute;
+			right: 0;
+			top: 20px;
+			content: '';
+			width: 5px;
+			height: 5px;
+			box-sizing: border-box;
+			border-top: 5px solid $primary-text-color;
+			border-right: 2.5px solid transparent;
+			border-bottom: none;
+			border-left: 2.5px solid transparent;
+			transition: 0.2s;
+		}
+	}
+	&__list {
+		clip: rect(-10px , 9999px , -10px , 0);
+		position: absolute;
+		list-style: none;
+		margin: 0;
+		padding: 10px;
+		border: 1px solid $ternary-bg-color;
+		border-radius: 15px;
+		background-color: $secondary-bg-color;
+		transition: 0.3s;
+		&::before {
+			content: '';
+			position: absolute;
+			bottom: 100%;
+			left: 30px;
+			width: 20px;
+			height: 10px;
+			box-sizing: border-box;
+			border: 10px solid transparent;
+			border-bottom-color: $secondary-bg-color;
+			border-top: none;
+		}
+	}
+	&__list-item {
+		margin: 15px 0 0;
+		height: 30px;
+	}
+	&__link {
+		display: block;
+		box-sizing: border-box;
+		height: 100%;
+		position: relative;
+		padding: 0 0 0 38px;
+		font-size: 13px;
+		font-weight: 500;
+		color: $quaternary-text-color;
+		text-decoration: none;
+		white-space: nowrap;
+		&:hover {
+			.drop-down__svg {
+				fill: url(#linear-gradient);
+			}
+		}
+	}
+	&__svg-wrapper {
+		position: absolute;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		top: 0;
+		left: 0;
+		width: 30px;
+		height: 30px;
+		box-sizing: border-box;
+	}
+	&__svg {
+		fill: $quaternary-text-color;
+	}
+	&__text-part {
+		line-height: 15px;
+	}
+}
+//_____________________________
+//
+//          section-contacts
+//_____________________________
+.section-contacts {
+	background-color: $primary-bg-color;
+	.section-img {
+		margin-bottom: 30px;
+	}
+}
+.breadcrumbs {
+	list-style: none;
+	margin: 0 0 35px;
+	padding: 0;
+	display: flex;
+	justify-content: flex-start;
+	align-items: baseline;
+	flex-wrap: wrap;
+	&__item {
+		position: relative;
+		padding-left: 15px;
+		&::before {
+			content: '/';
+			position: absolute;
+			left: 4px;
+			bottom: 1px;
+			pointer-events: none;
+		}
+		&:first-of-type {
+			padding-left: 0;
+			&::before {
+				content: none;
+			}
+		}
+		&_this-page {
+			font-size: 13px;
+			font-weight: 500;
+			color: $secondary-text-color;
+		}
+	}
+	&__link {
+		font-size: 13px;
+		font-weight: 500;
+		color: $quaternary-text-color;
+		text-decoration: none;
+	}
+}
+.contacts {
+	list-style: none;
+	margin: 0 0 30px;
+	padding: 0;
+	display: flex;
+	&__item {
+		box-sizing: border-box;
+		width: 25%;
+		padding: 30px;
+		margin: 0 30px 0 0;
+		border-radius: 15px;
+		background-color: $secondary-bg-color;
+		box-shadow: $card-shadow;
+		&:last-of-type {
+			margin: 0;
+		}
+	}
+	&__svg-wrapper {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 24px;
+		height: 24px;
+		margin: 0 0 20px;
+	}
+	&__svg {
+		fill: url(#linear-gradient);
+	}
+	&__heading {
+		margin: 0 0 15px;
+		font-size: 16px;
+		line-height: 18px;
+		font-weight: 700;
+		color: $ternary-text-color
+	}
+	&__info {
+		margin: 0;
+		font-size: 14px;
+		line-height: 18px;
+		font-weight: 500;
+		color: $quaternary-text-color;
+	}
+}
+.additional-contacts-wrapper {
+	display: flex;
+	justify-content: space-between;
+	min-height: 460px;
+	border-radius: 15px;
+	overflow: hidden;
+	background-color: $secondary-bg-color;
+	box-shadow: $card-shadow;
+}
+.form-wrapper {
+	box-sizing: border-box;
+	width: 50%;
+	padding: 50px 30px 30px;
+}
+.form-title {
+	margin: 0 0 30px;
+	font-size: 14px;
+	line-height: 16px;
+	font-weight: 600;
+	color: $ternary-text-color;
+}
+.contact-form {
+	input, textarea {
+		font-size: 14px;
+		line-height: 16px;
+		font-weight: 400;
+		color: $ternary-text-color;
+		display: block;
+		box-sizing: border-box;
+		width: 100%;
+		padding: 10px 20px;
+		margin: 0 0 20px;
+		outline: none;
+		border: none;
+		border-bottom: 1px solid $secondary-text-color;
+		@include placeholder {
+			font-family: 'GothamPro',sans-serif;
+			color: $quaternary-text-color;
+		}
+	}
+	textarea {
+		box-sizing: border-box;
+		width: 100%;
+		height: 70px;
+		resize: none;
+	}
+	
+}
+.form-row {
+	display: flex;
+	justify-content: space-between;
+	:first-child {
+		margin-right: 30px;
+	}
+}
+.recaptha {
+	width: 215px;
+	height: 54px;
+	margin: 0 0 20px;
+	background-color: #ccc;
+}
+.submit-btn {
+	border: none;
+	outline: none;
+	box-shadow: none;
+	cursor: pointer;
+	&:hover {
+		box-shadow: $btn-active-glow;
+	}
+}
+.map-wrapper {
+	overflow: hidden;
+	width: 50%;
+	background: transparent url('../img/pseudo-map.jpg') no-repeat center center/cover;
 }
