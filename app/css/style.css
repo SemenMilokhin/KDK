@@ -499,15 +499,15 @@ section .container {
 .sidebar-btn::before {
   content: '';
   position: absolute;
-  top: 16px;
-  right: 0;
+  top: 18px;
+  right: 2px;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  width: 9px;
-  height: 18px;
+  width: 7px;
+  height: 14px;
   background: none;
   border-style: solid;
-  border: 9px solid #fff;
+  border: 7px solid #fff;
   border-left: none;
   border-top-color: transparent;
   border-bottom-color: transparent;
@@ -568,7 +568,6 @@ section .container {
 .section-header {
   position: relative;
   z-index: 10;
-  background-color: rgba(39, 47, 64, 0.85);
 }
 
 .section-header .container {
@@ -588,6 +587,7 @@ section .container {
 .section-header::before {
   content: '';
   position: absolute;
+  z-index: 1;
   top: 0;
   left: 70px;
   width: 1px;
@@ -608,6 +608,8 @@ section .container {
 }
 
 .header-row {
+  position: relative;
+  z-index: 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -692,10 +694,22 @@ section .container {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
 }
 
 .search-btn:hover .search-svg, .clear-btn:hover .search-svg {
   fill: #ccc;
+}
+
+.clear-btn {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.clear-btn.show {
+  opacity: 1;
+  pointer-events: all;
 }
 
 .search-svg {
@@ -767,20 +781,53 @@ section .container {
   box-shadow: 0 0 13px 1.5px #f98a37;
 }
 
+.main-slider-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 .main-slider {
+  width: 100%;
+  height: 100%;
   list-style: none;
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  height: 377px;
 }
 
 .main-slider__item {
+  outline: none;
+  position: relative;
+  padding: 90px 0 145px;
   height: 100%;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  padding: 100px 0 80px;
+}
+
+.main-slider__img-wrapper {
+  position: absolute;
+  width: 100vw;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(39, 47, 64, 0.85);
+}
+
+.main-slider__bg-img {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.main-slider__content {
+  position: relative;
+  z-index: 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -794,14 +841,87 @@ section .container {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 395px;
+  padding: 100px 0 80px;
 }
 
-.main-slider__bg-img {
+.main-slider-controls {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  margin: 0 auto;
+  width: 1140px;
+  height: 0;
   top: 0;
   left: 0;
+  right: 0;
+}
+
+.main-slider-controls__item {
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+}
+
+.main-slider-controls__item_left-arrow, .main-slider-controls__item_right-arrow {
+  width: 28px;
+  height: 28px;
+  border: none;
+  outline: none;
+  background: none;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  position: absolute;
+  top: 295px;
+}
+
+.main-slider-controls__item_left-arrow::after, .main-slider-controls__item_right-arrow::after {
+  position: absolute;
+  top: 8px;
+  content: '';
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 10px;
+  height: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-left: none;
+  border-bottom: none;
+  z-index: 3;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.main-slider-controls__item_left-arrow.slick-disabled, .main-slider-controls__item_right-arrow.slick-disabled {
+  cursor: default;
+}
+
+.main-slider-controls__item_left-arrow.slick-disabled::after, .main-slider-controls__item_right-arrow.slick-disabled::after {
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.main-slider-controls__item_left-arrow:hover::after, .main-slider-controls__item_right-arrow:hover::after {
+  border-color: #fff;
+}
+
+.main-slider-controls__item_left-arrow {
+  left: 0;
+}
+
+.main-slider-controls__item_left-arrow::after {
+  -webkit-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+  left: 10px;
+}
+
+.main-slider-controls__item_right-arrow {
+  right: 0;
+}
+
+.main-slider-controls__item_right-arrow::after {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  right: 10px;
 }
 
 .main-title {
@@ -821,6 +941,7 @@ section .container {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   height: 60px;
+  outline: none;
   border-radius: 30px;
   padding: 22px 50px;
   font: 700 16px/16px 'GothamPro',sans-serif;
