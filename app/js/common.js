@@ -108,16 +108,6 @@ $(document).ready(function(){
 			dropDownList = $(el).find('.drop-down__list'),
 			dropDownListHeight = dropDownList.outerHeight();
 
-		dropDownList.on('mouseenter', function(){
-			$(this).css({
-				clip: 'rect(-10px , 9999px , '+dropDownListHeight+'px , 0)'
-			})
-		});
-		dropDownList.on('mouseleave', function(){
-			$(this).css({
-				clip: 'rect(-10px , 9999px , -10px , 0)'
-			})
-		});
 		dropDownBtn.on('mouseenter', function(){
 			dropDownList.css({
 				clip: 'rect(-10px , 9999px , '+dropDownListHeight+'px , 0)'
@@ -127,6 +117,16 @@ $(document).ready(function(){
 			dropDownList.css({
 				clip: 'rect(-10px , 9999px , -10px , 0)'
 			});
+		});
+		dropDownList.on('mouseenter', function(){
+			$(this).css({
+				clip: 'rect(-10px , 9999px , '+dropDownListHeight+'px , 0)'
+			})
+		});
+		dropDownList.on('mouseleave', function(){
+			$(this).css({
+				clip: 'rect(-10px , 9999px , -10px , 0)'
+			})
 		});
 	});
 
@@ -158,5 +158,58 @@ $(document).ready(function(){
 		} else {
 			clearBtn.removeClass('show');
 		}
+	});
+
+	var filtersForm = $('.filters-form'),
+		select = filtersForm.find('.select'),
+		moreFiltersBtn = filtersForm.find('.more-filters-btn'),
+		moreFiltersBtnText = filtersForm.find('.more-filters-btn__text'),
+		moreFiltersWrapper = filtersForm.find('.more-filters-wrapper');
+
+	moreFiltersBtn.on('click', function(evt) {
+		evt.preventDefault();
+		moreFiltersBtnText.text(moreFiltersBtnText.text() == "Скрыть" ? "Ещё фильтры" : "Скрыть");
+		moreFiltersBtn.toggleClass('opened');
+		moreFiltersWrapper.slideToggle(500);
+	});
+
+	select.each(function(i,el) {
+		var selectLabel = $(el).find('.select__label'),
+			selectLabelValue = selectLabel.find('.select__label-value'),
+			selectInput = $(el).find('.select__hidden-input'),
+			selectList = $(el).find('.select__list'),
+			selectListHeight = selectList.outerHeight(),
+			selectListItem = selectList.find('.select__list-item');
+
+		selectLabel.on('mouseenter', function(){
+			selectList.css({
+				clip: 'rect(0, 9999px , '+selectListHeight+'px , 0)'
+			});
+		});
+		selectLabel.on('mouseleave', function(){
+			selectList.css({
+				clip: 'rect(0, 9999px , 0, 0)'
+			});
+		});
+		selectList.on('mouseenter', function(){
+			$(this).css({
+				clip: 'rect(0, 9999px , '+selectListHeight+'px , 0)'
+			})
+		});
+		selectList.on('mouseleave', function(){
+			$(this).css({
+				clip: 'rect(0 , 9999px , 0 , 0)'
+			})
+		});
+
+		selectListItem.each(function(i,el) {
+			$(el).on('click', function(evt) {
+				var value = $(el).attr('data-value'),
+					text = $(el).text();
+				evt.preventDefault();
+				selectInput.val(value);
+				selectLabelValue.text(text);
+			})
+		})
 	});
 });
