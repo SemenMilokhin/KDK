@@ -225,24 +225,24 @@ $(document).ready(function(){
 		typeOfAdsBlocksBtn = adsWrapper.find('.type-of-ads__btn_type-blocks');
 
 
-	typeOfAdsListBtn.on('click', function(evt) {
-		evt.preventDefault();
-		typeOfAdsItem.each(function(i,el){
-			$(el).removeClass('selected');
-		});
-		typeOfAdsListBtn.parent('li').addClass('selected');
-		ads.removeClass('type-blocks');
-		ads.addClass('type-list');
-	});
-	typeOfAdsBlocksBtn.on('click', function(evt) {
-		evt.preventDefault();
-		typeOfAdsItem.each(function(i,el){
-			$(el).removeClass('selected');
-		});
-		typeOfAdsBlocksBtn.parent('li').addClass('selected');
-		ads.removeClass('type-list');
-		ads.addClass('type-blocks');
-	});
+	// typeOfAdsListBtn.on('click', function(evt) {
+	// 	evt.preventDefault();
+	// 	typeOfAdsItem.each(function(i,el){
+	// 		$(el).removeClass('selected');
+	// 	});
+	// 	typeOfAdsListBtn.parent('li').addClass('selected');
+	// 	ads.removeClass('type-blocks');
+	// 	ads.addClass('type-list');
+	// });
+	// typeOfAdsBlocksBtn.on('click', function(evt) {
+	// 	evt.preventDefault();
+	// 	typeOfAdsItem.each(function(i,el){
+	// 		$(el).removeClass('selected');
+	// 	});
+	// 	typeOfAdsBlocksBtn.parent('li').addClass('selected');
+	// 	ads.removeClass('type-list');
+	// 	ads.addClass('type-blocks');
+	// });
 
 
 	adsItem.each(function(i,el){
