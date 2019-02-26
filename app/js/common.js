@@ -346,4 +346,17 @@ $(document).ready(function(){
 		});
 	});
 
+
+	var anchorLinks = $('.anchor-links'),
+		anchorLinksLink = anchorLinks.find('.anchor-links__link');
+
+	anchorLinksLink.each(function(i,el) {
+		$(el).on("click", function (evt) {
+	        evt.preventDefault();
+	        var id  = $(this).attr('href'),
+	            top = $(id).offset().top - 105;
+	        $('body,html').animate({scrollTop: top}, 800);
+	    });
+	});
+
 });
