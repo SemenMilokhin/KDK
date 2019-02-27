@@ -297,10 +297,217 @@
 							<path class="search-svg" d="M818,36a9,9,0,1,0,9,9,9,9,0,0,0-9-9h0Zm-2.121,6.172,4.949,4.95a0.5,0.5,0,1,1-.707.707l-4.95-4.95A0.5,0.5,0,0,1,815.879,42.171Zm4.949,0.707-4.949,4.95a0.5,0.5,0,0,1-.708-0.707l4.95-4.95A0.5,0.5,0,1,1,820.828,42.879Z" transform="translate(-809 -36)"/>
 						</svg>
 					</button>
+					<div class="advanced-search">
+						<div class="advanced-search-container">
+							<button class="advanced-search-btn">Расширенный поиск</button>
+							<button class="advanced-search-close-btn"></button>
+							<div class="less-filters-wrapper">
+								<div class="select">
+									<button class="select__label">
+										<span class="select__label-value">Квартиры</span>
+										<svg class="select__label-svg" width="10" height="6" viewBox="0 0 10 6">
+											<path class="select__label-svg-path" d="M5.7,5.7C5.5,5.9,5.3,6,5,6S4.5,5.9,4.3,5.7l-4-4c-0.4-0.4-0.4-1,0-1.4c0.4-0.4,1-0.4,1.4,0L5,3.6l3.3-3.3c0.4-0.4,1-0.4,1.4,0c0.4,0.4,0.4,1,0,1.4L5.7,5.7z"/>
+										</svg>
+									</button>
+									<input type="hidden" class="select__hidden-input" name="property-type" id="property-type-field">
+									<ul class="select__list">
+										<li class="select__list-item" data-value="apartments">Квартиры</li>
+										<li class="select__list-item" data-value="cottages">Коттеджи</li>
+									</ul>
+								</div>
+								<div class="select">
+									<button class="select__label">
+										<span class="select__label-value">1-комнатная</span>
+										<svg class="select__label-svg" width="10" height="6" viewBox="0 0 10 6">
+											<path class="select__label-svg-path" d="M5.7,5.7C5.5,5.9,5.3,6,5,6S4.5,5.9,4.3,5.7l-4-4c-0.4-0.4-0.4-1,0-1.4c0.4-0.4,1-0.4,1.4,0L5,3.6l3.3-3.3c0.4-0.4,1-0.4,1.4,0c0.4,0.4,0.4,1,0,1.4L5.7,5.7z"/>
+										</svg>
+									</button>
+									<input type="hidden" class="select__hidden-input" name="number-of-rooms" id="number-of-rooms-field">
+									<ul class="select__list">
+										<li class="select__list-item" data-value="1">1-комнатная</li>
+										<li class="select__list-item" data-value="2">2-комнатная</li>
+										<li class="select__list-item" data-value="3">3-комнатная</li>
+										<li class="select__list-item" data-value="4">4-комнатная</li>
+										<li class="select__list-item" data-value="5">5-комнатная</li>
+									</ul>
+								</div>
+								<div class="property-price">
+									<input type="text" name="property-price-min" id="property-price-min-field" placeholder="от">
+									<input type="text" name="property-price-max" id="property-price-max-field" placeholder="до">
+									<span>₽</span>
+								</div>
+								<div class="adress">
+									<span class="adress__label">Город, адрес, метро, район, ж/д, шоссе или ЖК</span>
+									<div class="adress__wrapper">
+										<input type="text" class="adress__input" name="area" id="area-field" value="Солнечногорск" readonly>
+										<button class="adress__map-btn">Указать на карте</button>
+									</div>
+								</div>
+								<button class="more-filters-btn">
+									<span class="more-filters-btn__text">Ещё фильтры</span>
+									<svg class="more-filters-btn__svg" width="10" height="6" viewBox="0 0 10 6">
+										<path class="more-filters-btn__svg-path" d="M5.7,5.7C5.5,5.9,5.3,6,5,6S4.5,5.9,4.3,5.7l-4-4c-0.4-0.4-0.4-1,0-1.4c0.4-0.4,1-0.4,1.4,0L5,3.6l3.3-3.3c0.4-0.4,1-0.4,1.4,0c0.4,0.4,0.4,1,0,1.4L5.7,5.7z"/>
+									</svg>
+								</button>
+							</div>
+							<div class="slide-down-wrapper">
+								<div class="more-filters-wrapper">
+									<div class="form-row">
+										<span class="form-label">Площадь, м<sup>2</sup>:</span>
+										<span class="input-label">Общая:</span>
+										<div class="inputs-wrapper">
+											<input type="text" class="inputs-wrapper__item" name="total-area-min" id="total-area-min-field" placeholder="от">
+											<input type="text" class="inputs-wrapper__item" name="total-area-max" id="total-area-max-field" placeholder="до">
+										</div>
+										<span class="input-label">Кухня:</span>
+										<div class="inputs-wrapper">
+											<input type="text" class="inputs-wrapper__item" name="kitchen-area-min" id="kitchen-area-min-field" placeholder="от">
+											<input type="text" class="inputs-wrapper__item" name="kitchen-area-max" id="kitchen-area-max-field" placeholder="до">
+										</div>
+										<span class="input-label">Жилая:</span>
+										<div class="inputs-wrapper">
+											<input type="text" class="inputs-wrapper__item" name="living-area-min" id="living-area-min-field" placeholder="от">
+											<input type="text" class="inputs-wrapper__item" name="living-area-max" id="living-area-max-field" placeholder="до">
+										</div>
+									</div>
+									<div class="form-row">
+										<span class="form-label">Этаж:</span>
+										<div class="inputs-wrapper">
+											<input type="text" class="inputs-wrapper__item" name="floor-min" id="floor-min-field" placeholder="от">
+											<input type="text" class="inputs-wrapper__item" name="floor-min" id="floor-max-field" placeholder="до">
+										</div>
+										<ul class="checkboxes">
+											<li class="checkboxes__item">
+												<input type="checkbox" class="checkboxes__input" name="floor" value="only-last" id="floor-only-last">
+												<label class="checkboxes__label" for="floor-only-last">Только последний</label>
+											</li>
+										</ul>
+									</div>
+									<div class="form-row">
+										<span class="form-label">Тип дома:</span>
+										<ul class="checkboxes">
+											<li class="checkboxes__item">
+												<input type="checkbox" class="checkboxes__input" name="house-type" value="brick" id="house-type-brick">
+												<label class="checkboxes__label" for="house-type-brick">Кирпичный</label>
+											</li>
+											<li class="checkboxes__item">
+												<input type="checkbox" class="checkboxes__input" name="house-type" value="wooden" id="house-type-wooden">
+												<label class="checkboxes__label" for="house-type-wooden">Деревянный</label>
+											</li>
+											<li class="checkboxes__item">
+												<input type="checkbox" class="checkboxes__input" name="house-type" value="monolithic" id="house-type-monolithic">
+												<label class="checkboxes__label" for="house-type-monolithic">Монолитный</label>
+											</li>
+											<li class="checkboxes__item">
+												<input type="checkbox" class="checkboxes__input" name="house-type" value="panel" id="house-type-panel">
+												<label class="checkboxes__label" for="house-type-panel">Панельный</label>
+											</li>
+											<li class="checkboxes__item">
+												<input type="checkbox" class="checkboxes__input" name="house-type" value="brick-monolithic" id="house-type-brick-monolithic">
+												<label class="checkboxes__label" for="house-type-brick-monolithic">Кирпично-монолитный</label>
+											</li>
+										</ul>
+									</div>
+									<div class="form-row">
+										<span class="form-label">Год постройки:</span>
+										<div class="inputs-wrapper">
+											<input type="text" class="inputs-wrapper__item" name="year-min" id="year-min-field" placeholder="от">
+											<input type="text" class="inputs-wrapper__item" name="year-min" id="year-max-field" placeholder="до">
+										</div>
+									</div>
+									<div class="form-row">
+										<span class="form-label">Лифт:</span>
+										<ul class="checkboxes">
+											<li class="checkboxes__item">
+												<input type="checkbox" class="checkboxes__input" name="elevator-type" value="passenger" id="elevator-type-passenger">
+												<label class="checkboxes__label" for="elevator-type-passenger">Есть пассажирский</label>
+											</li>
+											<li class="checkboxes__item">
+												<input type="checkbox" class="checkboxes__input" name="elevator-type" value="cargo" id="elevator-type-cargo">
+												<label class="checkboxes__label" for="elevator-type-cargo">Есть грузовой</label>
+											</li>
+										</ul>
+									</div>
+									<div class="form-row">
+										<span class="form-label">Балкон:</span>
+										<ul class="checkboxes">
+											<li class="checkboxes__item">
+												<input type="checkbox" class="checkboxes__input" name="balcony-type" value="balcony" id="balcony-type-balcony">
+												<label class="checkboxes__label" for="balcony-type-balcony">Есть балкон</label>
+											</li>
+											<li class="checkboxes__item">
+												<input type="checkbox" class="checkboxes__input" name="balcony-type" value="loggia" id="balcony-type-loggia">
+												<label class="checkboxes__label" for="balcony-type-loggia">Есть лоджия</label>
+											</li>
+										</ul>
+									</div>
+									<div class="form-row">
+										<span class="form-label">Окна:</span>
+										<ul class="checkboxes">
+											<li class="checkboxes__item">
+												<input type="checkbox" class="checkboxes__input" name="windows-type" value="courtyard" id="windows-type-courtyard">
+												<label class="checkboxes__label" for="windows-type-courtyard">Во двор</label>
+											</li>
+											<li class="checkboxes__item">
+												<input type="checkbox" class="checkboxes__input" name="windows-type" value="street" id="windows-type-street">
+												<label class="checkboxes__label" for="windows-type-street">На улицу</label>
+											</li>
+										</ul>
+									</div>
+									<div class="form-row">
+										<span class="form-label">Ремонт:</span>
+										<ul class="checkboxes">
+											<li class="checkboxes__item">
+												<input type="checkbox" class="checkboxes__input" name="repairs-type" value="cosmetic" id="repairs-type-cosmetic">
+												<label class="checkboxes__label" for="repairs-type-cosmetic">Косметический</label>
+											</li>
+											<li class="checkboxes__item">
+												<input type="checkbox" class="checkboxes__input" name="repairs-type" value="eurorepair" id="repairs-type-eurorepair">
+												<label class="checkboxes__label" for="repairs-type-eurorepair">Евроремонт</label>
+											</li>
+											<li class="checkboxes__item">
+												<input type="checkbox" class="checkboxes__input" name="repairs-type" value="designer" id="repairs-type-designer">
+												<label class="checkboxes__label" for="repairs-type-designer">Дизайнерский</label>
+											</li>
+											<li class="checkboxes__item">
+												<input type="checkbox" class="checkboxes__input" name="repairs-type" value="without-repair" id="repairs-type-without-repair">
+												<label class="checkboxes__label" for="repairs-type-without-repair">Без ремонта</label>
+											</li>
+										</ul>
+									</div>
+									<div class="form-row">
+										<span class="form-label">Санузел:</span>
+										<ul class="checkboxes">
+											<li class="checkboxes__item">
+												<input type="checkbox" class="checkboxes__input" name="bathroom-type" value="combined" id="bathroom-type-combined">
+												<label class="checkboxes__label" for="bathroom-type-combined">Совмещённый</label>
+											</li>
+											<li class="checkboxes__item">
+												<input type="checkbox" class="checkboxes__input" name="bathroom-type" value="separated" id="bathroom-type-separated">
+												<label class="checkboxes__label" for="bathroom-type-separated">Раздельный</label>
+											</li>
+										</ul>
+										<span class="input-label">Количество:</span>
+										<div class="inputs-wrapper only-one-input">
+											<input type="text" class="inputs-wrapper__item" name="bathroom-max" id="bathroom-max-field" placeholder="до">
+										</div>
+									</div>
+									<div class="form-row">
+										<span class="form-label">ID объявления:</span>
+										<input type="text" class="form-input" name="id" id="id">
+									</div>
+								</div>
+								<div class="btns-wrapper">
+									<button class="on-map-btn">Показать на карте</button>
+									<button type="submit" class="filters-submit-btn">Показать <span class="objects-count-here">111888</span> объектов</button>
+								</div>
+							</div>
+						</div>
+					</div>
 				</form>
 				<div class="phone-wrapper">
 					<a class="phone-number" href="tel:+74951234567"><span class="different-color">+7 (495) </span>123-45-67</a>
-					<a class="call-order-button" href="#">Заказать звонок</a>
+					<button class="call-order-button">Заказать звонок</button>
 				</div>
 			</div>
 			<div class="main-slider-wrapper">
@@ -529,88 +736,254 @@
 	<section class="section-new-ads" id="section-new-ads">
 		<div class="container">
 			<h2 class="section-title">Новые объявления</h2>
-			<ul class="new-ads">
-				<li class="new-ads__item in-favorites price-increase">
-					<div class="new-ads__slider-wrapper">
-						<ul class="new-ads__img-slider">
-							<li class="new-ads__img-slide">
-								<img class="new-ads__img" src="img/ad-img-1.jpg" alt="ad-img">
-							</li>
-							<li class="new-ads__img-slide">
-								<img class="new-ads__img" src="img/ad-img-2.jpg" alt="ad-img">
-							</li>
-							<li class="new-ads__img-slide">
-								<img class="new-ads__img" src="img/ad-img-1.jpg" alt="ad-img">
-							</li>
-						</ul>
-						<div class="new-ads__slider-controls">
-							<button class="new-ads__slider-controls_left-arrow"></button>
-							<button class="new-ads__slider-controls_right-arrow"></button>
+			<div class="new-ads-wrapper">
+				<ul class="new-ads">
+					<li class="new-ads__item in-favorites price-increase">
+						<div class="new-ads__slider-wrapper">
+							<ul class="new-ads__img-slider">
+								<li class="new-ads__img-slide">
+									<img class="new-ads__img" src="img/ad-img-1.jpg" alt="ad-img">
+								</li>
+								<li class="new-ads__img-slide">
+									<img class="new-ads__img" src="img/ad-img-2.jpg" alt="ad-img">
+								</li>
+								<li class="new-ads__img-slide">
+									<img class="new-ads__img" src="img/ad-img-1.jpg" alt="ad-img">
+								</li>
+							</ul>
+							<div class="new-ads__slider-controls">
+								<button class="new-ads__slider-controls_left-arrow"></button>
+								<button class="new-ads__slider-controls_right-arrow"></button>
+							</div>
+							<button class="new-ads__favorites-btn">
+								<svg width="16" height="13">
+									<path class="new-ads__svg" d="M12,0c-1.1,0-2.1,0.4-2.8,1.2L8,2.3L6.8,1.2c-1.6-1.6-4.1-1.6-5.7,0C0.4,1.9,0,2.9,0,4c0.1,1.1,0.6,2.1,1.4,2.9l5.9,5.8c0.4,0.4,1,0.4,1.4,0l5.8-5.8C15.4,6.1,15.9,5.1,16,4C16,1.8,14.2,0,12,0C12,0,12,0,12,0z M8,10.6L2.8,5.4C2.4,5.1,2.1,4.6,2,4c0-1.1,0.9-2,2-2c0.5,0,1,0.2,1.4,0.6l1.9,1.9c0.4,0.4,1,0.4,1.4,0l1.9-1.9c0.8-0.8,2-0.8,2.8,0C13.8,3,14,3.5,14,4c-0.1,0.6-0.4,1.1-0.8,1.4L8,10.6z"/>
+								</svg>
+								<span class="new-ads__favorites-btn-text">в избранно</span>
+							</button>
 						</div>
-						<button class="new-ads__favorites-btn">
-							<svg width="16" height="13">
-								<path class="new-ads__svg" d="M12,0c-1.1,0-2.1,0.4-2.8,1.2L8,2.3L6.8,1.2c-1.6-1.6-4.1-1.6-5.7,0C0.4,1.9,0,2.9,0,4c0.1,1.1,0.6,2.1,1.4,2.9l5.9,5.8c0.4,0.4,1,0.4,1.4,0l5.8-5.8C15.4,6.1,15.9,5.1,16,4C16,1.8,14.2,0,12,0C12,0,12,0,12,0z M8,10.6L2.8,5.4C2.4,5.1,2.1,4.6,2,4c0-1.1,0.9-2,2-2c0.5,0,1,0.2,1.4,0.6l1.9,1.9c0.4,0.4,1,0.4,1.4,0l1.9-1.9c0.8-0.8,2-0.8,2.8,0C13.8,3,14,3.5,14,4c-0.1,0.6-0.4,1.1-0.8,1.4L8,10.6z"/>
-							</svg>
-							<span class="new-ads__favorites-btn-text">в избранно</span>
-						</button>
-					</div>
-					<a href="one_object.html" class="new-ads__text-wrapper">
-						<div class="new-ads__wrapper">
-							<h4 class="new-ads__title"><span class="new-ads__number-of-rooms-here">3</span>-комн. квартира, <span class="new-ads__square-meters-here">96</span> м<sup>2</sup></h4>
-							<p class="new-ads__station">Преображенская площадь</p>
-							<p class="new-ads__adress">Москва, ВАО, р-н Преображенское, м. Преображенская площадь, улица Алымова, 3</p>
+						<a href="one_object.html" class="new-ads__text-wrapper">
+							<div class="new-ads__wrapper">
+								<h4 class="new-ads__title"><span class="new-ads__number-of-rooms-here">3</span>-комн. квартира, <span class="new-ads__square-meters-here">96</span> м<sup>2</sup></h4>
+								<p class="new-ads__station">Преображенская площадь</p>
+								<p class="new-ads__adress">Москва, ВАО, р-н Преображенское, м. Преображенская площадь, улица Алымова, 3</p>
+							</div>
+							<div class="new-ads__wrapper">
+								<p class="new-ads__price"><span class="new-ads__price-here">29 500 000</span> ₽</p>
+								<p class="new-ads__price-per-square-meter"><span class="new-ads__price-per-square-meter-here">307 292</span> ₽/м<sup>2</sup></p>
+							</div>
+							<div class="new-ads__additional-information">
+								<p class="new-ads__id">ID <span class="new-ads__id-here">56899</span></p>
+								<p class="new-ads__post-date">Добавлено: <span class="new-ads__post-date-here">вчера</span></p>
+							</div>
+						</a>
+					</li>
+					<li class="new-ads__item price-drop">
+						<div class="new-ads__slider-wrapper">
+							<ul class="new-ads__img-slider">
+								<li class="new-ads__img-slide">
+									<img class="new-ads__img" src="img/ad-img-2.jpg" alt="ad-img">
+								</li>
+								<li class="new-ads__img-slide">
+									<img class="new-ads__img" src="img/ad-img-1.jpg" alt="ad-img">
+								</li>
+								<li class="new-ads__img-slide">
+									<img class="new-ads__img" src="img/ad-img-2.jpg" alt="ad-img">
+								</li>
+							</ul>
+							<div class="new-ads__slider-controls">
+								<button class="new-ads__slider-controls_left-arrow"></button>
+								<button class="new-ads__slider-controls_right-arrow"></button>
+							</div>
+							<button class="new-ads__favorites-btn">
+								<svg width="16" height="13">
+									<path class="new-ads__svg" d="M12,0c-1.1,0-2.1,0.4-2.8,1.2L8,2.3L6.8,1.2c-1.6-1.6-4.1-1.6-5.7,0C0.4,1.9,0,2.9,0,4c0.1,1.1,0.6,2.1,1.4,2.9l5.9,5.8c0.4,0.4,1,0.4,1.4,0l5.8-5.8C15.4,6.1,15.9,5.1,16,4C16,1.8,14.2,0,12,0C12,0,12,0,12,0z M8,10.6L2.8,5.4C2.4,5.1,2.1,4.6,2,4c0-1.1,0.9-2,2-2c0.5,0,1,0.2,1.4,0.6l1.9,1.9c0.4,0.4,1,0.4,1.4,0l1.9-1.9c0.8-0.8,2-0.8,2.8,0C13.8,3,14,3.5,14,4c-0.1,0.6-0.4,1.1-0.8,1.4L8,10.6z"/>
+								</svg>
+								<span class="new-ads__favorites-btn-text">в избранно</span>
+							</button>
 						</div>
-						<div class="new-ads__wrapper">
-							<p class="new-ads__price"><span class="new-ads__price-here">29 500 000</span> ₽</p>
-							<p class="new-ads__price-per-square-meter"><span class="new-ads__price-per-square-meter-here">307 292</span> ₽/м<sup>2</sup></p>
+						<a href="one_object.html" class="new-ads__text-wrapper">
+							<div class="new-ads__content-wrapper">
+								<h4 class="new-ads__title"><span class="new-ads__number-of-rooms-here">2</span>-комн. квартира, <span class="new-ads__square-meters-here">76</span> м<sup>2</sup></h4>
+								<p class="new-ads__station">Хорошёво</p>
+								<p class="new-ads__adress">Москва, СЗАО, р-н Хорошево-Мневники, ул. Мневники</p>
+							</div>
+							<div class="new-ads__content-wrapper">
+								<p class="new-ads__price"><span class="new-ads__price-here">9 800 960</span> ₽</p>
+								<p class="new-ads__price-per-square-meter"><span class="new-ads__price-per-square-meter-here">161 200</span> ₽/м<sup>2</sup></p>
+							</div>
+							<div class="new-ads__additional-information">
+								<p class="new-ads__id">ID <span class="new-ads__id-here">56124152121</span></p>
+								<p class="new-ads__post-date">Добавлено: <span class="new-ads__post-date-here">04.07.18</span></p>
+							</div>
+						</a>
+					</li>
+					<li class="new-ads__item in-favorites price-increase">
+						<div class="new-ads__slider-wrapper">
+							<ul class="new-ads__img-slider">
+								<li class="new-ads__img-slide">
+									<img class="new-ads__img" src="img/ad-img-1.jpg" alt="ad-img">
+								</li>
+								<li class="new-ads__img-slide">
+									<img class="new-ads__img" src="img/ad-img-2.jpg" alt="ad-img">
+								</li>
+								<li class="new-ads__img-slide">
+									<img class="new-ads__img" src="img/ad-img-1.jpg" alt="ad-img">
+								</li>
+							</ul>
+							<div class="new-ads__slider-controls">
+								<button class="new-ads__slider-controls_left-arrow"></button>
+								<button class="new-ads__slider-controls_right-arrow"></button>
+							</div>
+							<button class="new-ads__favorites-btn">
+								<svg width="16" height="13">
+									<path class="new-ads__svg" d="M12,0c-1.1,0-2.1,0.4-2.8,1.2L8,2.3L6.8,1.2c-1.6-1.6-4.1-1.6-5.7,0C0.4,1.9,0,2.9,0,4c0.1,1.1,0.6,2.1,1.4,2.9l5.9,5.8c0.4,0.4,1,0.4,1.4,0l5.8-5.8C15.4,6.1,15.9,5.1,16,4C16,1.8,14.2,0,12,0C12,0,12,0,12,0z M8,10.6L2.8,5.4C2.4,5.1,2.1,4.6,2,4c0-1.1,0.9-2,2-2c0.5,0,1,0.2,1.4,0.6l1.9,1.9c0.4,0.4,1,0.4,1.4,0l1.9-1.9c0.8-0.8,2-0.8,2.8,0C13.8,3,14,3.5,14,4c-0.1,0.6-0.4,1.1-0.8,1.4L8,10.6z"/>
+								</svg>
+								<span class="new-ads__favorites-btn-text">в избранно</span>
+							</button>
 						</div>
-						<div class="new-ads__additional-information">
-							<p class="new-ads__id">ID <span class="new-ads__id-here">56899</span></p>
-							<p class="new-ads__post-date">Добавлено: <span class="new-ads__post-date-here">вчера</span></p>
+						<a href="one_object.html" class="new-ads__text-wrapper">
+							<div class="new-ads__wrapper">
+								<h4 class="new-ads__title"><span class="new-ads__number-of-rooms-here">3</span>-комн. квартира, <span class="new-ads__square-meters-here">96</span> м<sup>2</sup></h4>
+								<p class="new-ads__station">Преображенская площадь</p>
+								<p class="new-ads__adress">Москва, ВАО, р-н Преображенское, м. Преображенская площадь, улица Алымова, 3</p>
+							</div>
+							<div class="new-ads__wrapper">
+								<p class="new-ads__price"><span class="new-ads__price-here">29 500 000</span> ₽</p>
+								<p class="new-ads__price-per-square-meter"><span class="new-ads__price-per-square-meter-here">307 292</span> ₽/м<sup>2</sup></p>
+							</div>
+							<div class="new-ads__additional-information">
+								<p class="new-ads__id">ID <span class="new-ads__id-here">56899</span></p>
+								<p class="new-ads__post-date">Добавлено: <span class="new-ads__post-date-here">вчера</span></p>
+							</div>
+						</a>
+					</li>
+					<li class="new-ads__item price-drop">
+						<div class="new-ads__slider-wrapper">
+							<ul class="new-ads__img-slider">
+								<li class="new-ads__img-slide">
+									<img class="new-ads__img" src="img/ad-img-2.jpg" alt="ad-img">
+								</li>
+								<li class="new-ads__img-slide">
+									<img class="new-ads__img" src="img/ad-img-1.jpg" alt="ad-img">
+								</li>
+								<li class="new-ads__img-slide">
+									<img class="new-ads__img" src="img/ad-img-2.jpg" alt="ad-img">
+								</li>
+							</ul>
+							<div class="new-ads__slider-controls">
+								<button class="new-ads__slider-controls_left-arrow"></button>
+								<button class="new-ads__slider-controls_right-arrow"></button>
+							</div>
+							<button class="new-ads__favorites-btn">
+								<svg width="16" height="13">
+									<path class="new-ads__svg" d="M12,0c-1.1,0-2.1,0.4-2.8,1.2L8,2.3L6.8,1.2c-1.6-1.6-4.1-1.6-5.7,0C0.4,1.9,0,2.9,0,4c0.1,1.1,0.6,2.1,1.4,2.9l5.9,5.8c0.4,0.4,1,0.4,1.4,0l5.8-5.8C15.4,6.1,15.9,5.1,16,4C16,1.8,14.2,0,12,0C12,0,12,0,12,0z M8,10.6L2.8,5.4C2.4,5.1,2.1,4.6,2,4c0-1.1,0.9-2,2-2c0.5,0,1,0.2,1.4,0.6l1.9,1.9c0.4,0.4,1,0.4,1.4,0l1.9-1.9c0.8-0.8,2-0.8,2.8,0C13.8,3,14,3.5,14,4c-0.1,0.6-0.4,1.1-0.8,1.4L8,10.6z"/>
+								</svg>
+								<span class="new-ads__favorites-btn-text">в избранно</span>
+							</button>
 						</div>
-					</a>
-				</li>
-				<li class="new-ads__item price-drop">
-					<div class="new-ads__slider-wrapper">
-						<ul class="new-ads__img-slider">
-							<li class="new-ads__img-slide">
-								<img class="new-ads__img" src="img/ad-img-2.jpg" alt="ad-img">
-							</li>
-							<li class="new-ads__img-slide">
-								<img class="new-ads__img" src="img/ad-img-1.jpg" alt="ad-img">
-							</li>
-							<li class="new-ads__img-slide">
-								<img class="new-ads__img" src="img/ad-img-2.jpg" alt="ad-img">
-							</li>
-						</ul>
-						<div class="new-ads__slider-controls">
-							<button class="new-ads__slider-controls_left-arrow"></button>
-							<button class="new-ads__slider-controls_right-arrow"></button>
+						<a href="one_object.html" class="new-ads__text-wrapper">
+							<div class="new-ads__content-wrapper">
+								<h4 class="new-ads__title"><span class="new-ads__number-of-rooms-here">2</span>-комн. квартира, <span class="new-ads__square-meters-here">76</span> м<sup>2</sup></h4>
+								<p class="new-ads__station">Хорошёво</p>
+								<p class="new-ads__adress">Москва, СЗАО, р-н Хорошево-Мневники, ул. Мневники</p>
+							</div>
+							<div class="new-ads__content-wrapper">
+								<p class="new-ads__price"><span class="new-ads__price-here">9 800 960</span> ₽</p>
+								<p class="new-ads__price-per-square-meter"><span class="new-ads__price-per-square-meter-here">161 200</span> ₽/м<sup>2</sup></p>
+							</div>
+							<div class="new-ads__additional-information">
+								<p class="new-ads__id">ID <span class="new-ads__id-here">56124152121</span></p>
+								<p class="new-ads__post-date">Добавлено: <span class="new-ads__post-date-here">04.07.18</span></p>
+							</div>
+						</a>
+					</li>
+					<li class="new-ads__item in-favorites price-increase">
+						<div class="new-ads__slider-wrapper">
+							<ul class="new-ads__img-slider">
+								<li class="new-ads__img-slide">
+									<img class="new-ads__img" src="img/ad-img-1.jpg" alt="ad-img">
+								</li>
+								<li class="new-ads__img-slide">
+									<img class="new-ads__img" src="img/ad-img-2.jpg" alt="ad-img">
+								</li>
+								<li class="new-ads__img-slide">
+									<img class="new-ads__img" src="img/ad-img-1.jpg" alt="ad-img">
+								</li>
+							</ul>
+							<div class="new-ads__slider-controls">
+								<button class="new-ads__slider-controls_left-arrow"></button>
+								<button class="new-ads__slider-controls_right-arrow"></button>
+							</div>
+							<button class="new-ads__favorites-btn">
+								<svg width="16" height="13">
+									<path class="new-ads__svg" d="M12,0c-1.1,0-2.1,0.4-2.8,1.2L8,2.3L6.8,1.2c-1.6-1.6-4.1-1.6-5.7,0C0.4,1.9,0,2.9,0,4c0.1,1.1,0.6,2.1,1.4,2.9l5.9,5.8c0.4,0.4,1,0.4,1.4,0l5.8-5.8C15.4,6.1,15.9,5.1,16,4C16,1.8,14.2,0,12,0C12,0,12,0,12,0z M8,10.6L2.8,5.4C2.4,5.1,2.1,4.6,2,4c0-1.1,0.9-2,2-2c0.5,0,1,0.2,1.4,0.6l1.9,1.9c0.4,0.4,1,0.4,1.4,0l1.9-1.9c0.8-0.8,2-0.8,2.8,0C13.8,3,14,3.5,14,4c-0.1,0.6-0.4,1.1-0.8,1.4L8,10.6z"/>
+								</svg>
+								<span class="new-ads__favorites-btn-text">в избранно</span>
+							</button>
 						</div>
-						<button class="new-ads__favorites-btn">
-							<svg width="16" height="13">
-								<path class="new-ads__svg" d="M12,0c-1.1,0-2.1,0.4-2.8,1.2L8,2.3L6.8,1.2c-1.6-1.6-4.1-1.6-5.7,0C0.4,1.9,0,2.9,0,4c0.1,1.1,0.6,2.1,1.4,2.9l5.9,5.8c0.4,0.4,1,0.4,1.4,0l5.8-5.8C15.4,6.1,15.9,5.1,16,4C16,1.8,14.2,0,12,0C12,0,12,0,12,0z M8,10.6L2.8,5.4C2.4,5.1,2.1,4.6,2,4c0-1.1,0.9-2,2-2c0.5,0,1,0.2,1.4,0.6l1.9,1.9c0.4,0.4,1,0.4,1.4,0l1.9-1.9c0.8-0.8,2-0.8,2.8,0C13.8,3,14,3.5,14,4c-0.1,0.6-0.4,1.1-0.8,1.4L8,10.6z"/>
-							</svg>
-							<span class="new-ads__favorites-btn-text">в избранно</span>
-						</button>
-					</div>
-					<a href="one_object.html" class="new-ads__text-wrapper">
-						<div class="new-ads__content-wrapper">
-							<h4 class="new-ads__title"><span class="new-ads__number-of-rooms-here">2</span>-комн. квартира, <span class="new-ads__square-meters-here">76</span> м<sup>2</sup></h4>
-							<p class="new-ads__station">Хорошёво</p>
-							<p class="new-ads__adress">Москва, СЗАО, р-н Хорошево-Мневники, ул. Мневники</p>
+						<a href="one_object.html" class="new-ads__text-wrapper">
+							<div class="new-ads__wrapper">
+								<h4 class="new-ads__title"><span class="new-ads__number-of-rooms-here">3</span>-комн. квартира, <span class="new-ads__square-meters-here">96</span> м<sup>2</sup></h4>
+								<p class="new-ads__station">Преображенская площадь</p>
+								<p class="new-ads__adress">Москва, ВАО, р-н Преображенское, м. Преображенская площадь, улица Алымова, 3</p>
+							</div>
+							<div class="new-ads__wrapper">
+								<p class="new-ads__price"><span class="new-ads__price-here">29 500 000</span> ₽</p>
+								<p class="new-ads__price-per-square-meter"><span class="new-ads__price-per-square-meter-here">307 292</span> ₽/м<sup>2</sup></p>
+							</div>
+							<div class="new-ads__additional-information">
+								<p class="new-ads__id">ID <span class="new-ads__id-here">56899</span></p>
+								<p class="new-ads__post-date">Добавлено: <span class="new-ads__post-date-here">вчера</span></p>
+							</div>
+						</a>
+					</li>
+					<li class="new-ads__item price-drop">
+						<div class="new-ads__slider-wrapper">
+							<ul class="new-ads__img-slider">
+								<li class="new-ads__img-slide">
+									<img class="new-ads__img" src="img/ad-img-2.jpg" alt="ad-img">
+								</li>
+								<li class="new-ads__img-slide">
+									<img class="new-ads__img" src="img/ad-img-1.jpg" alt="ad-img">
+								</li>
+								<li class="new-ads__img-slide">
+									<img class="new-ads__img" src="img/ad-img-2.jpg" alt="ad-img">
+								</li>
+							</ul>
+							<div class="new-ads__slider-controls">
+								<button class="new-ads__slider-controls_left-arrow"></button>
+								<button class="new-ads__slider-controls_right-arrow"></button>
+							</div>
+							<button class="new-ads__favorites-btn">
+								<svg width="16" height="13">
+									<path class="new-ads__svg" d="M12,0c-1.1,0-2.1,0.4-2.8,1.2L8,2.3L6.8,1.2c-1.6-1.6-4.1-1.6-5.7,0C0.4,1.9,0,2.9,0,4c0.1,1.1,0.6,2.1,1.4,2.9l5.9,5.8c0.4,0.4,1,0.4,1.4,0l5.8-5.8C15.4,6.1,15.9,5.1,16,4C16,1.8,14.2,0,12,0C12,0,12,0,12,0z M8,10.6L2.8,5.4C2.4,5.1,2.1,4.6,2,4c0-1.1,0.9-2,2-2c0.5,0,1,0.2,1.4,0.6l1.9,1.9c0.4,0.4,1,0.4,1.4,0l1.9-1.9c0.8-0.8,2-0.8,2.8,0C13.8,3,14,3.5,14,4c-0.1,0.6-0.4,1.1-0.8,1.4L8,10.6z"/>
+								</svg>
+								<span class="new-ads__favorites-btn-text">в избранно</span>
+							</button>
 						</div>
-						<div class="new-ads__content-wrapper">
-							<p class="new-ads__price"><span class="new-ads__price-here">9 800 960</span> ₽</p>
-							<p class="new-ads__price-per-square-meter"><span class="new-ads__price-per-square-meter-here">161 200</span> ₽/м<sup>2</sup></p>
-						</div>
-						<div class="new-ads__additional-information">
-							<p class="new-ads__id">ID <span class="new-ads__id-here">56124152121</span></p>
-							<p class="new-ads__post-date">Добавлено: <span class="new-ads__post-date-here">04.07.18</span></p>
-						</div>
-					</a>
-				</li>
-			</ul>
+						<a href="one_object.html" class="new-ads__text-wrapper">
+							<div class="new-ads__content-wrapper">
+								<h4 class="new-ads__title"><span class="new-ads__number-of-rooms-here">2</span>-комн. квартира, <span class="new-ads__square-meters-here">76</span> м<sup>2</sup></h4>
+								<p class="new-ads__station">Хорошёво</p>
+								<p class="new-ads__adress">Москва, СЗАО, р-н Хорошево-Мневники, ул. Мневники</p>
+							</div>
+							<div class="new-ads__content-wrapper">
+								<p class="new-ads__price"><span class="new-ads__price-here">9 800 960</span> ₽</p>
+								<p class="new-ads__price-per-square-meter"><span class="new-ads__price-per-square-meter-here">161 200</span> ₽/м<sup>2</sup></p>
+							</div>
+							<div class="new-ads__additional-information">
+								<p class="new-ads__id">ID <span class="new-ads__id-here">56124152121</span></p>
+								<p class="new-ads__post-date">Добавлено: <span class="new-ads__post-date-here">04.07.18</span></p>
+							</div>
+						</a>
+					</li>
+				</ul>
+				<div class="new-ads__primary-slider-controls">
+					<button class="new-ads__primary-slider-arrow new-ads__primary-slider-arrow_left"></button>
+					<button class="new-ads__primary-slider-arrow new-ads__primary-slider-arrow_right"></button>
+				</div>
+			</div>
 			<div class="section-btns-wrapper">
 				<a href="objects-in-lines.html" class="section-btn">Все объявления</a>
 			</div>
@@ -699,15 +1072,15 @@
 				</p>
 				<div class="footer-phone-wrapper">
 					<a class="phone-number" href="tel:+74951234567"><span class="different-color">+7 (495) </span>123-45-67</a>
-					<a class="call-order-button" href="#">Заказать звонок</a>
+					<button class="call-order-button">Заказать звонок</button>
 				</div>
 			</div>
 			<div class="footer-right-part">
 				<nav class="footer-navigation">
-					<a href="#" class="footer-navigation__item">Услуги</a>
+					<a href="services.html" class="footer-navigation__item">Услуги</a>
 					<a href="#" class="footer-navigation__item">Карьера</a>
-					<a href="#" class="footer-navigation__item">Контакты</a>
-					<a href="#" class="footer-navigation__item">Новости</a>
+					<a href="contacts.html" class="footer-navigation__item">Контакты</a>
+					<a href="articles.html" class="footer-navigation__item">Новости</a>
 				</nav>
 				<p class="footer-info">
 					ООО «Группа компаний КДК»: ИНН 7701566365, ОГРН 1047796857393 119180 МО, г. Солнечногорск, ул. Промышленная, д.1б, 2 этаж, офис №7

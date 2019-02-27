@@ -1,5 +1,4 @@
 $(document).ready(function(){
-
 	initMenu();
 	initSearchFormMovements();
 	initMainPageSlider();
@@ -20,16 +19,36 @@ $(document).ready(function(){
 	function initMenu() {
 		var sidebarNav    = $('.sidebar-navigation'),
 			menuContainer = sidebarNav.find('.menu-container'),
+			menuContainerFlag = true,
 			menuBtn       = sidebarNav.find('#sidebar-menu-btn'),
 			hamburger     = menuBtn.find('.hamburger'),
 			menu          = $('.menu'),
-			menuSections  = menu.find('.menu__sections');
+			menuSections  = menu.find('.menu__sections'),
+			removeClass   = function() {
+				menuContainer.removeClass('opened');
+			}
+			openMenu      = function() {
+				menuContainer.addClass('opened').animate({
+					opacity: '1'
+				},300);
+				menuContainerFlag = false;
+			},
+			closeMenu     = function() {
+				menuContainer.animate({
+					opacity: '0'
+				},300,'swing',removeClass);
+				menuContainerFlag = true;
+			};
 
 		menuBtn.on('click', function(evt) {
 			evt.preventDefault();
 			hamburger.toggleClass('active');
-			menuContainer.toggleClass('opened');
 			$('body').toggleClass('without-scroll');
+			if(menuContainerFlag) {
+				openMenu();
+			} else {
+				closeMenu();
+			}
 		});
 
 		menuSections.each(function(i,el){
@@ -51,9 +70,16 @@ $(document).ready(function(){
 		});
 	}
 	function initSearchFormMovements() {
-		var searchForm  = $('.search-form'),
-			searchInput = searchForm.find('.search-input'),
-			clearBtn    = searchForm.find('.clear-btn');
+		var searchForm             = $('.search-form'),
+			searchInput            = searchForm.find('.search-input'),
+			clearBtn               = searchForm.find('.clear-btn'),
+			advancedSearch         = searchForm.find('.advanced-search'),
+			advancedSearchBtn      = searchForm.find('.advanced-search-btn'),
+			advancedSearchCloseBtn = searchForm.find('.advanced-search-close-btn'),
+			moreFiltersWrapper     = searchForm.find('.more-filters-wrapper'),
+			btnsWrapper            = searchForm.find('.btns-wrapper'),
+			moreFiltersBtnText     = searchForm.find('.more-filters-btn__text');
+
 		clearBtn.on('click', function() {
 			clearBtn.removeClass('show');
 		});
@@ -63,6 +89,43 @@ $(document).ready(function(){
 			} else {
 				clearBtn.removeClass('show');
 			}
+		});
+		searchInput.on('focusin', function() {
+			advancedSearchBtn.css({
+				transform: "translate(0, 18px)"
+			});
+		});
+		searchInput.on('focusout', function() {
+			setTimeout(function () {
+				advancedSearchBtn.css({
+					transform: "translate(0, 0)"
+				});
+			}, 10);
+		});
+		advancedSearchBtn.on('click', function(evt) {
+			evt.preventDefault();
+			advancedSearch.css({
+				transform: "translate(0, 171px)"
+			});
+			setTimeout(function () {
+				advancedSearchCloseBtn.css({
+					transform: 'translate(31px, 0)'
+				});
+			}, 300);
+		});
+		advancedSearchCloseBtn.on('click', function(evt) {
+			evt.preventDefault();
+			advancedSearchCloseBtn.css({
+				transform: 'translate(0, 0)'
+			});
+			moreFiltersWrapper.slideUp();
+			btnsWrapper.removeClass('more-pb');
+			moreFiltersBtnText.text('Ещё фильтры');
+			setTimeout(function () {
+				advancedSearch.css({
+					transform: "translate(0, 0)"
+				});
+			}, 300);
 		});
 	}
 	function initMainPageSlider() {
@@ -88,21 +151,25 @@ $(document).ready(function(){
 		btn.on('click', function(evt) {
 			evt.preventDefault();
 			siteSections.addClass('clipped');
-			services.animate({
-				left: "0%"			
-			},1000);
+			services.css({
+				transform: "translate(-1140px, 0px)"			
+			});
 		});
 		closeBtn.on('click', function(evt) {
 			evt.preventDefault();
 			siteSections.removeClass('clipped');
-			services.animate({
-				left: "100%"			
-			},1000);
+			services.css({
+				transform: "translate(0px, 0px)"			
+			});
 		});
 	}
 	function initNewAdsMovements() {
-		var newAds     = $('.new-ads'),
-			newAdsItem = newAds.find('.new-ads__item');
+		var newAdsWrapper              = $('.new-ads-wrapper'),
+			newAdsMainSliderControls   = newAdsWrapper.find('.new-ads__primary-slider-controls'),
+			newAdsMainSliderArrowLeft  = newAdsMainSliderControls.find('.new-ads__primary-slider-arrow_left'),
+			newAdsMainSliderArrowRight = newAdsMainSliderControls.find('.new-ads__primary-slider-arrow_right'),
+			newAds                     = newAdsWrapper.find('.new-ads'),
+			newAdsItem                 = newAds.find('.new-ads__item');
 
 		newAdsItem.each(function(i,el){
 			var newAdsItemFavoritesBtn = $(el).find('.new-ads__favorites-btn'),
@@ -124,6 +191,15 @@ $(document).ready(function(){
 				$(el).toggleClass('in-favorites');
 			})
 		});
+
+		newAds.slick({
+			infinite: false,
+			slidesToShow: 2,
+			slidesToScroll: 2,
+			appendArrows: newAdsMainSliderControls,
+			prevArrow: newAdsMainSliderArrowLeft,
+			nextArrow: newAdsMainSliderArrowRight
+		});
 	}
 	function initAboutSlider() {
 		var controls = $('#section-about-slider-controls'),
@@ -131,7 +207,7 @@ $(document).ready(function(){
 			rArr     = controls.find('.slider__controls_right-arrow');
 
 		$('#section-about-slider').slick({
-			slidesToShow: '3',
+			slidesToShow: 3,
 			appendArrows: controls,
 			prevArrow: lArr,
 			nextArrow: rArr
@@ -170,15 +246,17 @@ $(document).ready(function(){
 		});
 	}
 	function initFiltersFormMovements() {
-		var filtersForm        = $('.filters-form'),
-			moreFiltersBtn     = filtersForm.find('.more-filters-btn'),
-			moreFiltersBtnText = filtersForm.find('.more-filters-btn__text'),
-			moreFiltersWrapper = filtersForm.find('.more-filters-wrapper');
+		var form               = $('form'),
+			moreFiltersBtn     = form.find('.more-filters-btn'),
+			moreFiltersBtnText = form.find('.more-filters-btn__text'),
+			moreFiltersWrapper = form.find('.more-filters-wrapper'),
+			btnsWrapper        = form.find('.btns-wrapper');
 
 		moreFiltersBtn.on('click', function(evt) {
 			evt.preventDefault();
 			moreFiltersBtnText.text(moreFiltersBtnText.text() == "Скрыть" ? "Ещё фильтры" : "Скрыть");
 			moreFiltersBtn.toggleClass('opened');
+			btnsWrapper.toggleClass('more-pb');
 			moreFiltersWrapper.slideToggle(500);
 		});
 	}
@@ -326,7 +404,8 @@ $(document).ready(function(){
 				objectSliderArrowLeft  = objectSliderControls.find('.object__slider-arrow_left'),
 				objectSliderArrowRight = objectSliderControls.find('.object__slider-arrow_right'),
 				objectFullscreenBtn    = objectSliderWrapper.find('.object__fullscreen-btn'),
-				objectInFavoritesBtn   = $(el).find('.object__in-favorites-btn');
+				objectInFavoritesBtn   = $(el).find('.object__in-favorites-btn'),
+				objectPhoneBtn         = $(el).find('.object__phone-btn');
 
 			objectSlider.slick({
 				infinite: false,
@@ -338,6 +417,11 @@ $(document).ready(function(){
 			objectInFavoritesBtn.on('click', function(evt) {
 				evt.preventDefault();
 				$(el).toggleClass('in-favorites');
+			});
+
+			objectPhoneBtn.on('click', function(evt) {
+				evt.preventDefault();
+				objectPhoneBtn.toggleClass('phone-show');
 			});
 		});
 	}
@@ -359,22 +443,4 @@ $(document).ready(function(){
 			});
 		});
 	}
-	
-	//Прелоад картинок
-	// function readURL(input) {
-
-	//     if (input.files && input.files[0]) {
-	//         var reader = new FileReader();
-
-	//         reader.onload = function (evt) {
-	//             $('#image').attr('src', evt.target.result);
-	//         };
-
-	//         reader.readAsDataURL(input.files[0]);
-	//     }
-	// }
-
-	// $("#images").change(function(){
-	//     readURL(this);
-	// });
 });
