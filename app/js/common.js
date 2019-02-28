@@ -5,6 +5,7 @@ $(document).ready(function(){
 	initMainPageServicesSlideEffect();
 	initNewAdsMovements();
 	initAboutSlider();
+	initCallOrderPopup();
 
 	initHeaderDropDownLists();
 	initFiltersFormMovements();
@@ -213,6 +214,43 @@ $(document).ready(function(){
 			nextArrow: rArr
 		});
 	}
+	function initCallOrderPopup() {
+		var orderPopup = $('.order-popup'),
+			popupCloseBtn = orderPopup.find('.popup-close-btn'),
+			callOrderBtn = $('.call-order-button'),
+			showPopup = function() {
+				orderPopup.addClass('show');
+			},
+			hidePopup = function() {
+				orderPopup.removeClass('show');
+			};
+
+		callOrderBtn.each(function(i,el) {
+			$(el).on('click', function(evt) {
+				evt.preventDefault();
+				showPopup();
+				orderPopup.animate({
+					opacity: '1'
+				},1000);
+			});
+		});
+
+		popupCloseBtn.on('click', function(evt) {
+			evt.preventDefault();
+			orderPopup.animate({
+				opacity: '0'
+			},1000, 'swing', hidePopup);
+		});
+		
+		orderPopup.on('click', function(evt) {
+			evt.preventDefault();
+			if ($(evt.target).is(orderPopup)) {
+				orderPopup.animate({
+					opacity: '0'
+				},1000, 'swing', hidePopup);
+			}
+		});
+	}
 	function initHeaderDropDownLists() {
 		var header       = $('.section-header.secondary-page'),
 			dropDown     = header.find('.drop-down'),
@@ -314,7 +352,6 @@ $(document).ready(function(){
 			var parent = $(el).parent('div'),
 				input  = parent.find('input');
 			if (input.length == 0) {
-				console.log('не нашёл')
 				input  = parent.find('textarea');
 			}
 			input.on('keyup', function() {
@@ -404,6 +441,14 @@ $(document).ready(function(){
 				objectSliderArrowLeft  = objectSliderControls.find('.object__slider-arrow_left'),
 				objectSliderArrowRight = objectSliderControls.find('.object__slider-arrow_right'),
 				objectFullscreenBtn    = objectSliderWrapper.find('.object__fullscreen-btn'),
+
+				objectFullScreenSliderWrapper    = $(el).find('.object__fullscreen-slider-wrapper'),
+				objectFullScreenSlider           = objectFullScreenSliderWrapper.find('.object__fullscreen-slider'),
+				objectFullScreenSliderControls   = objectFullScreenSliderWrapper.find('.object__fullscreen-slider-controls'),
+				objectFullScreenSliderArrowLeft  = objectFullScreenSliderControls.find('.object__fullscreen-slider-arrow_left'),
+				objectFullScreenSliderArrowRight = objectFullScreenSliderControls.find('.object__fullscreen-slider-arrow_right'),
+				objectFullscreenCloseBtn         = objectFullScreenSliderWrapper.find('.object__fullscreen-close-btn'),
+
 				objectInFavoritesBtn   = $(el).find('.object__in-favorites-btn'),
 				objectPhoneBtn         = $(el).find('.object__phone-btn');
 
@@ -411,7 +456,16 @@ $(document).ready(function(){
 				infinite: false,
 				appendArrows: objectSliderControls,
 				prevArrow: objectSliderArrowLeft,
-				nextArrow: objectSliderArrowRight
+				nextArrow: objectSliderArrowRight,
+				asNavFor: objectFullScreenSlider
+			});
+
+			objectFullScreenSlider.slick({
+				infinite: false,
+				appendArrows: objectFullScreenSliderControls,
+				prevArrow: objectFullScreenSliderArrowLeft,
+				nextArrow: objectFullScreenSliderArrowRight,
+				asNavFor: objectSlider
 			});
 
 			objectInFavoritesBtn.on('click', function(evt) {
@@ -422,6 +476,27 @@ $(document).ready(function(){
 			objectPhoneBtn.on('click', function(evt) {
 				evt.preventDefault();
 				objectPhoneBtn.toggleClass('phone-show');
+			});
+
+			objectFullscreenBtn.on('click', function(evt) {
+				evt.preventDefault();
+				$('body').addClass('without-scroll');
+				objectSliderWrapper.animate({opacity: '0'},500);
+				objectFullScreenSliderWrapper.css({zIndex: '30'}).animate({
+					opacity: '1'
+				},500);
+			});
+
+			objectFullscreenCloseBtn.on('click', function(evt) {
+				evt.preventDefault();
+				$('body').removeClass('without-scroll');
+				objectSliderWrapper.animate({opacity: '1'},500);
+				objectFullScreenSliderWrapper.animate({
+					opacity: '0'
+				},500);
+				setTimeout(function () {
+					objectFullScreenSliderWrapper.css({zIndex: '-1'});
+				}, 500);
 			});
 		});
 	}

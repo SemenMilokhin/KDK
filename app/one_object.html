@@ -394,23 +394,23 @@
 		<div class="container">
 			<ul class="breadcrumbs">
 				<li class="breadcrumbs__item">
-					<a href="#" class="breadcrumbs__link">Главная</a>
+					<a href="index.html" class="breadcrumbs__link">Главная</a>
 				</li>
 				<li class="breadcrumbs__item">
-					<a href="#" class="breadcrumbs__link">Квартиры в Солнечногорске</a>
+					<a href="objects-in-blocks.html" class="breadcrumbs__link">Квартиры в Солнечногорске</a>
 				</li>
 				<li class="breadcrumbs__item breadcrumbs__item_this-page">Потрясающая квартира в Солнечногорске</li>
 			</ul>
 			<div class="object price-increase in-favorites">
 				<h1 class="object__title">Потрясающая квартира в Солнечногорске</h1>
 				<p class="object__id-subtitle">ID <span class="object__id-here">56899</span></p>
-				<div class="object__slider-wrapper fixed">
+				<div class="object__slider-wrapper">
 					<ul class="object__slider">
 						<li class="object__slider-item">
 							<img src="img/object-slider-example.jpg" alt="object-slider-example" class="object__image">
 						</li>
 						<li class="object__slider-item">
-							<img src="img/object-slider-example.jpg" alt="object-slider-example" class="object__image">
+							<img src="img/section-img.jpg" alt="object-slider-example" class="object__image">
 						</li>
 						<li class="object__slider-item">
 							<img src="img/object-slider-example.jpg" alt="object-slider-example" class="object__image">
@@ -421,6 +421,24 @@
 						<button class="object__slider-arrow object__slider-arrow_right"></button>
 					</div>
 					<button class="object__fullscreen-btn"></button>
+				</div>
+				<div class="object__fullscreen-slider-wrapper">
+					<ul class="object__fullscreen-slider">
+						<li class="object__fullscreen-slider-item">
+							<img src="img/object-slider-example.jpg" alt="object-slider-example" class="object__image">
+						</li>
+						<li class="object__fullscreen-slider-item">
+							<img src="img/section-img.jpg" alt="object-slider-example" class="object__image">
+						</li>
+						<li class="object__fullscreen-slider-item">
+							<img src="img/object-slider-example.jpg" alt="object-slider-example" class="object__image">
+						</li>
+					</ul>
+					<div class="object__fullscreen-slider-controls">
+						<button class="object__fullscreen-slider-arrow object__fullscreen-slider-arrow_left"></button>
+						<button class="object__fullscreen-slider-arrow object__fullscreen-slider-arrow_right"></button>
+					</div>
+					<button class="object__fullscreen-close-btn"></button>
 				</div>
 				<div class="object__wrapper">
 					<div class="object__subwrapper">
@@ -619,6 +637,42 @@
 			</div>
 		</div>
 	</footer>
+	<div class="order-popup">
+		<form class="order-call-form" action="#" method="post">
+			<span class="form-label">Представьтесь, пожалуйста:</span>
+			<div class="form-row">
+				<input type="text" class="form-input" name="name" id="name">
+				<button class="input-clear-btn">
+					<svg width="18" height="18" viewBox="0 0 18 18">
+						<path class="input-clear-svg" d="M818,36a9,9,0,1,0,9,9,9,9,0,0,0-9-9h0Zm-2.121,6.172,4.949,4.95a0.5,0.5,0,1,1-.707.707l-4.95-4.95A0.5,0.5,0,0,1,815.879,42.171Zm4.949,0.707-4.949,4.95a0.5,0.5,0,0,1-.708-0.707l4.95-4.95A0.5,0.5,0,1,1,820.828,42.879Z" transform="translate(-809 -36)"/>
+					</svg>
+				</button>
+			</div>
+			<span class="form-label">Номер телефона:</span>
+			<div class="form-row">
+				<input type="text" class="form-input" name="phone" id="phone">
+				<button class="input-clear-btn">
+					<svg width="18" height="18" viewBox="0 0 18 18">
+						<path class="input-clear-svg" d="M818,36a9,9,0,1,0,9,9,9,9,0,0,0-9-9h0Zm-2.121,6.172,4.949,4.95a0.5,0.5,0,1,1-.707.707l-4.95-4.95A0.5,0.5,0,0,1,815.879,42.171Zm4.949,0.707-4.949,4.95a0.5,0.5,0,0,1-.708-0.707l4.95-4.95A0.5,0.5,0,1,1,820.828,42.879Z" transform="translate(-809 -36)"/>
+					</svg>
+				</button>
+			</div>
+			<span class="form-label">Комментарий:</span>
+			<div class="form-row">
+				<textarea class="form-textarea" name="comment" id="comment"></textarea>
+				<button class="input-clear-btn">
+					<svg width="18" height="18" viewBox="0 0 18 18">
+						<path class="input-clear-svg" d="M818,36a9,9,0,1,0,9,9,9,9,0,0,0-9-9h0Zm-2.121,6.172,4.949,4.95a0.5,0.5,0,1,1-.707.707l-4.95-4.95A0.5,0.5,0,0,1,815.879,42.171Zm4.949,0.707-4.949,4.95a0.5,0.5,0,0,1-.708-0.707l4.95-4.95A0.5,0.5,0,1,1,820.828,42.879Z" transform="translate(-809 -36)"/>
+					</svg>
+				</button>
+			</div>
+			<input type="hidden" name="page-id" id="page-id">
+			<div class="form-btns-wrapper">
+				<input type="submit" class="submit-btn" value="Перезвоните мне!">
+			</div>
+			<button class="popup-close-btn"></button>
+		</form>
+	</div>
 	<script src="js/jquery.min.js"></script>
 	<script src="js/slick.min.js"></script>
 	<script src="js/common.js"></script>
