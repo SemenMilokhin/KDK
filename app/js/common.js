@@ -231,7 +231,7 @@ $(document).ready(function(){
 				showPopup();
 				orderPopup.animate({
 					opacity: '1'
-				},1000);
+				},500);
 			});
 		});
 
@@ -239,7 +239,7 @@ $(document).ready(function(){
 			evt.preventDefault();
 			orderPopup.animate({
 				opacity: '0'
-			},1000, 'swing', hidePopup);
+			},500, 'swing', hidePopup);
 		});
 		
 		orderPopup.on('click', function(evt) {
@@ -247,7 +247,7 @@ $(document).ready(function(){
 			if ($(evt.target).is(orderPopup)) {
 				orderPopup.animate({
 					opacity: '0'
-				},1000, 'swing', hidePopup);
+				},500, 'swing', hidePopup);
 			}
 		});
 	}
