@@ -195,8 +195,8 @@ $(document).ready(function(){
 
 		newAds.slick({
 			infinite: false,
-			slidesToShow: 2,
-			slidesToScroll: 2,
+			slidesToShow: 1,
+			slidesToScroll: 1,
 			appendArrows: newAdsMainSliderControls,
 			prevArrow: newAdsMainSliderArrowLeft,
 			nextArrow: newAdsMainSliderArrowRight

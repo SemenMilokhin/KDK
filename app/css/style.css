@@ -1442,10 +1442,23 @@ section .container {
 }
 
 .new-ads {
-  list-style: none;
   margin: 0;
   padding: 0;
   font-size: 0;
+}
+
+.new-ads__slide {
+  display: -webkit-inline-box !important;
+  display: -ms-inline-flexbox !important;
+  display: inline-flex !important;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  width: 1140px;
+  outline: none;
 }
 
 .new-ads__item {
@@ -1458,11 +1471,6 @@ section .container {
   box-sizing: border-box;
   border-radius: 15px;
   overflow: hidden;
-  outline: none;
-}
-
-.new-ads__item:nth-of-type(2n-1) {
-  margin-right: 30px;
 }
 
 .new-ads__item.in-favorites .new-ads__favorites-btn {
