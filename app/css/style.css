@@ -5591,6 +5591,7 @@ section .container {
 }
 
 .articles__item {
+  position: relative;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   width: 360px;
@@ -5610,11 +5611,7 @@ section .container {
   margin-bottom: 30px;
 }
 
-.articles__item.tag-building, .articles__item.tag-services, .articles__item.tag-news {
-  position: relative;
-}
-
-.articles__item.tag-building::after, .articles__item.tag-services::after, .articles__item.tag-news::after {
+.articles__label {
   color: #fff;
   font-size: 13px;
   line-height: 15px;
@@ -5625,21 +5622,6 @@ section .container {
   left: 10px;
   display: inline-block;
   padding: 10px;
-}
-
-.articles__item.tag-building::after {
-  content: 'Строительство';
-  background-color: #f98a37;
-}
-
-.articles__item.tag-services::after {
-  content: 'Услуги';
-  background-color: #32b6fa;
-}
-
-.articles__item.tag-news::after {
-  content: 'Новости';
-  background-color: #ed4f6c;
 }
 
 .articles__img {

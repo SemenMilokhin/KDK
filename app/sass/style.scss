@@ -4404,6 +4404,7 @@ section .container {
 	flex-wrap: wrap;
 	align-items: flex-start;
 	&__item {
+		position: relative;
 		box-sizing: border-box;
 		width: 360px;
 		height: 370px;
@@ -4417,39 +4418,18 @@ section .container {
 		&:nth-last-of-type(n+4) {
 			margin-bottom: 30px;
 		}
-		&.tag-building, &.tag-services, &.tag-news {
-			position: relative;
-			&::after {
-				color: $primary-text-color;
-				font-size: 13px;
-				line-height: 15px;
-				font-weight: 500;
-				border-radius: 5px;
-				position: absolute;
-				top: 10px;
-				left: 10px;
-				display: inline-block;
-				padding: 10px;
-			}
-		}
-		&.tag-building {
-			&::after {
-				content: 'Строительство';
-				background-color: #f98a37;
-			}
-		}
-		&.tag-services {
-			&::after {
-				content: 'Услуги';
-				background-color: #32b6fa;
-			}
-		}
-		&.tag-news {
-			&::after {
-				content: 'Новости';
-				background-color: #ed4f6c;
-			}
-		}
+	}
+	&__label {
+		color: $primary-text-color;
+		font-size: 13px;
+		line-height: 15px;
+		font-weight: 500;
+		border-radius: 5px;
+		position: absolute;
+		top: 10px;
+		left: 10px;
+		display: inline-block;
+		padding: 10px;
 	}
 	&__img {
 		display: block;
