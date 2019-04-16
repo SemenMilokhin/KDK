@@ -2941,6 +2941,9 @@ section .container {
 				width: 100%;
 				display: flex;
 				justify-content: space-between;
+				:last-child {
+					margin-right: 0;
+				}
 				&::before {
 					content: '';
 					width: 262px;
@@ -2952,12 +2955,14 @@ section .container {
 					left: -20px;
 				}
 			}
+			&__specifications-item {
+				margin-right: 8px;
+			}
 			&__specifications-title {
 				font-size: 12px;
 				display: block;
 				margin-bottom: 5px;
 				color: $secondary-text-color;
-				max-width: 150px;
 			}
 			&__specifications-info {
 				position: relative;
@@ -2966,7 +2971,6 @@ section .container {
 				font-weight: 700;
 				display: block;
 				color: $ternary-text-color;
-				max-width: 150px;
 				sup {
 					position: absolute;
 					top: -2px;

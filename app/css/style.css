@@ -3754,6 +3754,10 @@ section .container {
   justify-content: space-between;
 }
 
+.ads.type-blocks .ads__specifications :last-child {
+  margin-right: 0;
+}
+
 .ads.type-blocks .ads__specifications::before {
   content: '';
   width: 262px;
@@ -3765,12 +3769,15 @@ section .container {
   left: -20px;
 }
 
+.ads.type-blocks .ads__specifications-item {
+  margin-right: 8px;
+}
+
 .ads.type-blocks .ads__specifications-title {
   font-size: 12px;
   display: block;
   margin-bottom: 5px;
   color: #a1b0c1;
-  max-width: 150px;
 }
 
 .ads.type-blocks .ads__specifications-info {
@@ -3780,7 +3787,6 @@ section .container {
   font-weight: 700;
   display: block;
   color: #272f40;
-  max-width: 150px;
 }
 
 .ads.type-blocks .ads__specifications-info sup {
