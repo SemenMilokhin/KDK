@@ -20,7 +20,9 @@ function initProductionServer() {
 
 function initBrowserSyncAndWatch() {
 	browserSync.init({
-		proxy: "KDK.local"
+		server: {
+			baseDir: 'app'
+		}
 	});
 	gulp.watch('app/sass/**/*.+(scss|sass)').on('change', compileSass);
 	gulp.watch(['app/js/**/*.js','app/**/*.html','app/**/*.php']).on('change', browserSync.reload);

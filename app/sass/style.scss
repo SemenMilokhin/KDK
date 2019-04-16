@@ -2957,6 +2957,7 @@ section .container {
 				display: block;
 				margin-bottom: 5px;
 				color: $secondary-text-color;
+				max-width: 150px;
 			}
 			&__specifications-info {
 				position: relative;
@@ -2965,6 +2966,7 @@ section .container {
 				font-weight: 700;
 				display: block;
 				color: $ternary-text-color;
+				max-width: 150px;
 				sup {
 					position: absolute;
 					top: -2px;
@@ -3314,10 +3316,26 @@ section .container {
 				color: $primary-text-color;
 				background: $contrast-color-2 $main-gradient;
 				border: none;
+				position: relative;
 				&:hover {
 					transform: translate(0, -3px);
 					box-shadow: $btn-active-glow;
 				}
+				&.phone-show {
+					color: transparent;
+					.ads__phone-number {
+						opacity: 1;
+					}
+				}
+			}
+			&__phone-number {
+				position: absolute;
+				width: 140px;
+				height: 30px;
+				top: 11px;
+				left: 27px;
+				opacity: 0;
+				transition: 0.2s;
 			}
 			&__link {
 				position: relative;

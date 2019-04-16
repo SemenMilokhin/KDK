@@ -3770,6 +3770,7 @@ section .container {
   display: block;
   margin-bottom: 5px;
   color: #a1b0c1;
+  max-width: 150px;
 }
 
 .ads.type-blocks .ads__specifications-info {
@@ -3779,6 +3780,7 @@ section .container {
   font-weight: 700;
   display: block;
   color: #272f40;
+  max-width: 150px;
 }
 
 .ads.type-blocks .ads__specifications-info sup {
@@ -4220,6 +4222,7 @@ section .container {
   color: #fff;
   background: #f34308 linear-gradient(135deg, #f98a37, #f34308);
   border: none;
+  position: relative;
 }
 
 .ads.type-lines .ads__phone-btn:hover {
@@ -4227,6 +4230,25 @@ section .container {
   transform: translate(0, -3px);
   -webkit-box-shadow: 0 13px 45px 0 rgba(245, 89, 23, 0.5);
   box-shadow: 0 13px 45px 0 rgba(245, 89, 23, 0.5);
+}
+
+.ads.type-lines .ads__phone-btn.phone-show {
+  color: transparent;
+}
+
+.ads.type-lines .ads__phone-btn.phone-show .ads__phone-number {
+  opacity: 1;
+}
+
+.ads.type-lines .ads__phone-number {
+  position: absolute;
+  width: 140px;
+  height: 30px;
+  top: 11px;
+  left: 27px;
+  opacity: 0;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
 }
 
 .ads.type-lines .ads__link {
