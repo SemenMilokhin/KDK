@@ -1133,15 +1133,15 @@ section .container {
 }
 //_____________________________
 //
-//      section-new-ads
+//      section-new-offers
 //_____________________________
-.section-new-ads {
+.section-new-offers {
 	background-color: $secondary-bg-color
 }
-.new-ads-wrapper {
+.new-offers-wrapper {
 	position: relative;
 }
-.new-ads {
+.new-offers {
 	margin: 0;
 	padding: 0;
 	font-size: 0;
@@ -1160,19 +1160,19 @@ section .container {
 		border-radius: 15px;
 		overflow: hidden;
 		&.in-favorites {
-			.new-ads__favorites-btn {
+			.new-offers__favorites-btn {
 				background: $contrast-color-2 $main-gradient;
 				color: $primary-text-color;
 			}
-			.new-ads__svg {
+			.new-offers__svg {
 				fill: $primary-text-color;
 			}
-			.new-ads__favorites-btn-text::after {
+			.new-offers__favorites-btn-text::after {
 				content: 'м';
 			}
 		}
 		&.price-drop {
-			.new-ads__price-here {
+			.new-offers__price-here {
 				position: relative;
 					&::after {
 					content: '';
@@ -1186,7 +1186,7 @@ section .container {
 			}
 		}
 		&.price-increase {
-			.new-ads__price-here {
+			.new-offers__price-here {
 				position: relative;
 				&::after {
 					content: '';
@@ -1309,7 +1309,7 @@ section .container {
 			&::before {
 				opacity: 1;
 			}
-			.new-ads__svg {
+			.new-offers__svg {
 				fill: $primary-text-color;
 			}
 		}
@@ -2590,7 +2590,7 @@ section .container {
 		padding: 18px 15px 37px;
 	}
 }
-.ads-wrapper {
+.offers-wrapper {
 	position: relative;
 	margin: 0 0 40px;
 }
@@ -2599,7 +2599,7 @@ section .container {
 	height: 100%;
 	position: relative;
 }
-.type-of-ads {
+.type-of-offers {
 	list-style: none;
 	margin: 0;
 	padding: 6px 10px;
@@ -2618,12 +2618,12 @@ section .container {
 	&__item {
 		width: 50%;
 		&.selected, &:hover {
-			.type-of-ads__btn-picture {
+			.type-of-offers__btn-picture {
 				&::before, &::after, .more-pseudo::before, .more-pseudo::after {
 					border-color: $secondary-text-color;
 				}
 			}
-			.type-of-ads__btn-label {
+			.type-of-offers__btn-label {
 				color: $secondary-text-color;
 			}
 		}
@@ -2642,7 +2642,7 @@ section .container {
 		background: none;
 		&_type-list {
 			border-radius: 15px 0 0 15px;
-			.type-of-ads__btn-picture {
+			.type-of-offers__btn-picture {
 				&::before, &::after {
 					position: absolute;
 					content: '';
@@ -2666,7 +2666,7 @@ section .container {
 		}
 		&_type-blocks {
 			border-radius: 0 15px 15px 0;
-			.type-of-ads__btn-picture {
+			.type-of-offers__btn-picture {
 				&::before, &::after, .more-pseudo::before, .more-pseudo::after {
 					position: absolute;
 					content: '';
@@ -2705,7 +2705,7 @@ section .container {
 		transition: 0.2s;
 	}
 }
-.ads {
+.offers {
 	&.type-blocks {
 		list-style: none;
 		margin: 0;
@@ -2713,7 +2713,7 @@ section .container {
 		display: flex;
 		justify-content: flex-start;
 		flex-wrap: wrap;
-		.ads {
+		.offers {
 			&__item {
 				display: flex;
 				flex-direction: column;
@@ -2730,19 +2730,19 @@ section .container {
 					margin-bottom: 28px;
 				}
 				&.in-favorites {
-					.ads__favorites-btn {
+					.offers__favorites-btn {
 						background: $contrast-color-2 $main-gradient;
 						color: $primary-text-color;
 					}
-					.ads__svg {
+					.offers__svg {
 						fill: $primary-text-color;
 					}
-					.ads__favorites-btn-text::after {
+					.offers__favorites-btn-text::after {
 						content: 'м';
 					}
 				}
 				&.price-drop {
-					.ads__price-here {
+					.offers__price-here {
 						position: relative;
 							&::after {
 							content: '';
@@ -2756,7 +2756,7 @@ section .container {
 					}
 				}
 				&.price-increase {
-					.ads__price-here {
+					.offers__price-here {
 						position: relative;
 						&::after {
 							content: '';
@@ -2884,7 +2884,7 @@ section .container {
 					&::before {
 						opacity: 1;
 					}
-					.ads__svg {
+					.offers__svg {
 						fill: $primary-text-color;
 					}
 				}
@@ -3008,7 +3008,7 @@ section .container {
 		display: flex;
 		justify-content: flex-start;
 		flex-wrap: wrap;
-		.ads {
+		.offers {
 			&__item {
 				display: flex;
 				flex-direction: row;
@@ -3022,19 +3022,19 @@ section .container {
 					margin-bottom: 30px;
 				}
 				&.in-favorites {
-					.ads__favorites-btn {
+					.offers__favorites-btn {
 						background: $contrast-color-2 $main-gradient;
 						color: $primary-text-color;
 					}
-					.ads__svg {
+					.offers__svg {
 						fill: $primary-text-color;
 					}
-					.ads__favorites-btn-text::after {
+					.offers__favorites-btn-text::after {
 						content: 'м';
 					}
 				}
 				&.price-drop {
-					.ads__price-here {
+					.offers__price-here {
 						position: relative;
 							&::after {
 							content: '';
@@ -3048,7 +3048,7 @@ section .container {
 					}
 				}
 				&.price-increase {
-					.ads__price-here {
+					.offers__price-here {
 						position: relative;
 						&::after {
 							content: '';
@@ -3176,7 +3176,7 @@ section .container {
 					&::before {
 						opacity: 1;
 					}
-					.ads__svg {
+					.offers__svg {
 						fill: $primary-text-color;
 					}
 				}
@@ -3327,7 +3327,7 @@ section .container {
 				}
 				&.phone-show {
 					color: transparent;
-					.ads__phone-number {
+					.offers__phone-number {
 						opacity: 1;
 					}
 				}
@@ -3374,7 +3374,7 @@ section .container {
 					&::after {
 						transform: scale(1);
 					}
-					.ads__link-svg-fill {
+					.offers__link-svg-fill {
 						fill: $primary-text-color;
 					}
 				}

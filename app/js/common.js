@@ -3,7 +3,7 @@ $(document).ready(function(){
 	initSearchFormMovements();
 	initMainPageSlider();
 	initMainPageServicesSlideEffect();
-	initNewAdsMovements();
+	initNewOffersMovements();
 	initAboutSlider();
 	initCallOrderPopup();
 
@@ -13,7 +13,7 @@ $(document).ready(function(){
 	initInputClearBtns();
 
 	initAnchorLinks();
-	initAdsMovements();
+	initOffersMovements();
 	initObjectMovements();
 	initArticleMovements();
 
@@ -164,42 +164,42 @@ $(document).ready(function(){
 			});
 		});
 	}
-	function initNewAdsMovements() {
-		var newAdsWrapper              = $('.new-ads-wrapper'),
-			newAdsMainSliderControls   = newAdsWrapper.find('.new-ads__primary-slider-controls'),
-			newAdsMainSliderArrowLeft  = newAdsMainSliderControls.find('.new-ads__primary-slider-arrow_left'),
-			newAdsMainSliderArrowRight = newAdsMainSliderControls.find('.new-ads__primary-slider-arrow_right'),
-			newAds                     = newAdsWrapper.find('.new-ads'),
-			newAdsItem                 = newAds.find('.new-ads__item');
+	function initNewOffersMovements() {
+		var newOffersWrapper              = $('.new-offers-wrapper'),
+			newOffersMainSliderControls   = newOffersWrapper.find('.new-offers__primary-slider-controls'),
+			newOffersMainSliderArrowLeft  = newOffersMainSliderControls.find('.new-offers__primary-slider-arrow_left'),
+			newOffersMainSliderArrowRight = newOffersMainSliderControls.find('.new-offers__primary-slider-arrow_right'),
+			newOffers                     = newOffersWrapper.find('.new-offers'),
+			newOffersItem                 = newOffers.find('.new-offers__item');
 
-		newAdsItem.each(function(i,el){
-			var newAdsItemFavoritesBtn = $(el).find('.new-ads__favorites-btn'),
-				newAdsSliderWrapper    = $(el).find('.new-ads__slider-wrapper'),
-				newAdsImgSlider        = newAdsSliderWrapper.find('.new-ads__img-slider'),
-				newAdsSliderControls   = newAdsSliderWrapper.find('.new-ads__slider-controls'),
-				newAdsSliderLeftArr    = newAdsSliderControls.find('.new-ads__slider-controls_left-arrow'),
-				newAdsSliderRightArr   = newAdsSliderControls.find('.new-ads__slider-controls_right-arrow');
+		newOffersItem.each(function(i,el){
+			var newOffersItemFavoritesBtn = $(el).find('.new-offers__favorites-btn'),
+				newOffersSliderWrapper    = $(el).find('.new-offers__slider-wrapper'),
+				newOffersImgSlider        = newOffersSliderWrapper.find('.new-offers__img-slider'),
+				newOffersSliderControls   = newOffersSliderWrapper.find('.new-offers__slider-controls'),
+				newOffersSliderLeftArr    = newOffersSliderControls.find('.new-offers__slider-controls_left-arrow'),
+				newOffersSliderRightArr   = newOffersSliderControls.find('.new-offers__slider-controls_right-arrow');
 
-			newAdsImgSlider.slick({
+			newOffersImgSlider.slick({
 				infinite: false,
-				appendArrows: newAdsSliderControls,
-				prevArrow: newAdsSliderLeftArr,
-				nextArrow: newAdsSliderRightArr
+				appendArrows: newOffersSliderControls,
+				prevArrow: newOffersSliderLeftArr,
+				nextArrow: newOffersSliderRightArr
 			});
 
-			newAdsItemFavoritesBtn.on('click', function(evt){
+			newOffersItemFavoritesBtn.on('click', function(evt){
 				evt.preventDefault();
 				$(el).toggleClass('in-favorites');
 			})
 		});
 
-		newAds.slick({
+		newOffers.slick({
 			infinite: false,
 			slidesToShow: 1,
 			slidesToScroll: 1,
-			appendArrows: newAdsMainSliderControls,
-			prevArrow: newAdsMainSliderArrowLeft,
-			nextArrow: newAdsMainSliderArrowRight
+			appendArrows: newOffersMainSliderControls,
+			prevArrow: newOffersMainSliderArrowLeft,
+			nextArrow: newOffersMainSliderArrowRight
 		});
 	}
 	function initAboutSlider() {
@@ -381,35 +381,35 @@ $(document).ready(function(){
 		    });
 		});
 	}
-	function initAdsMovements() {
-		var adsWrapper = $('.ads-wrapper'),
-			ads        = adsWrapper.find('.ads'),
-			adsItem    = ads.find('.ads__item');
+	function initOffersMovements() {
+		var offersWrapper = $('.offers-wrapper'),
+			offers        = offersWrapper.find('.offers'),
+			offersItem    = offers.find('.offers__item');
 
-		adsItem.each(function(i,el){
-			var adsItemFavoritesBtn = $(el).find('.ads__favorites-btn'),
-				adsSliderWrapper    = $(el).find('.ads__slider-wrapper'),
-				adsImgSlider        = adsSliderWrapper.find('.ads__img-slider'),
-				adsSliderControls   = adsSliderWrapper.find('.ads__slider-controls'),
-				adsSliderLeftArr    = adsSliderControls.find('.ads__slider-controls_left-arrow'),
-				adsSliderRightArr   = adsSliderControls.find('.ads__slider-controls_right-arrow'),
-				adsPhoneBtn         = $(el).find('.ads__phone-btn');
+		offersItem.each(function(i,el){
+			var offersItemFavoritesBtn = $(el).find('.offers__favorites-btn'),
+				offersSliderWrapper    = $(el).find('.offers__slider-wrapper'),
+				offersImgSlider        = offersSliderWrapper.find('.offers__img-slider'),
+				offersSliderControls   = offersSliderWrapper.find('.offers__slider-controls'),
+				offersSliderLeftArr    = offersSliderControls.find('.offers__slider-controls_left-arrow'),
+				offersSliderRightArr   = offersSliderControls.find('.offers__slider-controls_right-arrow'),
+				offersPhoneBtn         = $(el).find('.offers__phone-btn');
 
-			adsImgSlider.slick({
+			offersImgSlider.slick({
 				infinite: false,
-				appendArrows: adsSliderControls,
-				prevArrow: adsSliderLeftArr,
-				nextArrow: adsSliderRightArr
+				appendArrows: offersSliderControls,
+				prevArrow: offersSliderLeftArr,
+				nextArrow: offersSliderRightArr
 			});
 
-			adsItemFavoritesBtn.on('click', function(evt){
+			offersItemFavoritesBtn.on('click', function(evt){
 				evt.preventDefault();
 				$(el).toggleClass('in-favorites');
 			})
 
-			adsPhoneBtn.on('click', function(evt) {
+			offersPhoneBtn.on('click', function(evt) {
 				evt.preventDefault();
-				adsPhoneBtn.toggleClass('phone-show');
+				offersPhoneBtn.toggleClass('phone-show');
 			});
 		});
 	}
