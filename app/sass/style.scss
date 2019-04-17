@@ -3270,18 +3270,18 @@ section .container {
 				justify-content: space-between;
 				border: 1px solid $ternary-bg-color;
 				border-radius: 10px;
-				> :nth-last-child(n+2) {
-					position: relative;
-					&::after {
-						content: '';
-						width: 1px;
-						height: 100%;
-						position: absolute;
-						right: -20px;
-						top: 0;
-						background-color: $ternary-bg-color;
-					}
+				:last-child {
+					margin-right: 0;
 				}
+			}
+			&__specifications-item {
+				margin-right: 8px;
+			}
+			&__specifications-separator {
+				display: block;
+				width: 1px;
+				height: 34px;
+				background-color: $ternary-bg-color;
 			}
 			&__specifications-title {
 				font-size: 12px;

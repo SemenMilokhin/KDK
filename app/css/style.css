@@ -4167,17 +4167,18 @@ section .container {
   border-radius: 10px;
 }
 
-.offers.type-lines .offers__specifications > :nth-last-child(n+2) {
-  position: relative;
+.offers.type-lines .offers__specifications :last-child {
+  margin-right: 0;
 }
 
-.offers.type-lines .offers__specifications > :nth-last-child(n+2)::after {
-  content: '';
+.offers.type-lines .offers__specifications-item {
+  margin-right: 8px;
+}
+
+.offers.type-lines .offers__specifications-separator {
+  display: block;
   width: 1px;
-  height: 100%;
-  position: absolute;
-  right: -20px;
-  top: 0;
+  height: 34px;
   background-color: #e3e8ee;
 }
 
