@@ -71,15 +71,17 @@ $(document).ready(function(){
 		});
 	}
 	function initSearchFormMovements() {
-		var searchForm             = $('.search-form'),
+		var searchFormWrapper      = $('.search-form-wrapper'),
+			searchForm             = searchFormWrapper.find('.search-form'),
 			searchInput            = searchForm.find('.search-input'),
 			clearBtn               = searchForm.find('.clear-btn'),
-			advancedSearch         = searchForm.find('.advanced-search'),
-			advancedSearchBtn      = searchForm.find('.advanced-search-btn'),
-			advancedSearchCloseBtn = searchForm.find('.advanced-search-close-btn'),
-			moreFiltersWrapper     = searchForm.find('.more-filters-wrapper'),
-			btnsWrapper            = searchForm.find('.btns-wrapper'),
-			moreFiltersBtnText     = searchForm.find('.more-filters-btn__text');
+			
+			advancedSearch         = searchFormWrapper.find('.advanced-search'),
+			advancedSearchBtn      = advancedSearch.find('.advanced-search-btn'),
+			advancedSearchCloseBtn = advancedSearch.find('.advanced-search-close-btn'),
+			moreFiltersWrapper     = advancedSearch.find('.more-filters-wrapper'),
+			btnsWrapper            = advancedSearch.find('.btns-wrapper'),
+			moreFiltersBtnText     = advancedSearch.find('.more-filters-btn__text');
 
 		clearBtn.on('click', function() {
 			clearBtn.removeClass('show');
