@@ -1425,6 +1425,8 @@ section .container {
   bottom: 0;
   left: 0;
   margin: auto;
+  min-width: 100%;
+  min-height: 100%;
 }
 
 .new-articles__text-wrapper {
@@ -1547,8 +1549,21 @@ section .container {
 
 .new-offers__img-slide {
   margin: 0;
-  width: 100%;
-  height: 100%;
+  width: 260px;
+  height: 250px;
+  position: relative;
+  overflow: hidden;
+}
+
+.new-offers__img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  min-width: 100%;
+  min-height: 100%;
 }
 
 .new-offers__slider-controls {
@@ -3543,9 +3558,22 @@ section .container {
 
 .offers.type-blocks .offers__img-slide {
   display: inline-block;
+  position: relative;
+  overflow: hidden;
   margin: 0;
-  width: 100%;
-  height: 100%;
+  width: 264px;
+  height: 175px;
+}
+
+.offers.type-blocks .offers__img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  min-width: 100%;
+  min-height: 100%;
 }
 
 .offers.type-blocks .offers__slider-controls {
@@ -3611,11 +3639,6 @@ section .container {
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
   right: 10px;
-}
-
-.offers.type-blocks .offers__img {
-  width: 100%;
-  height: 100%;
 }
 
 .offers.type-blocks .offers__favorites-btn {
@@ -3902,6 +3925,7 @@ section .container {
 
 .offers.type-lines .offers__img-slider {
   list-style: none;
+  font-size: 0;
   margin: 0;
   padding: 0;
   width: 100%;
@@ -3915,9 +3939,22 @@ section .container {
 
 .offers.type-lines .offers__img-slide {
   display: inline-block;
+  position: relative;
+  overflow: hidden;
   margin: 0;
-  width: 100%;
-  height: 100%;
+  width: 360px;
+  height: 250px;
+}
+
+.offers.type-lines .offers__img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  min-width: 100%;
+  min-height: 100%;
 }
 
 .offers.type-lines .offers__slider-controls {
@@ -3983,11 +4020,6 @@ section .container {
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
   right: 10px;
-}
-
-.offers.type-lines .offers__img {
-  width: 100%;
-  height: 100%;
 }
 
 .offers.type-lines .offers__favorites-btn {
@@ -5716,6 +5748,11 @@ section .container {
   height: 100%;
 }
 
+.articles__tags-link {
+  text-decoration: none;
+  color: #a1b0c1;
+}
+
 .articles__title {
   font-size: 18px;
   line-height: 20px;
@@ -5793,6 +5830,11 @@ section .container {
 
 .article__tags-item::before {
   content: '#';
+}
+
+.article__tags-link {
+  color: #a1b0c1;
+  text-decoration: none;
 }
 
 .article__img-slider-wrapper {

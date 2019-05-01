@@ -1126,6 +1126,8 @@ section .container {
 		bottom: 0;
 		left: 0;
 		margin: auto;
+		min-width: 100%;
+		min-height: 100%;
 	}
 	&__text-wrapper {
 		display: block;
@@ -1230,8 +1232,20 @@ section .container {
 	}
 	&__img-slide {
 		margin: 0;
-		width: 100%;
-		height: 100%;
+		width: 260px;
+		height: 250px;
+		position: relative;
+		overflow: hidden;
+	}
+	&__img {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		margin: auto;
+		min-width: 100%;
+		min-height: 100%;
 	}
 	&__slider-controls {
 		position: absolute;
@@ -2780,9 +2794,21 @@ section .container {
 			}
 			&__img-slide {
 				display: inline-block;
+				position: relative;
+				overflow: hidden;
 				margin: 0;
-				width: 100%;
-				height: 100%;
+				width: 264px;
+				height: 175px;
+			}
+			&__img {
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				margin: auto;
+				min-width: 100%;
+				min-height: 100%;
 			}
 			&__slider-controls {
 				position: absolute;
@@ -2835,10 +2861,6 @@ section .container {
 						right: 10px;
 					}
 				}
-			}
-			&__img {
-				width: 100%;
-				height: 100%;
 			}
 			&__favorites-btn {
 				color: $ternary-text-color;
@@ -3061,6 +3083,7 @@ section .container {
 			}
 			&__img-slider {
 				list-style: none;
+				font-size: 0;
 				margin: 0;
 				padding: 0;
 				width: 100%;
@@ -3072,9 +3095,21 @@ section .container {
 			}
 			&__img-slide {
 				display: inline-block;
+				position: relative;
+				overflow: hidden;
 				margin: 0;
-				width: 100%;
-				height: 100%;
+				width: 360px;
+				height: 250px;
+			}
+			&__img {
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				margin: auto;
+				min-width: 100%;
+				min-height: 100%;
 			}
 			&__slider-controls {
 				position: absolute;
@@ -3127,10 +3162,6 @@ section .container {
 						right: 10px;
 					}
 				}
-			}
-			&__img {
-				width: 100%;
-				height: 100%;
 			}
 			&__favorites-btn {
 				color: $ternary-text-color;
@@ -4496,6 +4527,10 @@ section .container {
 			height: 100%;
 		}
 	}
+	&__tags-link {
+		text-decoration: none;
+		color: $secondary-text-color;
+	}
 	&__title {
 		font-size: 18px;
 		line-height: 20px;
@@ -4566,6 +4601,10 @@ section .container {
 		&::before {
 			content: '#';
 		}
+	}
+	&__tags-link {
+		color: $secondary-text-color;
+		text-decoration: none;
 	}
 	&__img-slider-wrapper {
 		position: relative;
