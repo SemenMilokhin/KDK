@@ -15,6 +15,213 @@
 			</linearGradient>
 		</defs>
 	</svg>
+	<form class="advanced-search">
+		<div class="advanced-search-container">
+			<button class="advanced-search-btn">Расширенный поиск</button>
+			<button class="advanced-search-close-btn"></button>
+			<div class="less-filters-wrapper">
+				<div class="select">
+					<button class="select__label">
+						<span class="select__label-value">Квартиры</span>
+						<svg class="select__label-svg" width="10" height="6" viewBox="0 0 10 6">
+							<path class="select__label-svg-path" d="M5.7,5.7C5.5,5.9,5.3,6,5,6S4.5,5.9,4.3,5.7l-4-4c-0.4-0.4-0.4-1,0-1.4c0.4-0.4,1-0.4,1.4,0L5,3.6l3.3-3.3c0.4-0.4,1-0.4,1.4,0c0.4,0.4,0.4,1,0,1.4L5.7,5.7z"/>
+						</svg>
+					</button>
+					<input type="hidden" class="select__hidden-input" name="property-type" id="property-type-field">
+					<ul class="select__list">
+						<li class="select__list-item" data-value="apartments">Квартиры</li>
+						<li class="select__list-item" data-value="cottages">Коттеджи</li>
+					</ul>
+				</div>
+				<div class="select">
+					<button class="select__label">
+						<span class="select__label-value">1-комнатная</span>
+						<svg class="select__label-svg" width="10" height="6" viewBox="0 0 10 6">
+							<path class="select__label-svg-path" d="M5.7,5.7C5.5,5.9,5.3,6,5,6S4.5,5.9,4.3,5.7l-4-4c-0.4-0.4-0.4-1,0-1.4c0.4-0.4,1-0.4,1.4,0L5,3.6l3.3-3.3c0.4-0.4,1-0.4,1.4,0c0.4,0.4,0.4,1,0,1.4L5.7,5.7z"/>
+						</svg>
+					</button>
+					<input type="hidden" class="select__hidden-input" name="number-of-rooms" id="number-of-rooms-field">
+					<ul class="select__list">
+						<li class="select__list-item" data-value="1">1-комнатная</li>
+						<li class="select__list-item" data-value="2">2-комнатная</li>
+						<li class="select__list-item" data-value="3">3-комнатная</li>
+						<li class="select__list-item" data-value="4">4-комнатная</li>
+						<li class="select__list-item" data-value="5">5-комнатная</li>
+					</ul>
+				</div>
+				<div class="property-price">
+					<input type="text" name="property-price-min" id="property-price-min-field" placeholder="от">
+					<input type="text" name="property-price-max" id="property-price-max-field" placeholder="до">
+					<span>₽</span>
+				</div>
+				<div class="adress">
+					<span class="adress__label">Город, адрес, метро, район, ж/д, шоссе или ЖК</span>
+					<div class="adress__wrapper">
+						<input type="text" class="adress__input" name="area" id="area-field" value="Солнечногорск" readonly>
+						<button class="adress__map-btn">Указать на карте</button>
+					</div>
+				</div>
+				<button class="more-filters-btn">
+					<span class="more-filters-btn__text">Ещё фильтры</span>
+					<svg class="more-filters-btn__svg" width="10" height="6" viewBox="0 0 10 6">
+						<path class="more-filters-btn__svg-path" d="M5.7,5.7C5.5,5.9,5.3,6,5,6S4.5,5.9,4.3,5.7l-4-4c-0.4-0.4-0.4-1,0-1.4c0.4-0.4,1-0.4,1.4,0L5,3.6l3.3-3.3c0.4-0.4,1-0.4,1.4,0c0.4,0.4,0.4,1,0,1.4L5.7,5.7z"/>
+					</svg>
+				</button>
+			</div>
+			<div class="slide-down-wrapper">
+				<div class="more-filters-wrapper">
+					<div class="form-row">
+						<span class="form-label">Площадь, м<sup>2</sup>:</span>
+						<span class="input-label">Общая:</span>
+						<div class="inputs-wrapper">
+							<input type="text" class="inputs-wrapper__item" name="total-area-min" id="total-area-min-field" placeholder="от">
+							<input type="text" class="inputs-wrapper__item" name="total-area-max" id="total-area-max-field" placeholder="до">
+						</div>
+						<span class="input-label">Кухня:</span>
+						<div class="inputs-wrapper">
+							<input type="text" class="inputs-wrapper__item" name="kitchen-area-min" id="kitchen-area-min-field" placeholder="от">
+							<input type="text" class="inputs-wrapper__item" name="kitchen-area-max" id="kitchen-area-max-field" placeholder="до">
+						</div>
+						<span class="input-label">Жилая:</span>
+						<div class="inputs-wrapper">
+							<input type="text" class="inputs-wrapper__item" name="living-area-min" id="living-area-min-field" placeholder="от">
+							<input type="text" class="inputs-wrapper__item" name="living-area-max" id="living-area-max-field" placeholder="до">
+						</div>
+					</div>
+					<div class="form-row">
+						<span class="form-label">Этаж:</span>
+						<div class="inputs-wrapper">
+							<input type="text" class="inputs-wrapper__item" name="floor-min" id="floor-min-field" placeholder="от">
+							<input type="text" class="inputs-wrapper__item" name="floor-min" id="floor-max-field" placeholder="до">
+						</div>
+						<ul class="checkboxes">
+							<li class="checkboxes__item">
+								<input type="checkbox" class="checkboxes__input" name="floor" value="only-last" id="floor-only-last">
+								<label class="checkboxes__label" for="floor-only-last">Только последний</label>
+							</li>
+						</ul>
+					</div>
+					<div class="form-row">
+						<span class="form-label">Тип дома:</span>
+						<ul class="checkboxes">
+							<li class="checkboxes__item">
+								<input type="checkbox" class="checkboxes__input" name="house-type" value="brick" id="house-type-brick">
+								<label class="checkboxes__label" for="house-type-brick">Кирпичный</label>
+							</li>
+							<li class="checkboxes__item">
+								<input type="checkbox" class="checkboxes__input" name="house-type" value="wooden" id="house-type-wooden">
+								<label class="checkboxes__label" for="house-type-wooden">Деревянный</label>
+							</li>
+							<li class="checkboxes__item">
+								<input type="checkbox" class="checkboxes__input" name="house-type" value="monolithic" id="house-type-monolithic">
+								<label class="checkboxes__label" for="house-type-monolithic">Монолитный</label>
+							</li>
+							<li class="checkboxes__item">
+								<input type="checkbox" class="checkboxes__input" name="house-type" value="panel" id="house-type-panel">
+								<label class="checkboxes__label" for="house-type-panel">Панельный</label>
+							</li>
+							<li class="checkboxes__item">
+								<input type="checkbox" class="checkboxes__input" name="house-type" value="brick-monolithic" id="house-type-brick-monolithic">
+								<label class="checkboxes__label" for="house-type-brick-monolithic">Кирпично-монолитный</label>
+							</li>
+						</ul>
+					</div>
+					<div class="form-row">
+						<span class="form-label">Год постройки:</span>
+						<div class="inputs-wrapper">
+							<input type="text" class="inputs-wrapper__item" name="year-min" id="year-min-field" placeholder="от">
+							<input type="text" class="inputs-wrapper__item" name="year-min" id="year-max-field" placeholder="до">
+						</div>
+					</div>
+					<div class="form-row">
+						<span class="form-label">Лифт:</span>
+						<ul class="checkboxes">
+							<li class="checkboxes__item">
+								<input type="checkbox" class="checkboxes__input" name="elevator-type" value="passenger" id="elevator-type-passenger">
+								<label class="checkboxes__label" for="elevator-type-passenger">Есть пассажирский</label>
+							</li>
+							<li class="checkboxes__item">
+								<input type="checkbox" class="checkboxes__input" name="elevator-type" value="cargo" id="elevator-type-cargo">
+								<label class="checkboxes__label" for="elevator-type-cargo">Есть грузовой</label>
+							</li>
+						</ul>
+					</div>
+					<div class="form-row">
+						<span class="form-label">Балкон:</span>
+						<ul class="checkboxes">
+							<li class="checkboxes__item">
+								<input type="checkbox" class="checkboxes__input" name="balcony-type" value="balcony" id="balcony-type-balcony">
+								<label class="checkboxes__label" for="balcony-type-balcony">Есть балкон</label>
+							</li>
+							<li class="checkboxes__item">
+								<input type="checkbox" class="checkboxes__input" name="balcony-type" value="loggia" id="balcony-type-loggia">
+								<label class="checkboxes__label" for="balcony-type-loggia">Есть лоджия</label>
+							</li>
+						</ul>
+					</div>
+					<div class="form-row">
+						<span class="form-label">Окна:</span>
+						<ul class="checkboxes">
+							<li class="checkboxes__item">
+								<input type="checkbox" class="checkboxes__input" name="windows-type" value="courtyard" id="windows-type-courtyard">
+								<label class="checkboxes__label" for="windows-type-courtyard">Во двор</label>
+							</li>
+							<li class="checkboxes__item">
+								<input type="checkbox" class="checkboxes__input" name="windows-type" value="street" id="windows-type-street">
+								<label class="checkboxes__label" for="windows-type-street">На улицу</label>
+							</li>
+						</ul>
+					</div>
+					<div class="form-row">
+						<span class="form-label">Ремонт:</span>
+						<ul class="checkboxes">
+							<li class="checkboxes__item">
+								<input type="checkbox" class="checkboxes__input" name="repairs-type" value="cosmetic" id="repairs-type-cosmetic">
+								<label class="checkboxes__label" for="repairs-type-cosmetic">Косметический</label>
+							</li>
+							<li class="checkboxes__item">
+								<input type="checkbox" class="checkboxes__input" name="repairs-type" value="eurorepair" id="repairs-type-eurorepair">
+								<label class="checkboxes__label" for="repairs-type-eurorepair">Евроремонт</label>
+							</li>
+							<li class="checkboxes__item">
+								<input type="checkbox" class="checkboxes__input" name="repairs-type" value="designer" id="repairs-type-designer">
+								<label class="checkboxes__label" for="repairs-type-designer">Дизайнерский</label>
+							</li>
+							<li class="checkboxes__item">
+								<input type="checkbox" class="checkboxes__input" name="repairs-type" value="without-repair" id="repairs-type-without-repair">
+								<label class="checkboxes__label" for="repairs-type-without-repair">Без ремонта</label>
+							</li>
+						</ul>
+					</div>
+					<div class="form-row">
+						<span class="form-label">Санузел:</span>
+						<ul class="checkboxes">
+							<li class="checkboxes__item">
+								<input type="checkbox" class="checkboxes__input" name="bathroom-type" value="combined" id="bathroom-type-combined">
+								<label class="checkboxes__label" for="bathroom-type-combined">Совмещённый</label>
+							</li>
+							<li class="checkboxes__item">
+								<input type="checkbox" class="checkboxes__input" name="bathroom-type" value="separated" id="bathroom-type-separated">
+								<label class="checkboxes__label" for="bathroom-type-separated">Раздельный</label>
+							</li>
+						</ul>
+						<span class="input-label">Количество:</span>
+						<div class="inputs-wrapper only-one-input">
+							<input type="text" class="inputs-wrapper__item" name="bathroom-max" id="bathroom-max-field" placeholder="до">
+						</div>
+					</div>
+					<div class="form-row">
+						<span class="form-label">ID объявления:</span>
+						<input type="text" class="form-input" name="id" id="id">
+					</div>
+				</div>
+				<div class="btns-wrapper">
+					<button class="on-map-btn">Показать на карте</button>
+					<button type="submit" class="filters-submit-btn">Показать <span class="objects-count-here">111888</span> объектов</button>
+				</div>
+			</div>
+		</div>
+	</form>
 	<div class="sidebar-substrate"></div>
 	<aside class="sidebar">
 		<nav class="sidebar-navigation">
@@ -285,228 +492,19 @@
 					<a href="index.html" class="logo-link"><img class="logo" width="142" height="45" src="img/logo.png" alt="logo"></a>
 					<span class="logo-text-part">Профессионалы недвижимости</span>
 				</div>
-				<div class="search-form-wrapper">
-					<form class="search-form" action="/" method="get">
-						<button class="search-btn" type="submit">
-							<svg width="16" height="16" viewBox="0 0 16 16">
-								<path class="search-svg" d="M588.707,51.293L585.6,48.187a7.012,7.012,0,1,0-1.413,1.414l3.105,3.106A1,1,0,0,0,588.707,51.293ZM580,49a5,5,0,1,1,5-5A5,5,0,0,1,580,49Z" transform="translate(-573 -37)"/>
-							</svg>
-						</button>
-						<input class="search-input" type="text" placeholder="Поиск...">
-						<button class="clear-btn" type="reset">
-							<svg width="18" height="18" viewBox="0 0 18 18">
-								<path class="search-svg" d="M818,36a9,9,0,1,0,9,9,9,9,0,0,0-9-9h0Zm-2.121,6.172,4.949,4.95a0.5,0.5,0,1,1-.707.707l-4.95-4.95A0.5,0.5,0,0,1,815.879,42.171Zm4.949,0.707-4.949,4.95a0.5,0.5,0,0,1-.708-0.707l4.95-4.95A0.5,0.5,0,1,1,820.828,42.879Z" transform="translate(-809 -36)"/>
-							</svg>
-						</button>
-					</form>
-					<form class="advanced-search">
-						<div class="advanced-search-container">
-							<button class="advanced-search-btn">Расширенный поиск</button>
-							<button class="advanced-search-close-btn"></button>
-							<div class="less-filters-wrapper">
-								<div class="select">
-									<button class="select__label">
-										<span class="select__label-value">Квартиры</span>
-										<svg class="select__label-svg" width="10" height="6" viewBox="0 0 10 6">
-											<path class="select__label-svg-path" d="M5.7,5.7C5.5,5.9,5.3,6,5,6S4.5,5.9,4.3,5.7l-4-4c-0.4-0.4-0.4-1,0-1.4c0.4-0.4,1-0.4,1.4,0L5,3.6l3.3-3.3c0.4-0.4,1-0.4,1.4,0c0.4,0.4,0.4,1,0,1.4L5.7,5.7z"/>
-										</svg>
-									</button>
-									<input type="hidden" class="select__hidden-input" name="property-type" id="property-type-field">
-									<ul class="select__list">
-										<li class="select__list-item" data-value="apartments">Квартиры</li>
-										<li class="select__list-item" data-value="cottages">Коттеджи</li>
-									</ul>
-								</div>
-								<div class="select">
-									<button class="select__label">
-										<span class="select__label-value">1-комнатная</span>
-										<svg class="select__label-svg" width="10" height="6" viewBox="0 0 10 6">
-											<path class="select__label-svg-path" d="M5.7,5.7C5.5,5.9,5.3,6,5,6S4.5,5.9,4.3,5.7l-4-4c-0.4-0.4-0.4-1,0-1.4c0.4-0.4,1-0.4,1.4,0L5,3.6l3.3-3.3c0.4-0.4,1-0.4,1.4,0c0.4,0.4,0.4,1,0,1.4L5.7,5.7z"/>
-										</svg>
-									</button>
-									<input type="hidden" class="select__hidden-input" name="number-of-rooms" id="number-of-rooms-field">
-									<ul class="select__list">
-										<li class="select__list-item" data-value="1">1-комнатная</li>
-										<li class="select__list-item" data-value="2">2-комнатная</li>
-										<li class="select__list-item" data-value="3">3-комнатная</li>
-										<li class="select__list-item" data-value="4">4-комнатная</li>
-										<li class="select__list-item" data-value="5">5-комнатная</li>
-									</ul>
-								</div>
-								<div class="property-price">
-									<input type="text" name="property-price-min" id="property-price-min-field" placeholder="от">
-									<input type="text" name="property-price-max" id="property-price-max-field" placeholder="до">
-									<span>₽</span>
-								</div>
-								<div class="adress">
-									<span class="adress__label">Город, адрес, метро, район, ж/д, шоссе или ЖК</span>
-									<div class="adress__wrapper">
-										<input type="text" class="adress__input" name="area" id="area-field" value="Солнечногорск" readonly>
-										<button class="adress__map-btn">Указать на карте</button>
-									</div>
-								</div>
-								<button class="more-filters-btn">
-									<span class="more-filters-btn__text">Ещё фильтры</span>
-									<svg class="more-filters-btn__svg" width="10" height="6" viewBox="0 0 10 6">
-										<path class="more-filters-btn__svg-path" d="M5.7,5.7C5.5,5.9,5.3,6,5,6S4.5,5.9,4.3,5.7l-4-4c-0.4-0.4-0.4-1,0-1.4c0.4-0.4,1-0.4,1.4,0L5,3.6l3.3-3.3c0.4-0.4,1-0.4,1.4,0c0.4,0.4,0.4,1,0,1.4L5.7,5.7z"/>
-									</svg>
-								</button>
-							</div>
-							<div class="slide-down-wrapper">
-								<div class="more-filters-wrapper">
-									<div class="form-row">
-										<span class="form-label">Площадь, м<sup>2</sup>:</span>
-										<span class="input-label">Общая:</span>
-										<div class="inputs-wrapper">
-											<input type="text" class="inputs-wrapper__item" name="total-area-min" id="total-area-min-field" placeholder="от">
-											<input type="text" class="inputs-wrapper__item" name="total-area-max" id="total-area-max-field" placeholder="до">
-										</div>
-										<span class="input-label">Кухня:</span>
-										<div class="inputs-wrapper">
-											<input type="text" class="inputs-wrapper__item" name="kitchen-area-min" id="kitchen-area-min-field" placeholder="от">
-											<input type="text" class="inputs-wrapper__item" name="kitchen-area-max" id="kitchen-area-max-field" placeholder="до">
-										</div>
-										<span class="input-label">Жилая:</span>
-										<div class="inputs-wrapper">
-											<input type="text" class="inputs-wrapper__item" name="living-area-min" id="living-area-min-field" placeholder="от">
-											<input type="text" class="inputs-wrapper__item" name="living-area-max" id="living-area-max-field" placeholder="до">
-										</div>
-									</div>
-									<div class="form-row">
-										<span class="form-label">Этаж:</span>
-										<div class="inputs-wrapper">
-											<input type="text" class="inputs-wrapper__item" name="floor-min" id="floor-min-field" placeholder="от">
-											<input type="text" class="inputs-wrapper__item" name="floor-min" id="floor-max-field" placeholder="до">
-										</div>
-										<ul class="checkboxes">
-											<li class="checkboxes__item">
-												<input type="checkbox" class="checkboxes__input" name="floor" value="only-last" id="floor-only-last">
-												<label class="checkboxes__label" for="floor-only-last">Только последний</label>
-											</li>
-										</ul>
-									</div>
-									<div class="form-row">
-										<span class="form-label">Тип дома:</span>
-										<ul class="checkboxes">
-											<li class="checkboxes__item">
-												<input type="checkbox" class="checkboxes__input" name="house-type" value="brick" id="house-type-brick">
-												<label class="checkboxes__label" for="house-type-brick">Кирпичный</label>
-											</li>
-											<li class="checkboxes__item">
-												<input type="checkbox" class="checkboxes__input" name="house-type" value="wooden" id="house-type-wooden">
-												<label class="checkboxes__label" for="house-type-wooden">Деревянный</label>
-											</li>
-											<li class="checkboxes__item">
-												<input type="checkbox" class="checkboxes__input" name="house-type" value="monolithic" id="house-type-monolithic">
-												<label class="checkboxes__label" for="house-type-monolithic">Монолитный</label>
-											</li>
-											<li class="checkboxes__item">
-												<input type="checkbox" class="checkboxes__input" name="house-type" value="panel" id="house-type-panel">
-												<label class="checkboxes__label" for="house-type-panel">Панельный</label>
-											</li>
-											<li class="checkboxes__item">
-												<input type="checkbox" class="checkboxes__input" name="house-type" value="brick-monolithic" id="house-type-brick-monolithic">
-												<label class="checkboxes__label" for="house-type-brick-monolithic">Кирпично-монолитный</label>
-											</li>
-										</ul>
-									</div>
-									<div class="form-row">
-										<span class="form-label">Год постройки:</span>
-										<div class="inputs-wrapper">
-											<input type="text" class="inputs-wrapper__item" name="year-min" id="year-min-field" placeholder="от">
-											<input type="text" class="inputs-wrapper__item" name="year-min" id="year-max-field" placeholder="до">
-										</div>
-									</div>
-									<div class="form-row">
-										<span class="form-label">Лифт:</span>
-										<ul class="checkboxes">
-											<li class="checkboxes__item">
-												<input type="checkbox" class="checkboxes__input" name="elevator-type" value="passenger" id="elevator-type-passenger">
-												<label class="checkboxes__label" for="elevator-type-passenger">Есть пассажирский</label>
-											</li>
-											<li class="checkboxes__item">
-												<input type="checkbox" class="checkboxes__input" name="elevator-type" value="cargo" id="elevator-type-cargo">
-												<label class="checkboxes__label" for="elevator-type-cargo">Есть грузовой</label>
-											</li>
-										</ul>
-									</div>
-									<div class="form-row">
-										<span class="form-label">Балкон:</span>
-										<ul class="checkboxes">
-											<li class="checkboxes__item">
-												<input type="checkbox" class="checkboxes__input" name="balcony-type" value="balcony" id="balcony-type-balcony">
-												<label class="checkboxes__label" for="balcony-type-balcony">Есть балкон</label>
-											</li>
-											<li class="checkboxes__item">
-												<input type="checkbox" class="checkboxes__input" name="balcony-type" value="loggia" id="balcony-type-loggia">
-												<label class="checkboxes__label" for="balcony-type-loggia">Есть лоджия</label>
-											</li>
-										</ul>
-									</div>
-									<div class="form-row">
-										<span class="form-label">Окна:</span>
-										<ul class="checkboxes">
-											<li class="checkboxes__item">
-												<input type="checkbox" class="checkboxes__input" name="windows-type" value="courtyard" id="windows-type-courtyard">
-												<label class="checkboxes__label" for="windows-type-courtyard">Во двор</label>
-											</li>
-											<li class="checkboxes__item">
-												<input type="checkbox" class="checkboxes__input" name="windows-type" value="street" id="windows-type-street">
-												<label class="checkboxes__label" for="windows-type-street">На улицу</label>
-											</li>
-										</ul>
-									</div>
-									<div class="form-row">
-										<span class="form-label">Ремонт:</span>
-										<ul class="checkboxes">
-											<li class="checkboxes__item">
-												<input type="checkbox" class="checkboxes__input" name="repairs-type" value="cosmetic" id="repairs-type-cosmetic">
-												<label class="checkboxes__label" for="repairs-type-cosmetic">Косметический</label>
-											</li>
-											<li class="checkboxes__item">
-												<input type="checkbox" class="checkboxes__input" name="repairs-type" value="eurorepair" id="repairs-type-eurorepair">
-												<label class="checkboxes__label" for="repairs-type-eurorepair">Евроремонт</label>
-											</li>
-											<li class="checkboxes__item">
-												<input type="checkbox" class="checkboxes__input" name="repairs-type" value="designer" id="repairs-type-designer">
-												<label class="checkboxes__label" for="repairs-type-designer">Дизайнерский</label>
-											</li>
-											<li class="checkboxes__item">
-												<input type="checkbox" class="checkboxes__input" name="repairs-type" value="without-repair" id="repairs-type-without-repair">
-												<label class="checkboxes__label" for="repairs-type-without-repair">Без ремонта</label>
-											</li>
-										</ul>
-									</div>
-									<div class="form-row">
-										<span class="form-label">Санузел:</span>
-										<ul class="checkboxes">
-											<li class="checkboxes__item">
-												<input type="checkbox" class="checkboxes__input" name="bathroom-type" value="combined" id="bathroom-type-combined">
-												<label class="checkboxes__label" for="bathroom-type-combined">Совмещённый</label>
-											</li>
-											<li class="checkboxes__item">
-												<input type="checkbox" class="checkboxes__input" name="bathroom-type" value="separated" id="bathroom-type-separated">
-												<label class="checkboxes__label" for="bathroom-type-separated">Раздельный</label>
-											</li>
-										</ul>
-										<span class="input-label">Количество:</span>
-										<div class="inputs-wrapper only-one-input">
-											<input type="text" class="inputs-wrapper__item" name="bathroom-max" id="bathroom-max-field" placeholder="до">
-										</div>
-									</div>
-									<div class="form-row">
-										<span class="form-label">ID объявления:</span>
-										<input type="text" class="form-input" name="id" id="id">
-									</div>
-								</div>
-								<div class="btns-wrapper">
-									<button class="on-map-btn">Показать на карте</button>
-									<button type="submit" class="filters-submit-btn">Показать <span class="objects-count-here">111888</span> объектов</button>
-								</div>
-							</div>
-						</div>
-					</form>
-				</div>
+				<form class="search-form" action="/" method="get">
+					<button class="search-btn" type="submit">
+						<svg width="16" height="16" viewBox="0 0 16 16">
+							<path class="search-svg" d="M588.707,51.293L585.6,48.187a7.012,7.012,0,1,0-1.413,1.414l3.105,3.106A1,1,0,0,0,588.707,51.293ZM580,49a5,5,0,1,1,5-5A5,5,0,0,1,580,49Z" transform="translate(-573 -37)"/>
+						</svg>
+					</button>
+					<input class="search-input" type="text" placeholder="Поиск...">
+					<button class="clear-btn" type="reset">
+						<svg width="18" height="18" viewBox="0 0 18 18">
+							<path class="search-svg" d="M818,36a9,9,0,1,0,9,9,9,9,0,0,0-9-9h0Zm-2.121,6.172,4.949,4.95a0.5,0.5,0,1,1-.707.707l-4.95-4.95A0.5,0.5,0,0,1,815.879,42.171Zm4.949,0.707-4.949,4.95a0.5,0.5,0,0,1-.708-0.707l4.95-4.95A0.5,0.5,0,1,1,820.828,42.879Z" transform="translate(-809 -36)"/>
+						</svg>
+					</button>
+				</form>
 				<div class="phone-wrapper">
 					<a class="phone-number" href="tel:+74951234567"><span class="different-color">+7 (495) </span>123-45-67</a>
 					<button class="call-order-button">Заказать звонок</button>

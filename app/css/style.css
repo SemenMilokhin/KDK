@@ -27,6 +27,7 @@
 }
 
 body {
+  position: relative;
   margin: 0;
   font-family: 'GothamPro', sans-serif;
   font-weight: 400;
@@ -761,8 +762,8 @@ section .container {
 }
 
 .advanced-search {
-  position: fixed;
-  z-index: 2;
+  position: absolute;
+  z-index: 21;
   bottom: 100%;
   left: 0;
   width: 100vw;
@@ -4777,9 +4778,26 @@ section .container {
   outline: none;
 }
 
-.object__image, .object__fullscreen-image {
+.object__slider-item {
+  position: relative;
+  overflow: hidden;
+  height: 325px;
+}
+
+.object__fullscreen-image {
   max-width: 100%;
   max-height: 100%;
+}
+
+.object__image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  min-height: 100%;
+  min-width: 100%;
 }
 
 .object__slider-controls, .object__fullscreen-slider-controls {

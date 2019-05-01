@@ -71,12 +71,11 @@ $(document).ready(function(){
 		});
 	}
 	function initSearchFormMovements() {
-		var searchFormWrapper      = $('.search-form-wrapper'),
-			searchForm             = searchFormWrapper.find('.search-form'),
+		var searchForm             = $('.search-form'),
 			searchInput            = searchForm.find('.search-input'),
 			clearBtn               = searchForm.find('.clear-btn'),
 			
-			advancedSearch         = searchFormWrapper.find('.advanced-search'),
+			advancedSearch         = $('.advanced-search'),
 			advancedSearchBtn      = advancedSearch.find('.advanced-search-btn'),
 			advancedSearchCloseBtn = advancedSearch.find('.advanced-search-close-btn'),
 			moreFiltersWrapper     = advancedSearch.find('.more-filters-wrapper'),
