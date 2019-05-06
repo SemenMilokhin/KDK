@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	initAdaptability();
 	initMenu();
 	initSearchFormMovements();
 	initMainPageSlider();
@@ -17,6 +18,60 @@ $(document).ready(function(){
 	initObjectMovements();
 	initArticleMovements();
 
+	function desktopTransform(typeOfDevice) {
+		alert(typeOfDevice);
+		if ($('.menu-container>.phone-wrapper')) {
+			$('.menu-container>.phone-wrapper').appendTo($('.header-row'));
+		}
+	}
+	function tabletTransform(typeOfDevice) {
+		alert(typeOfDevice);
+		if ($('.header-row>.phone-wrapper')) {
+			$('.header-row>.phone-wrapper').insertBefore($('.menu'));
+		}
+	}
+	function mobileTransform(typeOfDevice) {
+		alert(typeOfDevice);
+	}
+	function initAdaptability() {
+		var device = "",
+			desktopResize = false,
+			tabletResize = false,
+			mobileResize = false,
+			deviceDefinition = function() {
+				var deviceWidth = window.innerWidth;
+
+				if (deviceWidth>1310) {
+					device = "desktop";
+				} else if (deviceWidth<=1310 && deviceWidth>=768) {
+					device = "tablet";
+				} else if (deviceWidth<768) {
+					device = "mobile";
+				}
+			},
+			transform = function() {
+				deviceDefinition();
+				if (device === "desktop" && !desktopResize) {
+					desktopTransform(device);
+					desktopResize = true;
+					tabletResize = false;
+					mobileResize = false;
+				} else if (device === "tablet" && !tabletResize) {
+					tabletTransform(device);
+					desktopResize = false;
+					tabletResize = true;
+					mobileResize = false;
+				} else if (device === "mobile" && !mobileResize) {
+					mobileTransform(device);
+					desktopResize = false;
+					tabletResize = false;
+					mobileResize = true;
+				}
+			};
+
+		transform();
+		$(window).bind('resize', transform);
+	}
 	function initMenu() {
 		var sidebarNav    = $('.sidebar-navigation'),
 			menuContainer = sidebarNav.find('.menu-container'),
@@ -154,7 +209,7 @@ $(document).ready(function(){
 			evt.preventDefault();
 			siteSections.addClass('clipped');
 			services.css({
-				transform: "translate(-1140px, 0px)"			
+				transform: "translate(-"+hold.width()+"px, 0px)"			
 			});
 		});
 		closeBtn.on('click', function(evt) {
@@ -196,6 +251,7 @@ $(document).ready(function(){
 
 		newOffers.slick({
 			infinite: false,
+			swipe: false,
 			slidesToShow: 1,
 			slidesToScroll: 1,
 			appendArrows: newOffersMainSliderControls,
