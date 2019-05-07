@@ -19,19 +19,16 @@ $(document).ready(function(){
 	initArticleMovements();
 
 	function desktopTransform(typeOfDevice) {
-		alert(typeOfDevice);
 		if ($('.menu-container>.phone-wrapper')) {
 			$('.menu-container>.phone-wrapper').appendTo($('.header-row'));
 		}
 	}
 	function tabletTransform(typeOfDevice) {
-		alert(typeOfDevice);
 		if ($('.header-row>.phone-wrapper')) {
 			$('.header-row>.phone-wrapper').insertBefore($('.menu'));
 		}
 	}
 	function mobileTransform(typeOfDevice) {
-		alert(typeOfDevice);
 	}
 	function initAdaptability() {
 		var device = "",
@@ -162,7 +159,7 @@ $(document).ready(function(){
 		advancedSearchBtn.on('click', function(evt) {
 			evt.preventDefault();
 			advancedSearch.css({
-				transform: "translate(0, 171px)"
+				transform: "translate(0, "+advancedSearch.height()+"px)"
 			});
 			setTimeout(function () {
 				advancedSearchCloseBtn.css({
@@ -359,7 +356,8 @@ $(document).ready(function(){
 		var select = $('.select');
 
 		select.each(function(i,el) {
-			var selectLabel      = $(el).find('.select__label'),
+			var selectItem       = $(el),
+				selectLabel      = $(el).find('.select__label'),
 				selectLabelValue = selectLabel.find('.select__label-value'),
 				selectInput      = $(el).find('.select__hidden-input'),
 				selectList       = $(el).find('.select__list'),
@@ -383,10 +381,10 @@ $(document).ready(function(){
 				evt.preventDefault();
 				if (selectListFlag) {
 					openSelect();
-					selectLabel.addClass('opened');
+					selectItem.addClass('opened');
 				} else {
 					closeSelect();
-					selectLabel.removeClass('opened');
+					selectItem.removeClass('opened');
 				};
 			});
 
@@ -398,7 +396,7 @@ $(document).ready(function(){
 					selectInput.val(value);
 					selectLabelValue.text(text);
 					closeSelect();
-					selectLabel.removeClass('opened');
+					$(el).removeClass('opened');
 				})
 			})
 		});
