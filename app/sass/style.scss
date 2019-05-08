@@ -42,6 +42,9 @@ $btn-border-color: #d7e0e6;
 //
 //            Спецификация
 //_____________________________
+html {
+	max-width: 100vw;
+}
 body {
 	position: relative;
 	margin: 0;
@@ -747,6 +750,9 @@ section .container {
 	height: 100%;
 }
 .main-slider {
+	.slick-list,.slick-track {
+		height: 100%;
+	}
 	width: 100%;
 	height: 100%;
 	list-style: none;
@@ -762,6 +768,7 @@ section .container {
 	}
 	&__img-wrapper {
 		position: absolute;
+		overflow: hidden;
 		width: 100vw;
 		height: 100%;
 		top: 0;
@@ -770,9 +777,15 @@ section .container {
 	}
 	&__bg-img {
 		display: block;
-		position: relative;
-		width: 100%;
-		height: 100%;
+		position: absolute;
+		top: -9999%;
+		right: -9999%;
+		bottom: -9999%;
+		left: -9999%;
+		margin: auto;
+		min-width: 1000%;
+		min-height: 1000%;
+		transform: scale(0.1);
 		z-index: -1;
 	}
 	&__content {
@@ -792,7 +805,7 @@ section .container {
 	margin: 0 auto;
 	width: 1140px;
 	height: 0;
-	top: 0;
+	top: 50%;
 	left: 0;
 	right: 0;
 	&__item {
@@ -809,7 +822,7 @@ section .container {
 			padding: 0;
 			cursor: pointer;
 			position: absolute;
-			top: 295px;
+			top: -14px;
 			&::after {
 				position: absolute;
 				top: 8px;
@@ -1156,6 +1169,9 @@ section .container {
 		padding: 0;
 		width: 100%;
 		height: 100%;
+		.slick-list, .slick-track {
+			height: 100%;
+		}
 	}
 	&__img-slide {
 		margin: 0;

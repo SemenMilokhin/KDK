@@ -29,6 +29,9 @@ $(document).ready(function(){
 		}
 	}
 	function mobileTransform(typeOfDevice) {
+		if ($('.header-row>.phone-wrapper')) {
+			$('.header-row>.phone-wrapper').insertBefore($('.menu'));
+		}
 	}
 	function initAdaptability() {
 		var device = "",
@@ -189,7 +192,7 @@ $(document).ready(function(){
 			mainSliderControlsLeftArrow  = mainSliderControls.find('.main-slider-controls__item_left-arrow'),
 			mainSliderControlsRightArrow = mainSliderControls.find('.main-slider-controls__item_right-arrow');
 		mainSlider.slick({
-			autoplay: true,
+			// autoplay: true,
 			speed: '1000',
 			appendArrows: mainSliderControls,
 			prevArrow: mainSliderControlsLeftArrow,
