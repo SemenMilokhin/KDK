@@ -293,6 +293,7 @@
 		> .select {
 			padding: 0 20px;
 			margin: 10px 0;
+			width: 100%;
 		}
 	}
 	.adress {
@@ -395,8 +396,10 @@
 		padding-left: 70px;
 	}
 	.menu {
-		padding-top: 30px;
+		padding-top: 0;
+		margin-top: 30px;
 		width: 628px;
+		max-height: 80vh;
 		&__title {
 		    line-height: 26px;
 		    padding-bottom: 20px;
@@ -876,6 +879,139 @@
 		padding-right: 3vw;
 		padding-left: 3vw;
 	}
+	.advanced-search {
+		margin-bottom: -50px;
+	}
+	.advanced-search-container {
+	    width: 100vw;
+	    padding: 3vw 3vw 0;
+	    .slide-down-wrapper {
+    	    transform: translate(0px, -35.5vw);
+	    }
+	}
+	.slide-down-wrapper .btns-wrapper {
+		margin-top: 5.3vw;
+	}
+	.less-filters-wrapper {
+		margin-bottom: 35.5vw;
+	}
+	.btns-wrapper {
+	    width: 100%;
+	    flex-direction: column;
+	    justify-content: center;
+	    align-items: center;
+	}
+	.advanced-search-close-btn {
+		top: auto;
+		right: 3vw;
+		width: 10vw;
+		height: 10vw;
+		bottom: 22vw;
+		z-index: 17;
+		background: none;
+		border-radius: 0;
+		&::after, &::before {
+		    width: 6vw;
+		    height: 0.4vw;
+		    position: absolute;
+		    top: 4.8vw;
+		    left: 2.2vw;
+		}
+	}
+	.on-map-btn {
+		margin-bottom: 4vw;
+	}
+	.on-map-btn, .filters-submit-btn {
+	    height: 10.5vw;
+	    line-height: 10.5vw;
+	    font-size: 3vw;
+	    padding: 0 9.2vw;
+	    border-radius: 5.5vw;
+	}
+	.advanced-search-btn {
+	    left: 67vw;
+	    font-size: 1.7vw;
+	    line-height: 3vw;
+	    padding: 0 0.7vw;
+	    &::before, &::after {
+			width: auto;
+			height: auto;
+			border-width: 1.5vw;
+	    }
+	}
+	.less-filters-wrapper {
+		.select {
+			padding: 0 5.2vw;
+			margin: 2.6vw 0;
+			&__label {
+				padding: 0 8.6vw 0 0;
+				height: 7.9vw;
+				font-size: 3.7vw;
+				line-height: 4.2vw;
+			}
+			&__list {
+				padding: 2.6vw 4.7vw;
+				top: 7.9vw;
+			}
+			&__list-item {
+				font-size: 3.7vw;
+				margin: 2.6vw 0;
+			}
+			&__label-svg {
+			    top: 2.8vw;
+			    width: 3vw;
+			    height: 1.8vw;
+			}
+		}
+		> div {
+			padding: 2.6vw 5.2vw;
+		}
+	}
+	.property-price {
+		span {
+			font-size: 3.7vw;
+			line-height: 4.2vw;
+		}
+		input {
+			font-size: 3.7vw;
+			line-height: 4.2vw;
+			width: 24vw;
+			height: 7.9vw;
+		}
+		input[name="property-price-min"] {
+			margin-right: 10.5vw;
+		}
+		&::before {
+			left: 29vw;
+		}
+	}
+	.adress {
+		&__label {
+			font-size: 3vw;
+		}
+		&__input {
+		    width: 47.5vw;
+		    font-size: 4.2vw;
+		    line-height: 4.8vw;
+		}
+		&__map-btn {
+			font-size: 3vw;
+			line-height: 3.7vw;
+		}
+	}
+	.more-filters-btn {
+	    margin: 2.6vw auto;
+	    width: 36vw;
+	    height: 7.9vw;
+	    font-size: 3.7vw;
+		line-height: 4.2vw;
+		padding: 0 8.6vw 0 0;
+		&__svg {
+		    top: 2.8vw;
+		    width: 3vw;
+		    height: 1.8vw;
+		}
+	}
 	.menu-container {
 		padding-left: 0;
 	}
@@ -890,7 +1026,7 @@
 		line-height: 14px;
 	}
 	.menu {
-		padding-top: 3vw;
+		margin-top: 3vw;
 		padding-left: 15px;
 		padding-right: 15px;
 		width: 100%;
@@ -1217,6 +1353,29 @@
 		&__slider-wrapper, &__img-slide {
 			height: 28.6vw;
 		}
+		&__primary-slider-arrow {
+		    top: 4vw;
+		    width: 8vw;
+		    height: 8vw;
+		    &::after {
+		    	top: 3vw;
+		    	width: 2.2vw;
+		    	height: 2.2vw;
+		    	border-width: 0.6vw;
+		    	border-radius: 0.4vw;
+		    }
+		    &_left {
+				right: 11vw;
+				&::after {
+					left: 3.2vw;
+				}
+		    }
+		    &_right {
+		    	&::after {
+					right: 3.2vw;
+		    	}
+		    }
+		}
 		&__favorites-btn {
 			font-size: 2vw;
 			line-height: 2vw;
@@ -1329,6 +1488,32 @@
 		}
 		&__controls {
 			margin-top: 5vw;
+			width: 18vw;
+    		height: 8vw;
+			&_left-arrow, &_right-arrow {
+			    width: 8vw;
+			    height: 8vw;
+			    border-radius: 4vw;
+			    &::before {
+					content: none;
+			    }
+			    &::after {
+					top: 3vw;
+				    width: 2vw;
+				    height: 2vw;
+				    border-width: 0.4vw;
+			    }
+			}
+			&_left-arrow::after {
+				left: 3.2vw;
+			}
+			&_right-arrow::after {
+				right: 3.2vw;
+			}
+			&::before {
+				right: 22.4vw;
+    			top: 4vw;
+			}
 		}
 	}
 	.footer {

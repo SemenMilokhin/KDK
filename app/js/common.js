@@ -149,7 +149,7 @@ $(document).ready(function(){
 		});
 		searchInput.on('focusin', function() {
 			advancedSearchBtn.css({
-				transform: "translate(0, 18px)"
+				transform: "translate(0, "+advancedSearchBtn.height()+"px)"
 			});
 		});
 		searchInput.on('focusout', function() {
@@ -165,9 +165,11 @@ $(document).ready(function(){
 				transform: "translate(0, "+advancedSearch.height()+"px)"
 			});
 			setTimeout(function () {
-				advancedSearchCloseBtn.css({
-					transform: 'translate(31px, 0)'
-				});
+				if (window.innerWidth>700) {
+					advancedSearchCloseBtn.css({
+						transform: 'translate(31px, 0)'
+					});
+				}
 			}, 300);
 		});
 		advancedSearchCloseBtn.on('click', function(evt) {
@@ -364,30 +366,38 @@ $(document).ready(function(){
 				selectLabelValue = selectLabel.find('.select__label-value'),
 				selectInput      = $(el).find('.select__hidden-input'),
 				selectList       = $(el).find('.select__list'),
-				selectListFlag   = true,
 				selectListHeight = selectList.outerHeight(),
 				selectListItem   = selectList.find('.select__list-item'),
 				closeSelect = function() {
 					selectList.css({
 						clip: 'rect(0, 9999px , 0, 0)'
 					});
-					selectListFlag=true;
+					selectItem.removeClass('opened');
 				},
 				openSelect = function() {
 					selectList.css({
 						clip: 'rect(0, 9999px , '+selectListHeight+'px , 0)'
 					});
-					selectListFlag=false;
+					selectItem.addClass('opened');
+				},
+				closeAllSelects = function(count) {
+					select.each(function(c,elem) {
+						if(count !== c) {
+							$(elem).find('.select__list').css({
+								clip: 'rect(0, 9999px , 0, 0)'
+							});
+							$(elem).removeClass('opened');
+						}
+					});
 				};
 
 			selectLabel.on('click', function(evt) {
+				closeAllSelects(i);
 				evt.preventDefault();
-				if (selectListFlag) {
+				if (!selectItem.hasClass('opened')) {
 					openSelect();
-					selectItem.addClass('opened');
 				} else {
 					closeSelect();
-					selectItem.removeClass('opened');
 				};
 			});
 
@@ -399,7 +409,6 @@ $(document).ready(function(){
 					selectInput.val(value);
 					selectLabelValue.text(text);
 					closeSelect();
-					$(el).removeClass('opened');
 				})
 			})
 		});
