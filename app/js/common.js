@@ -149,7 +149,7 @@ $(document).ready(function(){
 		});
 		searchInput.on('focusin', function() {
 			advancedSearchBtn.css({
-				transform: "translate(0, "+advancedSearchBtn.height()+"px)"
+				transform: "translate(0, "+advancedSearchBtn.outerHeight()+"px)"
 			});
 		});
 		searchInput.on('focusout', function() {
@@ -162,7 +162,7 @@ $(document).ready(function(){
 		advancedSearchBtn.on('click', function(evt) {
 			evt.preventDefault();
 			advancedSearch.css({
-				transform: "translate(0, "+advancedSearch.height()+"px)"
+				transform: "translate(0, "+advancedSearch.outerHeight()+"px)"
 			});
 			setTimeout(function () {
 				if (window.innerWidth>700) {

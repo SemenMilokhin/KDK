@@ -319,6 +319,8 @@
 	}
 	.form-label {
 		display: table-cell;
+		vertical-align: top;
+    	padding: 11px 0 0 0;
 	}
 	.inputs-wrapper {
 		width: 120px;
@@ -639,6 +641,9 @@
 		    border-left: 1px solid $ternary-bg-color;
 		    border-top: none;
 		}
+		.offers__img-slide {
+		    height: 200px;
+		}
 		.offers__title {
 			font-size: 16px;
 			line-height: 16px;
@@ -872,7 +877,8 @@
 		}
 	}
 	body.fixed-header section:first-of-type {
-		margin-top: 140px;
+		padding-top: 140px;
+		margin-top: 0;
 	}
 	.container {
 		width: 100vw;
@@ -1516,6 +1522,751 @@
 			}
 		}
 	}
+	.section-articles .container {
+	    padding: 5vw 3vw 12vw;
+	}
+	.breadcrumbs {
+		margin: 0 0 7vw;
+		&__item {
+			padding-left: 3vw;
+			&_this-page {
+				font-size: 2.6vw;
+			}
+			&::before {
+				font-size: 2.6vw;
+				left: 0.8vw;
+				top: 0.2vw;
+			}
+		}
+		&__link {
+			font-size: 2.6vw;
+		}
+	}
+	.page-title {
+	    font-size: 5vw;
+	    line-height: 5vw;
+	    margin: 0 0 4vw;
+	}
+	.sort-wrapper .page-subtitle {
+	    padding-right: 4vw;
+	}
+	.page-subtitle {
+	    font-size: 2.6vw;
+	    margin: 0 0 8vw;
+	}
+	.select.sort-select {
+	    top: -2.6vw;
+	    height: 8vw;
+	    width: 32vw;
+	    padding: 0 4vw;
+	    border-radius: 1vw;
+	    .select {
+		    &__label {
+			    font-size: 2.6vw;
+			    padding: 0 5.2vw 0 0;
+			    height: 100%;
+			}
+			&__label-svg {
+				top: 3.2vw;
+				width: 2vw;
+				height: 1.2vw;
+			}
+			&__list {
+			    padding: 1vw 4vw;
+			    top: 7vw;
+			    border-radius: 0 0 1vw 1vw; 
+			}
+			&__list-item {
+			    font-size: 2.6vw;
+			}
+		}
+	}
+	.select {
+		min-width: 36vw;
+		&__label {
+			font-size: 2.8vw;
+			line-height: 3.2vw;
+		}
+		&__list-item {
+			margin: 2vw 0;
+		}
+	}
+	.articles {
+		> :last-child {
+			margin-bottom: 0;
+		}
+		&__item{
+			flex-direction: column;
+			margin-bottom: 6vw;
+			&:nth-last-of-type(n+4) {
+			    margin-bottom: 6vw;
+			}
+		}
+		&__img-wrapper {
+			width: 100%;
+			height: 43vw;
+		}
+		&__label {
+			font-size: 2.6vw;
+		    line-height: 3vw;
+		    border-radius: 1vw;
+		    top: 2vw;
+		    left: 2vw;
+		    padding: 2vw;
+		}
+		&__content-wrapper {
+			width: 100%;
+			height: 48vw;
+    		padding: 4vw 4vw 6vw;
+		}
+		&__additional-information {
+		    font-size: 2.6vw;
+		    margin: 0 0 4vw;
+		}
+		&__tags-item {
+		    margin: 0 2.6vw 0 0;
+		    font-size: 2.6vw;
+		    &::after {
+		    	right: -1.6vw;
+		    }
+		}
+		&__title {
+		    font-size: 4.6vw;
+		    line-height: 4.8vw;
+		    margin: 0 0 4vw;
+		}
+		&__description {
+		    font-size: 3vw;
+		    line-height: 4vw;
+		}
+		&__read-more-btn {
+		    font-size: 3.6vw; 
+		}
+	}
+	.section-add-object .container {
+	    padding-top: 0px;
+	}
+	.form-input.w100, .form-textarea, .form-map {
+	    width: 100%;
+	}
+	.inputs-wrapper {
+	    margin: 6px 0;
+	}
+	.checkboxes {
+		padding-top: 6px;
+		&__label {
+			margin-bottom: 6px;
+		}
+	}
+	.form-input {
+	    margin: 6px 0;
+	}
+	.article {
+		&__title {
+		    font-size: 4.8vw;
+		    line-height: 5.2vw;
+		    margin: 0 0 4vw;
+		}
+		&__additional-information {
+		    font-size: 2.8vw;
+		    margin: 0 0 7vw;
+		}
+		&__tags-item {
+		    font-size: 2.8vw;
+		    margin: 0 0 0 1vw;
+		}
+		&__img-slider-wrapper {
+		    margin: 0 0 7vw;
+		}
+		&__img-slider {
+		    border-radius: 3vw;
+		}
+		&__img-slider-item {
+		    height: 40vw;
+		}
+		&__text-wrapper {
+		    column-gap: 6vw;
+		    padding: 0 0 8vw;
+		    margin: 0 0 8vw;
+		}
+		&__info {
+		    font-size: 2.8vw;
+		    line-height: 3.6vw;
+		    margin: 0 0 3.6vw;
+		}
+	}
+	.section-one-article .page-title {
+	    margin: 0 0 7vw;
+	}
+	.section-contacts .container {
+		padding-top: 0;
+	}
+	.contacts {
+	    margin: 6vw 0;
+	    &__item{
+	    	padding: 6vw;
+		    border-radius: 3vw;
+	    	&:nth-last-of-type(n+3) {
+			    margin-bottom: 6vw;
+			}
+	    }
+	    &__svg-wrapper {
+		    width: 4.8vw;
+		    height: 4.8vw;
+		    margin: 0 0 4vw;
+		    svg {
+		    	width: 4.8vw;
+		    	height: 4.8vw;
+		    }
+		}
+		&__heading {
+		    margin: 0 0 3vw;
+		    font-size: 3.2vw;
+		    line-height: 3.6vw;
+		}
+		&__info {
+		    font-size: 2.8vw;
+		    line-height: 3.6vw;
+		}
+	}
+	.contact-form .submit-btn {
+	    margin-left: 24vw; 
+	}
+	.section-map {
+	    min-height: 80vw;
+	}
+	.section-objects .container {
+	    padding: 4vw 3vw 7vw;
+	}
+	.offers.type-blocks {
+		.offers{
+			&__item {
+				height: 75vw;
+				width: 45.5vw;
+    			margin-right: 3vw;
+				&:nth-last-of-type(n+3) {
+				    margin-bottom: 3vw;
+				}
+			}
+			&__slider-wrapper {
+			    height: 29vw; 
+			}
+			&__img-slide {
+			    height: 29vw; 
+			}
+			&__favorites-btn {
+				font-size: 2vw;
+				line-height: 2vw;
+			    border-radius: 0.83vw;
+			    height: 5vw;
+			    padding: 1.5vw 1.6vw;
+			    top: 1.6vw;
+			    left: 1.6vw;
+			    svg {
+			    	width: 2.66vw;
+			    	height: 2.16vw;
+			    }
+			}
+			&__favorites-btn-text {
+			    margin-left: 1.6vw;
+			}
+			&__wrapper {
+			    border-radius: 0 0 3vw 3vw;
+			    height: 46vw;
+			    padding: 3.3vw;
+			}
+			&__title {
+				font-size: 3vw;
+				line-height: 3vw;
+			    margin: 0 0 2.5vw;
+			    sup {
+			    	font-size: 1.6vw;
+			    }
+			}
+			&__adress {
+			    font-size: 2vw;
+			    line-height: 2.5vw;
+			}
+			&__specifications {
+			    margin: 0 0 2.5vw;
+			    padding: 2.5vw 0;
+			    &::before {
+			    	width: 50vw;
+			    	left: -3.3vw;
+			    }
+			}
+			&__specifications-item {
+			    margin-right: 1.3vw;
+			}
+			&__specifications-title {
+			    font-size: 2vw;
+			    margin-bottom: 0.8vw;
+			}
+			&__specifications-info {
+			    font-size: 2.6vw;
+			    line-height: 2.6vw;
+			}
+			&__price {
+			    font-size: 3.3vw;
+			    line-height: 3.3vw;
+			    margin: 0 0 2.5vw;
+			}
+			&__price-here::after {
+			    width: 1.3vw;
+			    height: 2vw;
+			    bottom: 0.6vw;
+			    right: -5vw;
+			}
+			&__additional-information {
+				font-size: 2vw;
+				line-height: 2vw;
+			}
+		}
+	}
+	.pages {
+		flex-wrap: wrap;
+		&__list {
+			margin: 4vw auto 0;
+			order: 1;
+		}
+		&__btn {
+		    font-size: 2.5vw;
+		    padding: 0 3.75vw;
+		    border-radius: 3.4vw;
+		    height: 6.8vw;
+		    line-height: 6.8vw;
+		}
+		&__list-item {
+		    margin: 0 0.5vw 0;
+		    width: 6.75vw;
+		    height: 6.75vw;
+		    &_not-a-link {
+			    font-size: 3vw;
+			    padding: 1.75vw 0 0;
+			}
+		}
+		&__link {
+		    font-size: 3vw;
+		    line-height: 100%;
+		}
+	}
+	.section-filters .container {
+	    padding: 4vw 3vw 0;
+	}
+	.slide-down-wrapper::before, .slide-down-wrapper::after {
+	    width: 3vw;
+	}
+	.offers.type-lines {
+		.offers {
+			&__item {
+				border-radius: 3vw;
+				&:nth-last-of-type(n+2) {
+				    margin-bottom: 10vw;
+				}
+			}
+			&__slider-wrapper {
+			    height: 40vw;
+			}
+			&__img-slide {
+			    height: 40vw;
+			}
+			&__favorites-btn {
+			    font-size: 2.6vw;
+			    line-height: 2.6vw;
+			    border-radius: 1vw;
+			    height: 6vw;
+			    padding: 1.8vw 2vw;
+			    top: 2vw;
+			    left: 2vw;
+			    svg {
+			    	width: 3.2vw;
+			    	height: 2.6vw;
+			    }
+			}
+			&__wrapper {
+			    border-radius: 0 0 3vw 3vw;
+			    padding: 5vw 6vw;
+			    flex-direction: column;
+			}
+			&__text-wrapper {
+			    width: 100%;
+			    padding: 0;
+			}
+			&__title {
+			    font-size: 4vw;
+			    line-height: 4vw;
+			    margin: 0 0 3vw;
+			}
+			&__station-adress {
+			    font-size: 2vw;
+			    line-height: 2vw;
+			    margin: 0 0 3vw;
+			    padding-left: 5vw;
+			    &::before {
+			    	width: 3.6vw;
+				    height: 3.6vw;
+				    top: -0.8vw;
+			    } 
+			}
+			&__description {
+			    font-size: 2.4vw;
+			    line-height: 2.8vw;
+			    margin: 0 0 3vw;
+			}
+			&__information-wrapper {
+			    width: 100%;
+			}
+			&__price {
+			    font-size: 3.2vw;
+			    line-height: 3.2vw;
+			    margin: 0 0 1vw;
+			}
+			&__price-here::after {
+			    width: 1.6vw;
+			    height: 2.4vw;
+			    bottom: 0.8vw;
+			    right: -6vw;
+			}
+			&__price-per-square-meter {
+			    font-size: 2.4vw;
+			    line-height: 2.4vw;
+			    margin: 0 0 3vw;
+			}
+			&__specifications {
+			    margin: 0 0 5vw;
+			    padding: 1.6vw 4vw;
+			}
+			&__specifications-item {
+			    margin-right: 1.6vw;
+			}
+			&__specifications-title {
+			    font-size: 2vw;
+			    margin-bottom: 1vw;
+			}
+			&__specifications-info {
+			    font-size: 2.8vw;
+			    line-height: 3.2vw;
+			    sup {
+				    font-size: 2vw;
+				}
+			}
+			&__specifications-separator {
+			    height: 7vw;
+			}
+			&__phone-btn {
+			    height: 8vw;
+			    font-size: 2.4vw;
+			    padding: 0 6vw;
+			    line-height: 8vw;
+			}
+			&__phone-number {
+			    top: 1vw;
+			    left: 3.4vw;
+			    width: 28vw;
+				height: 6vw;
+			}
+			&__link {
+			    height: 8vw;
+			    width: 8vw;
+			}
+			&__link-svg {
+			    top: 2.6vw;
+			    left: 2.2vw;
+			    width: 3.6vw;
+			    height: 2.8vw;
+			}
+			&__additional-information {
+				position: unset;
+			    right: 6vw;
+			    font-size: 2vw;
+			    line-height: 2vw;
+			    margin-top: 3vw;
+			}
+		}
+	}
+	.anchor-links {
+	    margin: 0 0 6vw;
+	    &__item {
+		    margin: 0 2vw 2vw 0;
+		}
+		&__link {
+		    font-size: 2.6vw;
+		    line-height: 3vw;
+		    padding: 1.6vw 2vw;
+		    border-radius: 1vw;
+		}
+	}
+	.service-categories__item {
+	    margin: 0 0 8vw;
+	}
+	.service-categories__image-wrapper {
+	    height: 50vw;
+	    border-radius: 3vw;
+	}
+	.service-categories__content-wrapper {
+	    padding: 3.6vw 0 0;
+	    height: auto;
+	}
+	.service-categories__title {
+	    font-size: 4.8vw;
+	    line-height: 5.2vw;
+	    margin: 0 0 4vw;
+	}
+	.service-categories__description {
+	    font-size: 2.8vw;
+	    line-height: 3.6vw;
+	    margin: 0 0 4vw;
+	}
+	.service-categories__read-more-btn, .service__order-btn {
+	    line-height: 8vw;
+	    font-size: 2.4vw;
+	    padding: 0 7vw;
+	    height: 8vw;
+	    border-radius: 4vw;
+	}
+	.section-one-service .container {
+	    padding: 0 3vw 12vw;
+	}
+	.service__img-wrapper {
+	    width: 50vw;
+	    height: 40vw;
+	    margin: 0 5vw 5vw 0;
+	    border-radius: 3vw;
+	}
+	.service__description {
+	    padding: 0;
+	    font-size: 2.8vw;
+	    line-height: 3.6vw;
+	}
+	.service__subtitle {
+	    font-size: 3.6vw;
+	    line-height: 4vw;
+	    margin: 6vw 0 5vw;
+	    padding: 1vw 0 0;
+	}
+	.service__conditions {
+	    padding: 0 0 0 3.4vw;
+	}
+	.service__conditions-item, .service__lead-time-item {
+	    font-size: 2.8vw;
+	    line-height: 3.6vw;
+	}
+	.service__lead-time {
+	    padding: 0 0 0 3.4vw;
+	    margin: 0 0 7vw;
+	}
+	.service__price-title {
+	    font-size: 2.8vw;
+	    line-height: 3.2vw;
+	    margin: 0 0 1vw;
+	}
+	.service__price {
+	    font-size: 4.8vw;
+	    line-height: 4.8vw;
+	    margin: 0 0 3.6vw;
+	}
+	.section-one-object .container {
+	    padding: 0 3vw 10vw;
+	}
+	.object {
+		&__title {
+		    font-size: 4.8vw;
+		    line-height: 4.8vw;
+		    margin: 0 0 3vw;
+		}
+		&__id-subtitle {
+		    font-size: 2.6vw;
+		    margin: 0 0 6vw;
+		}
+		&__slider-wrapper, &__fullscreen-slider-wrapper {
+		    margin: 0 0 8vw;
+		}
+		&__slider, &__fullscreen-slider {
+		    border-radius: 3vw;
+		}
+		&__slider-item {
+		    height: 50vw;
+		}
+		&__fullscreen-btn, &__fullscreen-close-btn {
+		    top: 4vw;
+		    right: 4vw;
+		    width: 10vw;
+		    height: 10vw;
+		    border-radius: 50%;
+		    background-size: 4.8vw;
+		}
+		&__fullscreen-close-btn::before, &__fullscreen-close-btn::after {
+		    top: 4.8vw;
+		    left: 3vw;
+		    width: 4vw;
+		    height: 0.4vw;
+		}
+		&__wrapper {
+			.object__subwrapper:nth-of-type(1) {
+			    margin-bottom: 6vw;
+			    flex-direction: column;
+			}
+		}
+		&__specifications {
+		    margin-bottom: 6vw;
+		    margin-right: 0;
+		    width: 100%;
+		}
+		&__features {
+		    width: 100%;
+		}
+		&__wrapper-title {
+		    font-size: 3.6vw;
+		    line-height: 4vw;
+		    margin: 0 0 4vw;
+		}
+		&__specifications-list {
+		    padding: 0 4vw;
+		    margin: 6vw 0 6vw;
+		    height: 10.4vw;
+		    border-radius: 2vw;
+		}
+		&__specifications-title {
+		    font-size: 2.4vw;
+		    margin: 0 0 1.6vw;
+		}
+		&__specifications-value {
+		    font-size: 3.2vw;
+		    line-height: 3.2vw;
+		    sup {
+			    font-size: 2vw;
+			}
+		}
+		&__specifications-item:nth-last-of-type(n+2)::after {
+		    right: -10vw;
+		}
+		&__station-adress {
+			font-size: 2.4vw;
+			line-height: 2.8vw;
+		    margin: 0 0 5.6vw;
+		    padding-left: 4.6vw;
+		    &::before {
+			    width: 3.6vw;
+			    height: 3.6vw;
+			    top: -0.6vw;
+			}
+		}
+		&__price {
+			font-size: 4vw;
+			line-height: 4vw;
+		    margin: 0 0 0.4vw;
+		}
+		&__price-here::after {
+		    width: 0.4vw;
+		    height: 2.4vw;
+		    bottom: 0.8vw;
+		    right: -6vw;
+		}
+		&__price-per-square-meter {
+			font-size: 2.8vw;
+			line-height: 2.8vw;
+		    margin: 0 0 5.6vw;
+		    sup {
+		    	font-size: 2vw;
+		    }
+		}
+		&__phone-btn {
+			font-size: 2.8vw;
+			line-height: 10vw;
+		    border-radius: 5vw;
+		    padding: 0 6vw;
+		    margin: 0 0 5.6vw;
+		    height: 10vw;
+		}
+		&__phone-number {
+		    width: 28vw;
+		    height: 6vw;
+		    top: 2.2vw;
+		    left: 5.4vw;
+		}
+		&__additional-information {
+			font-size: 2.4vw;
+			line-height: 2.4vw;
+		}
+		&__post-date {
+		    margin: 0 0 0 4vw;
+		}
+		&__features {
+		    border-radius: 3vw;
+		    padding: 6vw;
+		    margin: 0 6vw 0 0;
+		}
+		&__features-label {
+		    font-size: 2.8vw;
+		    line-height: 4.8vw;
+		    margin: 0 1vw 0 0;
+		}
+		&__features-value {
+		    font-size: 2.8vw;
+		    line-height: 4.8vw;
+		}
+		&__subtitle {
+		    font-size: 4.8vw;
+		    line-height: 4.8vw;
+		    margin: 0 0 6vw;
+		}
+		&__description {
+		    font-size: 2.8vw;
+		    line-height: 3.6vw;
+		}
+		&__btns-wrapper {
+		    margin: 8vw 0 11vw;
+		}
+		&__order-btn, &__manager-email-btn, &__manager-whats-app-btn {
+			font-size: 2.2vw;
+			line-height: 10vw;
+		    border-radius: 5vw;
+		    padding: 0 8vw;
+		    margin: 0 4vw 0 0;
+		    height: 10vw;
+		}
+		&__in-favorites-btn {
+		    font-size: 2.6vw;
+		    line-height: 2.6vw;
+		    border-radius: 1vw;
+		    height: 6vw;
+		    padding: 1.8vw 2vw;
+		}
+		&__svg {
+			width: 3.2vw;
+			height: 2.6vw;
+		}
+		&__favorites-btn-text {
+		    margin-left: 2vw;
+		}
+		&__manager {
+		    border-radius: 3vw;
+		    padding: 9vw 6vw;
+		}
+		&__manager-img {
+		    width: 28vw;
+		    height: 28vw;
+		    margin: 0 5vw 0 0;
+		}
+		&__manager-title {
+		    font-size: 3.6vw;
+		    line-height: 4vw;
+		    margin: 0 0 4vw;
+		}
+		&__manager-name {
+		    font-size: 2.8vw;
+		    line-height: 3.2vw;
+		    margin: 0 0 4vw;
+		}
+		&__manager-btns-wrapper > :nth-child(n) {
+		    margin-right: 3vw;
+		}
+		&__manager-email-btn, &__manager-whats-app-btn {
+		    padding: 0 5vw;
+		}
+	}
+
+
 	.footer {
 		font-size: 2vw;
 		line-height: 2.6vw;
@@ -1565,7 +2316,7 @@
 			line-height: 2.6vw;
 		}
 		.call-order-button {
-			margin: 0 0 0 4.3vw;
+			margin: 1vw 0 0 4.3vw;
 			font-size: 1.7vw;
 			line-height: 1.7vw;
 			&::before {

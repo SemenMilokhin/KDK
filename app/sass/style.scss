@@ -3311,6 +3311,7 @@ section .container {
 			}
 		}
 		&_not-a-link {
+			text-align: center;
 			color: $secondary-text-color;
 			font-size: 13px;
 			padding: 7px 0 0;
@@ -3399,6 +3400,8 @@ section .container {
 	margin: 0 0 10px;
 	display: flex;
 	justify-content: flex-start;
+	flex-wrap: wrap;
+	line-height: 40px;
 	&__item {
 		margin-right: 10px;
 	}
@@ -3459,7 +3462,7 @@ section .container {
 		overflow: hidden;
 		margin: 0 20px 20px 0;
 		&:last-of-type {
-			margin: 0;
+			margin-right: 0;
 		}
 	}
 	&__img {
@@ -4151,6 +4154,7 @@ section .container {
 		font-size: 14px;
 		line-height: 18px;
 		color: $quaternary-text-color;
+		margin: 0 0 15px;
 	}
 	&__read-more-btn {
 		font: 700 14px/50px 'GothamPro',sans-serif;
