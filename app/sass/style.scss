@@ -1164,6 +1164,14 @@ section .container {
 		width: 260px;
 		height: 100%;
 	}
+	&__link {
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
 	&__img-slider {
 		list-style: none;
 		margin: 0;
@@ -1630,7 +1638,7 @@ section .container {
 	text-align: right;
 }
 
-.order-popup {
+.order-popup, .request-popup {
 	position: fixed;
 	z-index: 25;
 	width: 100vw;
@@ -2020,7 +2028,7 @@ section .container {
 	&.form-select {
 		display: block;
 		height: 50px;
-		width: 220px;
+		min-width: 220px;
 		padding: 10px 20px;
 		margin: 0;
 		border-radius: 15px;
@@ -2173,6 +2181,9 @@ section .container {
 	height: 30px;
 	margin: 0;
 	&__label {
+		border: none;
+		outline: none;
+		background: none;
 		font-size: 12px;
 		color: $secondary-text-color;
 	}
@@ -2592,6 +2603,14 @@ section .container {
 		justify-content: flex-start;
 		flex-wrap: wrap;
 		.offers {
+			&__pseudo-link {
+				position: absolute;
+				display: block;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+			}
 			&__item {
 				display: flex;
 				flex-direction: column;
@@ -2687,10 +2706,10 @@ section .container {
 			}
 			&__slider-controls {
 				position: absolute;
-				top: 0;
+				top: 50%;
 				left: 0;
 				width: 100%;
-				height: 100%;
+				height: 0;
 				&_left-arrow, &_right-arrow {
 					width: 28px;
 					height: 28px;
@@ -2701,7 +2720,7 @@ section .container {
 					padding: 0;
 					cursor: pointer;
 					position: absolute;
-					top: 80px;
+					top: -14px;
 					&::after {
 						position: absolute;
 						top: 8px;
@@ -2888,6 +2907,14 @@ section .container {
 		justify-content: flex-start;
 		flex-wrap: wrap;
 		.offers {
+			&__pseudo-link {
+				position: absolute;
+				display: block;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+			}
 			&__item {
 				display: flex;
 				flex-direction: row;
@@ -3139,8 +3166,6 @@ section .container {
 				}
 			}
 			&__specifications {
-				position: relative;
-				z-index: 1;
 				list-style: none;
 				margin: 0 0 25px;
 				padding: 8px 20px;
@@ -3205,11 +3230,15 @@ section .container {
 					color: transparent;
 					.offers__phone-number {
 						opacity: 1;
+						color: $primary-text-color;
 					}
 				}
 			}
 			&__phone-number {
 				position: absolute;
+				font-size: 14px;
+				line-height: 30px;
+				font-weight: 500;
 				width: 140px;
 				height: 30px;
 				top: 11px;
@@ -3605,7 +3634,6 @@ section .container {
 	&__slider-item, &__fullscreen-slider-item {
 		display: inline-flex;
 		vertical-align: middle;
-		// min-height: 325px;
 		height: 100%;
 		justify-content: center;
 		align-items: center;
@@ -3716,6 +3744,9 @@ section .container {
 	}
 	&__fullscreen-slider-item {
 		padding: 0 50px;
+		&.slick-slide {
+			display: inline-flex;
+		}
 	}
 	&__fullscreen-slider-controls {
 		top: 50vh;
@@ -4316,6 +4347,14 @@ section .container {
 			margin-bottom: 30px;
 		}
 	}
+	&__link {
+		display: block;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+	}
 	&__label {
 		color: $primary-text-color;
 		text-decoration: none;
@@ -4324,6 +4363,7 @@ section .container {
 		font-weight: 500;
 		border-radius: 5px;
 		position: absolute;
+		z-index: 3;
 		top: 10px;
 		left: 10px;
 		display: inline-block;
@@ -4416,6 +4456,7 @@ section .container {
 		color: $secondary-text-color;
 		text-decoration: none;
 		transition: 0.2s;
+		position: relative;
 	}
 }
 //_____________________________
@@ -4574,6 +4615,9 @@ section .container {
 		color: $quaternary-text-color;
 		margin: 0 0 18px;
 	}
+}
+.add-object-form {
+	display: none;
 }
 //_____________________________
 //

@@ -1477,6 +1477,15 @@ section .container {
   height: 100%;
 }
 
+.new-offers__link {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
 .new-offers__img-slider {
   list-style: none;
   margin: 0;
@@ -2052,7 +2061,7 @@ section .container {
   text-align: right;
 }
 
-.order-popup {
+.order-popup, .request-popup {
   position: fixed;
   z-index: 25;
   width: 100vw;
@@ -2068,7 +2077,7 @@ section .container {
   background-color: rgba(39, 47, 64, 0.5);
 }
 
-.order-popup.show {
+.order-popup.show, .request-popup.show {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2579,7 +2588,7 @@ section .container {
 .select.form-select {
   display: block;
   height: 50px;
-  width: 220px;
+  min-width: 220px;
   padding: 10px 20px;
   margin: 0;
   border-radius: 15px;
@@ -2762,6 +2771,9 @@ section .container {
 }
 
 .adress__label {
+  border: none;
+  outline: none;
+  background: none;
   font-size: 12px;
   color: #a1b0c1;
 }
@@ -3328,6 +3340,15 @@ section .container {
   flex-wrap: wrap;
 }
 
+.offers.type-blocks .offers__pseudo-link {
+  position: absolute;
+  display: block;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
 .offers.type-blocks .offers__item {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3440,10 +3461,10 @@ section .container {
 
 .offers.type-blocks .offers__slider-controls {
   position: absolute;
-  top: 0;
+  top: 50%;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 0;
 }
 
 .offers.type-blocks .offers__slider-controls_left-arrow, .offers.type-blocks .offers__slider-controls_right-arrow {
@@ -3456,7 +3477,7 @@ section .container {
   padding: 0;
   cursor: pointer;
   position: absolute;
-  top: 80px;
+  top: -14px;
 }
 
 .offers.type-blocks .offers__slider-controls_left-arrow::after, .offers.type-blocks .offers__slider-controls_right-arrow::after {
@@ -3701,6 +3722,15 @@ section .container {
   justify-content: flex-start;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+}
+
+.offers.type-lines .offers__pseudo-link {
+  position: absolute;
+  display: block;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
 .offers.type-lines .offers__item {
@@ -4009,8 +4039,6 @@ section .container {
 }
 
 .offers.type-lines .offers__specifications {
-  position: relative;
-  z-index: 1;
   list-style: none;
   margin: 0 0 25px;
   padding: 8px 20px;
@@ -4098,10 +4126,14 @@ section .container {
 
 .offers.type-lines .offers__phone-btn.phone-show .offers__phone-number {
   opacity: 1;
+  color: #fff;
 }
 
 .offers.type-lines .offers__phone-number {
   position: absolute;
+  font-size: 14px;
+  line-height: 30px;
+  font-weight: 500;
   width: 140px;
   height: 30px;
   top: 11px;
@@ -4706,6 +4738,12 @@ section .container {
 
 .object__fullscreen-slider-item {
   padding: 0 50px;
+}
+
+.object__fullscreen-slider-item.slick-slide {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 
 .object__fullscreen-slider-controls {
@@ -5479,6 +5517,15 @@ section .container {
   margin-bottom: 30px;
 }
 
+.articles__link {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
 .articles__label {
   color: #fff;
   text-decoration: none;
@@ -5487,6 +5534,7 @@ section .container {
   font-weight: 500;
   border-radius: 5px;
   position: absolute;
+  z-index: 3;
   top: 10px;
   left: 10px;
   display: inline-block;
@@ -5608,6 +5656,7 @@ section .container {
   text-decoration: none;
   -webkit-transition: 0.2s;
   transition: 0.2s;
+  position: relative;
 }
 
 .section-one-article {
@@ -5793,6 +5842,10 @@ section .container {
   line-height: 18px;
   color: #566886;
   margin: 0 0 18px;
+}
+
+.add-object-form {
+  display: none;
 }
 
 @media screen and (min-width: 1310px) {
@@ -7794,6 +7847,8 @@ section .container {
     line-height: 8vw;
   }
   .offers.type-lines .offers__phone-number {
+    font-size: 2.8vw;
+    line-height: 6vw;
     top: 1vw;
     left: 3.4vw;
     width: 28vw;
@@ -7814,7 +7869,7 @@ section .container {
     right: 6vw;
     font-size: 2vw;
     line-height: 2vw;
-    margin-top: 3vw;
+    margin-bottom: 3vw;
   }
   .anchor-links {
     margin: 0 0 6vw;
