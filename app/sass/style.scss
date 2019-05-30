@@ -2185,6 +2185,9 @@ section .container {
 		outline: none;
 		background: none;
 		font-size: 12px;
+		line-height: 12px;
+		height: 12px;
+		padding: 0;
 		color: $secondary-text-color;
 	}
 	&__wrapper {
@@ -2198,6 +2201,8 @@ section .container {
 		outline: none;
 		background: none;
 		font: 700 16px/18px 'GothamPro',sans-serif;
+		height: 18px;
+		padding: 0;
 	}
 	&__map-btn {
 		border: none;
@@ -2206,6 +2211,7 @@ section .container {
 		padding: 0;
 		background: none;
 		font: 500 12px/14px 'GothamPro',sans-serif;
+		height: 18px;
 		color: $contrast-color-2;
 	}
 }
