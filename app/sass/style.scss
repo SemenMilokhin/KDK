@@ -1178,6 +1178,10 @@ section .container {
 		padding: 0;
 		width: 100%;
 		height: 100%;
+		.slick-list {
+			border-radius: 15px 0 0 15px;
+			overflow: hidden;
+		}
 		.slick-list, .slick-track {
 			height: 100%;
 		}
@@ -1308,7 +1312,6 @@ section .container {
 	}
 	&__title {
 		font: 700 18px/18px 'GothamPro',sans-serif;
-		white-space: nowrap;
 		color: $ternary-text-color;
 		margin: 0 0 12px;
 		sup {
@@ -2686,6 +2689,9 @@ section .container {
 				padding: 0;
 				width: 100%;
 				height: 100%;
+				.slick-list {
+					border-radius: 15px 15px 0 0;
+				}
 				.slick-list, .slick-track {
 					width: 100%;
 					height: 100%;
@@ -2987,6 +2993,9 @@ section .container {
 				padding: 0;
 				width: 100%;
 				height: 100%;
+				.slick-list {
+					border-radius: 15px 0 0 15px;
+				}
 				.slick-list, .slick-track {
 					width: 100%;
 					height: 100%;
@@ -3150,8 +3159,6 @@ section .container {
 			&__description {
 				font-size: 12px;
 				line-height: 14px;
-				max-height: 114px;
-				overflow-y: hidden;
 				margin: 0;
 				color: $quaternary-text-color;
 			}
@@ -3633,6 +3640,9 @@ section .container {
 		width: 100%;
 		border-radius: 15px;
 		overflow: hidden;
+		.slick-track {
+			border-radius: 15px;
+		}
 		.slick-track, .slick-list {
 			height: 100%;
 		}
@@ -3810,19 +3820,11 @@ section .container {
 		justify-content: space-between;
 		align-items: center;		
 	}
-	&__specifications-item {
-		position: relative;
-		&:nth-last-of-type(n+2) {
-			&::after {
-				content: '';
-				position: absolute;
-				top: 0;
-				right: -30px;
-				height: 100%;
-				width: 1px;
-				background-color: $ternary-bg-color;
-			}
-		}
+	&__specifications-separator {
+		display: block;
+		height: 37px;
+		width: 1px;
+		background-color: $ternary-bg-color;
 	}
 	&__specifications-title {
 		font-size: 12px;
@@ -4041,6 +4043,7 @@ section .container {
 		display: block;
 		width: 140px;
 		height: 140px;
+		flex-shrink: 0;
 		border-radius: 50%;
 		margin: 0 25px 0 0;
 	}
@@ -4103,6 +4106,7 @@ section .container {
 	&__map-wrapper {
 		width: 50%;
 		overflow: hidden;
+		border-radius: 0 15px 15px 0;
 	}
 }
 //_____________________________

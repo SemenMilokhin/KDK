@@ -456,7 +456,7 @@
 		&__link {
 			flex-direction: column;
 			justify-content: flex-start;
-			align-items: space-between;
+			align-items: center;
 			padding: 5px 0 0 0;
 		}
 		&__heading {
@@ -466,7 +466,7 @@
 			max-width: 80px;
 		}
 		&__item_fill .services__link {
-			padding: 8px 0 0 0;
+			padding: 5px 0 0 8px;
 		}
 	}
 	.new-articles {
@@ -498,7 +498,7 @@
 	.new-offers-wrapper {
 		margin-bottom: 20px;
 	}
-	.new-offers{
+	.new-offers {
 		&__slide {
 			align-items: stretch;
 		}
@@ -519,6 +519,12 @@
 			min-height: 250px;
 			border-left: 1px solid $ternary-bg-color;
 			border-top: none;
+		}
+		&__img-slider {
+			.slick-list {
+				border-radius: 15px 15px 0 0;
+				overflow: hidden;
+			}
 		}
 		&__img-slide {
 			height: 200px;
@@ -641,6 +647,11 @@
 		    border-left: 1px solid $ternary-bg-color;
 		    border-top: none;
 		}
+		.offers__img-slider {
+			.slick-list {
+				border-radius: 15px 15px 0 0;
+			}
+		}
 		.offers__img-slide {
 		    height: 200px;
 		}
@@ -654,14 +665,12 @@
 			line-height: 10px;
 			margin: 0 0 10px;
 		}
-		.offers__description {
-			max-height: 100%;
-		}
 		.offers__additional-information {
 			right: 30px;
 			left: auto;
 			font-size: 10px;
 			line-height: 10px;
+			width: 200px;
 		}
 		.offers__post-date {
 		    margin: 0 0 0 40px;
@@ -711,6 +720,7 @@
 		}
 		.offers__information-wrapper {
 			width: 200px;
+			padding-bottom: 35px;
 		}
 		.offers__specifications {
 		    margin: 0 0 22px;
@@ -812,6 +822,9 @@
 	}
 	.object__manager {
 		width: 100%;
+	}
+	.object__map-wrapper {
+		border-radius: 0 0 15px 15px;
 	}
 	.service-categories__item {
 		flex-direction: column;
@@ -1359,6 +1372,12 @@
 		&__slider-wrapper, &__img-slide {
 			height: 28.6vw;
 		}
+		&__img-slider {
+			.slick-list {
+				border-radius: 2.1vw 2.1vw 0 0;
+				overflow: hidden;
+			}
+		}
 		&__primary-slider-arrow {
 		    top: 4vw;
 		    width: 8vw;
@@ -1867,6 +1886,11 @@
 			&__slider-wrapper {
 			    height: 40vw;
 			}
+			&__img-slider {
+				.slick-list {
+					border-radius: 3vw 3vw 0 0;
+				}
+			}
 			&__img-slide {
 			    height: 40vw;
 			}
@@ -1915,6 +1939,7 @@
 			}
 			&__information-wrapper {
 			    width: 100%;
+			    padding: 0;
 			}
 			&__price {
 			    font-size: 3.2vw;
@@ -1983,6 +2008,7 @@
 			    font-size: 2vw;
 			    line-height: 2vw;
 			    margin-bottom: 3vw;
+			    width: auto;
 			}
 		}
 	}
@@ -2083,6 +2109,11 @@
 		&__slider-wrapper, &__fullscreen-slider-wrapper {
 		    margin: 0 0 8vw;
 		}
+		&__slider {
+			.slick-list {
+				border-radius: 3vw;
+			}
+		}
 		&__slider, &__fullscreen-slider {
 		    border-radius: 3vw;
 		}
@@ -2128,6 +2159,9 @@
 		    height: 10.4vw;
 		    border-radius: 2vw;
 		}
+		&__specifications-separator {
+			height: 7.2vw;
+		}
 		&__specifications-title {
 		    font-size: 2.4vw;
 		    margin: 0 0 1.6vw;
@@ -2138,9 +2172,6 @@
 		    sup {
 			    font-size: 2vw;
 			}
-		}
-		&__specifications-item:nth-last-of-type(n+2)::after {
-		    right: -10vw;
 		}
 		&__station-adress {
 			font-size: 2.4vw;
@@ -2265,6 +2296,9 @@
 		}
 		&__manager-email-btn, &__manager-whats-app-btn {
 		    padding: 0 5vw;
+		}
+		&__map-wrapper {
+			border-radius: 0 0 3vw 3vw;
 		}
 	}
 
