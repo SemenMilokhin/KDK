@@ -1257,6 +1257,12 @@
 		border-radius: 2.2vw;
 	}
 	.site-sections {
+		> :first-child .site-sections__link {
+			border-radius: 2.2vw 0 0 2.2vw;
+		}
+		> :last-child .site-sections__link {
+			border-radius: 0 2.2vw 2.2vw 0;
+		}
 		&__link {
 			font-size: 1.85vw;
 			line-height: 2.28vw;

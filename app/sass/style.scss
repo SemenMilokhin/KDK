@@ -892,6 +892,12 @@ section .container {
 	width: 100%;
 	transition: 1s ease-in-out;
 	clip: rect(0 , 1190px , 85px , 0);
+	> :first-child .site-sections__link {
+		border-radius: 15px 0 0 15px;
+	}
+	> :last-child .site-sections__link {
+		border-radius: 0 15px 15px 0;
+	}
 	&.clipped {
 		clip: rect(0 , 50px , 85px , 0);
 	}
