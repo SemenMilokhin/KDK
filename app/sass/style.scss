@@ -2323,6 +2323,7 @@ section .container {
 		background: none;
 		border: 1px solid $btn-border-color;
 		transition: 0.2s;
+		white-space: nowrap;
 	}
 }
 .form-label {
