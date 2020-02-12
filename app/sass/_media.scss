@@ -298,6 +298,21 @@
 	}
 	.adress {
 		height: auto;
+		width: 100%;
+		&__label {
+			padding: 0;
+			top: 0;
+			left: 0;
+		}
+		&__input {
+			display: inline-block;
+			width: 265px;
+		}
+		&__map-btn {
+			right: 20px;
+			top: 2px;
+			margin: auto 0;
+		}
 	}
 	.more-filters-btn {
 		margin: 10px auto;
@@ -308,6 +323,7 @@
 	.filters-hl {
 		width: 100%;
 		height: 1px;
+		margin: 0;
 	}
 	.more-filters-wrapper {
 		padding-top: 30px;
@@ -1011,15 +1027,15 @@
 		}
 	}
 	.adress {
-		&__label {
-			font-size: 3vw;
-		}
 		&__input {
-		    width: 47.5vw;
-		    font-size: 4.2vw;
-		    line-height: 4.8vw;
+			font-size: 2.4vw;
+			height: 5vw;
+			width: 55vw;
 		}
 		&__map-btn {
+			right: 5.2vw;
+			top: 0;
+			height: 3.7vw;
 			font-size: 3vw;
 			line-height: 3.7vw;
 		}
