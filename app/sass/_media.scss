@@ -373,6 +373,30 @@
 	.btns-wrapper {
 		width: 450px;
 	}
+	.section-map {
+		background-color: $primary-bg-color;
+	}
+	.container_map-filters {
+		position: unset;
+		.slide-down-wrapper {
+			background: $primary-bg-color;
+			&::before, &::after {
+				content: '';
+			}
+		}
+		.more-filters-wrapper {
+			background-color: none;
+			padding-left: 0;
+			padding-right: 0;
+			padding-bottom: 0;
+			border-radius: 0;
+		}
+		.on-map-btn {
+			color: $quaternary-text-color;
+			background: none;
+			border-color: $btn-border-color;
+		}
+	}
 	.on-map-btn, .filters-submit-btn {
 		height: 40px;
 		line-height: 40px;
