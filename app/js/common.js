@@ -138,7 +138,8 @@ $(document).ready(function(){
 			advancedSearchCloseBtn = advancedSearch.find('.advanced-search-close-btn'),
 			moreFiltersWrapper     = advancedSearch.find('.more-filters-wrapper'),
 			btnsWrapper            = advancedSearch.find('.btns-wrapper'),
-			moreFiltersBtnText     = advancedSearch.find('.more-filters-btn__text');
+			moreFiltersBtn         = advancedSearch.find('.more-filters-btn'),
+			moreFiltersBtnText     = moreFiltersBtn.find('.more-filters-btn__text');
 
 		clearBtn.on('click', function() {
 			clearBtn.removeClass('show');
@@ -183,6 +184,7 @@ $(document).ready(function(){
 			moreFiltersWrapper.slideUp();
 			btnsWrapper.removeClass('more-pb');
 			moreFiltersBtnText.text('Ещё фильтры');
+			moreFiltersBtn.removeClass('opened');
 			setTimeout(function () {
 				advancedSearch.css({
 					transform: "translate(0, 0)"
@@ -383,19 +385,22 @@ $(document).ready(function(){
 		});
 	}
 	function initFiltersFormMovements() {
-		var form               = $('form'),
-			moreFiltersBtn     = form.find('.more-filters-btn'),
-			moreFiltersBtnText = form.find('.more-filters-btn__text'),
-			moreFiltersWrapper = form.find('.more-filters-wrapper'),
-			btnsWrapper        = form.find('.btns-wrapper');
+		var forms = $('form');
 
-		moreFiltersBtn.on('click', function(evt) {
-			evt.preventDefault();
-			moreFiltersBtnText.text(moreFiltersBtnText.text() == "Скрыть" ? "Ещё фильтры" : "Скрыть");
-			moreFiltersBtn.toggleClass('opened');
-			btnsWrapper.toggleClass('more-pb');
-			moreFiltersWrapper.slideToggle(500);
-		});
+		forms.each( function(formIndex, form) {
+			var	moreFiltersBtn     = $( form ).find('.more-filters-btn'),
+				moreFiltersBtnText = $( form ).find('.more-filters-btn__text'),
+				moreFiltersWrapper = $( form ).find('.more-filters-wrapper'),
+				btnsWrapper        = $( form ).find('.btns-wrapper');
+
+			moreFiltersBtn.on('click', function(evt) {
+				evt.preventDefault();
+				moreFiltersBtnText.text(moreFiltersBtnText.text() == "Скрыть" ? "Ещё фильтры" : "Скрыть");
+				moreFiltersBtn.toggleClass('opened');
+				btnsWrapper.toggleClass('more-pb');
+				moreFiltersWrapper.slideToggle(500);
+			});
+		} );
 	}
 	function initSelect() {
 		var select = $('.select');
