@@ -16,13 +16,17 @@
 | Формирование нового объекта | [add-object.html](https://semenmilokhin.github.io/KDK/add-object.html) |
 | Карта | [map.html](https://semenmilokhin.github.io/KDK/map.html) |
 
+---
 
 Проект собран на Vite  
-В работе использовались библиотеки: jQuery, slick-carousel
+В работе использовались библиотеки: jQuery, slick-carousel  
+
 ---
+
 ### Разработка
-Для разработки необходим установленный node.js (c npm), git
-остальные dev зависимости, взятые из package.json установит npm 
+Для разработки необходим установленный node.js (c npm), git  
+остальные dev зависимости, взятые из package.json установит npm  
+
 ```
 git clone git@github.com:SemenMilokhin/KDK.git
 cd KDK
