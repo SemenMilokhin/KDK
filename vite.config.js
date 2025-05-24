@@ -11,6 +11,7 @@ const htmlFiles = readdirSync(srcDir).filter(file => extname(file) === '.html')
   }, {})
 
 export default defineConfig({
+    base: '/KDK',
     root: 'src/',
     publicDir: '../public',
     build: {
