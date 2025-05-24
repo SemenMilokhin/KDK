@@ -1,3 +1,6 @@
+import $ from 'jquery';
+import 'slick-carousel/slick/slick.min.js';
+
 $(document).ready(function(){
 	initAdaptability();
 	initMenu();
@@ -85,7 +88,7 @@ $(document).ready(function(){
 			menuSections  = menu.find('.menu__sections'),
 			removeClass   = function() {
 				menuContainer.removeClass('opened');
-			}
+			},
 			openMenu      = function() {
 				menuContainer.addClass('opened').animate({
 					opacity: '1'
@@ -640,7 +643,7 @@ $(document).ready(function(){
 						});
 					}
 				});
-			}
+			},
 			check = function() {
 				tabsWrapper.find('.type-of-property__input').each(function(i,el) {
 					if($(el).prop('checked')) {
