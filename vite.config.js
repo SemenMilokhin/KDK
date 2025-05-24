@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import { readdirSync } from 'fs'
 import { join, extname } from 'path'
+import autoprefixer from 'autoprefixer'
 
 const srcDir = join(__dirname, 'src')
 const htmlFiles = readdirSync(srcDir).filter(file => extname(file) === '.html')
@@ -45,6 +46,15 @@ export default defineConfig({
                     return 'assets/[name][extname]'
                 },
             },
+        },
+    },
+    css: {
+        postcss: {
+            plugins: [
+                autoprefixer({
+                    overrideBrowserslist: ['last 2 versions']
+                }),
+            ],
         },
     },
     plugins: [
