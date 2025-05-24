@@ -4,17 +4,17 @@
  
 | Страница | Ссылка |
 | ------ | ------ |
-| Главная | [index.html](https://semenmilokhin.github.io/KDK/index.html){target="_blank"} |
-| Контакты | [contacts.html](https://semenmilokhin.github.io/KDK/contacts.html){target="_blank"} |
-| Статьи | [articles.html](https://semenmilokhin.github.io/KDK/articles.html){target="_blank"} |
-| Одна статья | [one-article.html](https://semenmilokhin.github.io/KDK/one-article.html){target="_blank"} |
-| Услуги | [services.html](https://semenmilokhin.github.io/KDK/services.html){target="_blank"} |
-| Одна услуга | [one-service.html](https://semenmilokhin.github.io/KDK/one-service.html){target="_blank"} |
-| Объекты (блоками) | [objects-in-blocks.html](https://semenmilokhin.github.io/KDK/objects-in-blocks.html){target="_blank"} |
-| Объекты (строками) | [objects-in-lines.html](https://semenmilokhin.github.io/KDK/objects-in-lines.html){target="_blank"} |
-| Один объект | [one-object.html](https://semenmilokhin.github.io/KDK/one-object.html){target="_blank"} |
-| Формирование нового объекта | [add-object.html](https://semenmilokhin.github.io/KDK/add-object.html){target="_blank"} |
-| Карта | [map.html](https://semenmilokhin.github.io/KDK/map.html){target="_blank"} |
+| Главная | [index.html](https://semenmilokhin.github.io/KDK/index.html) |
+| Контакты | [contacts.html](https://semenmilokhin.github.io/KDK/contacts.html) |
+| Статьи | [articles.html](https://semenmilokhin.github.io/KDK/articles.html) |
+| Одна статья | [one-article.html](https://semenmilokhin.github.io/KDK/one-article.html) |
+| Услуги | [services.html](https://semenmilokhin.github.io/KDK/services.html) |
+| Одна услуга | [one-service.html](https://semenmilokhin.github.io/KDK/one-service.html) |
+| Объекты (блоками) | [objects-in-blocks.html](https://semenmilokhin.github.io/KDK/objects-in-blocks.html) |
+| Объекты (строками) | [objects-in-lines.html](https://semenmilokhin.github.io/KDK/objects-in-lines.html) |
+| Один объект | [one-object.html](https://semenmilokhin.github.io/KDK/one-object.html) |
+| Формирование нового объекта | [add-object.html](https://semenmilokhin.github.io/KDK/add-object.html) |
+| Карта | [map.html](https://semenmilokhin.github.io/KDK/map.html) |
 
 Проект собран на Vite  
 В работе использовались библиотеки: jQuery, slick-carousel  
